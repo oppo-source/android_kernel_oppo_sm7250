@@ -86,7 +86,6 @@ enum {
 
 enum { UDF_MAX_LINKS = 0xffff };
 
-/* These are the "meat" - everything else is stuffing */
 static int udf_fill_super(struct super_block *, void *, int);
 static void udf_put_super(struct super_block *);
 static int udf_sync_fs(struct super_block *, int);

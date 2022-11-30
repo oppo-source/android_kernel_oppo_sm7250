@@ -159,7 +159,6 @@ static int get_lightbar_version(struct cros_ec_dev *ec,
 		goto exit;
 	}
 
-	/* Anything else (ie, EC_RES_INVALID_COMMAND) - no lightbar */
 	ret = 0;
 exit:
 	kfree(msg);

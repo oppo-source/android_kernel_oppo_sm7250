@@ -520,7 +520,6 @@ void notrace handle_interruption(int code, struct pt_regs *regs)
 		regs->gr[0] &= ~PSW_R;
 		if (user_space(regs))
 			handle_gdb_break(regs, TRAP_TRACE);
-		/* else this must be the start of a syscall - just let it run */
 		return;
 
 	case  5:

@@ -1652,7 +1652,6 @@ sisfb_check_var(struct fb_var_screeninfo *var, struct fb_info *info)
 		var->yoffset = var->yres_virtual - var->yres - 1;
 	}
 
-	/* Set everything else to 0 */
 	var->red.msb_right =
 		var->green.msb_right =
 		var->blue.msb_right =

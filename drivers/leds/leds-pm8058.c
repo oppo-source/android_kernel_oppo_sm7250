@@ -121,7 +121,6 @@ static int pm8058_led_probe(struct platform_device *pdev)
 		return -EINVAL;
 	}
 
-	/* Use label else node name */
 	led->cdev.name = of_get_property(np, "label", NULL) ? : np->name;
 	led->cdev.default_trigger =
 		of_get_property(np, "linux,default-trigger", NULL);

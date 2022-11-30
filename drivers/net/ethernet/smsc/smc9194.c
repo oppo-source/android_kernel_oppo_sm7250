@@ -857,7 +857,6 @@ static int __init smc_probe(struct net_device *dev, int ioaddr)
 	word memory_info_register;
 	word memory_cfg_register;
 
-	/* Grab the region so that no one else tries to probe our ioports. */
 	if (!request_region(ioaddr, SMC_IO_EXTENT, DRV_NAME))
 		return -EBUSY;
 

@@ -6,7 +6,6 @@
 // This driver uses the ChromeOS EC byte-level message-based protocol for
 // communicating the keyboard state (which keys are pressed) from a keyboard EC
 // to the AP over some bus (such as i2c, lpc, spi).  The EC does debouncing,
-// but everything else (including deghosting) is done here.  The main
 // motivation for this is to keep the EC firmware as simple as possible, since
 // it cannot be easily upgraded and EC flash/IRAM space is relatively
 // expensive.

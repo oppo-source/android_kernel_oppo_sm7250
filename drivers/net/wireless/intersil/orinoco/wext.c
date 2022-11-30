@@ -941,7 +941,6 @@ static int orinoco_ioctl_set_auth(struct net_device *dev,
 		} else {
 			if (param->value)
 				ret = -EOPNOTSUPP;
-			/* else silently accept disable of WPA */
 			priv->wpa_enabled = 0;
 		}
 		break;

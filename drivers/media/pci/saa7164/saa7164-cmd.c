@@ -111,7 +111,6 @@ int saa7164_irq_dequeue(struct saa7164_dev *dev)
 			ret = saa7164_bus_get(dev, &tRsp, &tmp, 0);
 			printk(KERN_ERR "%s() ret = %x\n", __func__, ret);
 			if (ret == SAA_ERR_EMPTY)
-				/* Someone else already fetched the response */
 				return SAA_OK;
 
 			if (ret != SAA_OK)
@@ -156,7 +155,6 @@ static int saa7164_cmd_dequeue(struct saa7164_dev *dev)
 			ret = saa7164_bus_get(dev, &tRsp, &tmp, 0);
 			printk(KERN_ERR "ret = %x\n", ret);
 			if (ret == SAA_ERR_EMPTY)
-				/* Someone else already fetched the response */
 				return SAA_OK;
 
 			if (ret != SAA_OK)

@@ -637,7 +637,6 @@ CIFSSMBNegotiate(const unsigned int xid, struct cifs_ses *ses)
 		rc = -EOPNOTSUPP;
 		goto neg_err_exit;
 	}
-	/* else wct == 17, NTLM or better */
 
 	server->sec_mode = pSMBr->SecurityMode;
 	if ((server->sec_mode & SECMODE_USER) == 0)

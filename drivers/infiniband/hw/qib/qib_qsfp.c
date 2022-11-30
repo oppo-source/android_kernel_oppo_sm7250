@@ -108,7 +108,6 @@ static int qsfp_read(struct qib_pportdata *ppd, int addr, void *bp, int len)
 		if (ret && cnt == 0 && ++pass < QSFP_MAX_RETRY)
 			continue;
 		if (ret) {
-			/* qib_twsi_blk_rd() 1 for error, else 0 */
 			ret = -EIO;
 			goto deselect;
 		}
@@ -213,7 +212,6 @@ static int qib_qsfp_write(struct qib_pportdata *ppd, int addr, void *bp,
 			wlen = QSFP_PAGESIZE - in_page;
 		ret = qib_twsi_blk_wr(dd, QSFP_DEV, addr, buff + cnt, wlen);
 		if (ret) {
-			/* qib_twsi_blk_wr() 1 for error, else 0 */
 			ret = -EIO;
 			goto deselect;
 		}

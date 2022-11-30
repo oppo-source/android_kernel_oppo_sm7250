@@ -6475,7 +6475,6 @@ pfm_remove_alt_pmu_interrupt(pfm_intr_handler_desc_t *hdl)
 
 	if (hdl == NULL) return -EINVAL;
 
-	/* cannot remove someone else's handler! */
 	if (pfm_alt_intr_handler != hdl) return -EINVAL;
 
 	/* one at a time in the install or remove, just fail the others */

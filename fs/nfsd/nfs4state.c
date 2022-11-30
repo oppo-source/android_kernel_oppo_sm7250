@@ -5652,7 +5652,6 @@ nfsd4_lm_notify(struct file_lock *fl)
 						struct nfsd4_blocked_lock, nbl_lock);
 	bool queue = false;
 
-	/* An empty list means that something else is going to be using it */
 	spin_lock(&nn->blocked_locks_lock);
 	if (!list_empty(&nbl->nbl_list)) {
 		list_del_init(&nbl->nbl_list);

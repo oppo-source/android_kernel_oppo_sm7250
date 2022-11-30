@@ -584,7 +584,6 @@ static int tps65010_probe(struct i2c_client *client,
 	case TPS65012:
 		tps->por = 1;
 		break;
-	/* else CHGCONFIG.POR is replaced by AUA, enabling a WAIT mode */
 	}
 	tps->chgconf = i2c_smbus_read_byte_data(client, TPS_CHGCONFIG);
 	show_chgconfig(tps->por, "conf/init", tps->chgconf);

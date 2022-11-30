@@ -277,7 +277,6 @@ Sample Userspace Code
         struct sockaddr_pppol2tp sax;
         int fd;
 
-        /* Note, the target socket must be bound already, else it will not be ready */
         sax.sa_family = AF_PPPOX;
         sax.sa_protocol = PX_PROTO_OL2TP;
         sax.pppol2tp.fd = tunnel_fd;

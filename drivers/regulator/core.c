@@ -1074,7 +1074,6 @@ static int machine_constraints_voltage(struct regulator_dev *rdev,
 		if ((cmin == 0) && (cmax == 0))
 			return 0;
 
-		/* else require explicit machine-level constraints */
 		if (cmin <= 0 || cmax <= 0 || cmax < cmin) {
 			rdev_err(rdev, "invalid voltage constraints\n");
 			return -EINVAL;
@@ -5266,6 +5265,16 @@ void regulator_debug_print_enabled(void)
 }
 EXPORT_SYMBOL(regulator_debug_print_enabled);
 
+#ifdef OPLUS_FEATURE_POWERINFO_RPMH
+void oplus_show_regulator_list(void)
+{
+	pr_info("oplus_show_regulator_list:Enabled regulators\n");
+	class_for_each_device(&regulator_class, NULL, NULL,
+			     _regulator_debug_print_enabled);
+}
+EXPORT_SYMBOL(oplus_show_regulator_list);
+#endif
+
 static int __init regulator_init(void)
 {
 	int ret;
@@ -5396,4 +5405,5 @@ static int __init regulator_init_complete(void)
 
 	return 0;
 }
+
 late_initcall_sync(regulator_init_complete);

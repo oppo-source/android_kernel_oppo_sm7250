@@ -276,7 +276,6 @@ static int sd_start(struct gspca_dev *gspca_dev)
 	data[8] = 0x01;		/* reg 7, V start - was 0x03 */
 /*	if (h_size == 320 ) */
 /*		data[9]= 0x56;	 * reg 8, 24MHz, 2:1 scale down */
-/*	else */
 	data[9] = 0x52;		/* reg 8, 24MHz, no scale down */
 /*jfm: from win trace*/
 	data[10] = 0x18;
@@ -292,7 +291,6 @@ static int sd_start(struct gspca_dev *gspca_dev)
 /*	if (gspca_dev->width == 1280) */
 /*		data[1] = 200;	 * reg 60, pc-cam frame size
 				 *	(unit: 4KB) 800KB */
-/*	else */
 	data[1] = 50;		/* 50 reg 60, pc-cam frame size
 				 *	(unit: 4KB) 200KB */
 	reg_w(gspca_dev, 2);

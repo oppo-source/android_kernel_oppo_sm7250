@@ -80,7 +80,6 @@ led_tg(struct sk_buff *skb, const struct xt_action_param *par)
 		led_trigger_event(&ledinternal->netfilter_led_trigger, LED_OFF);
 	}
 
-	/* else the delay is negative, which means switch on and stay on */
 
 	return XT_CONTINUE;
 }

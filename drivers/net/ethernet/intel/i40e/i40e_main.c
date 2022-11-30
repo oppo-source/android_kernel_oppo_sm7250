@@ -13171,7 +13171,6 @@ static void i40e_setup_pf_switch_element(struct i40e_pf *pf,
 		if (pf->lan_veb == I40E_NO_VEB) {
 			int v;
 
-			/* find existing or else empty VEB */
 			for (v = 0; v < I40E_MAX_VEB; v++) {
 				if (pf->veb[v] && (pf->veb[v]->seid == seid)) {
 					pf->lan_veb = v;
@@ -13412,7 +13411,6 @@ static void i40e_determine_queue_usage(struct i40e_pf *pf)
 
 	if ((queues_left == 1) ||
 	    !(pf->flags & I40E_FLAG_MSIX_ENABLED)) {
-		/* one qp for PF, no queues for anything else */
 		queues_left = 0;
 		pf->alloc_rss_size = pf->num_lan_qps = 1;
 

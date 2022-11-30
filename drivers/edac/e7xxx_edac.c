@@ -338,7 +338,6 @@ static void e7xxx_check(struct mem_ctl_info *mci)
 	e7xxx_process_error_info(mci, &info, 1);
 }
 
-/* Return 1 if dual channel mode is active.  Else return 0. */
 static inline int dual_channel_active(u32 drc, int dev_idx)
 {
 	return (dev_idx == E7501) ? ((drc >> 22) & 0x1) : 1;

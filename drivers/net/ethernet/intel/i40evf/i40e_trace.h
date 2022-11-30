@@ -196,7 +196,6 @@ DEFINE_EVENT(
 /* Events unique to the VF. */
 
 #endif /* _I40E_TRACE_H_ */
-/* This must be outside ifdef _I40E_TRACE_H */
 
 /* This trace include file is not located in the .../include/trace
  * with the kernel tracepoint definitions, because we're a loadable

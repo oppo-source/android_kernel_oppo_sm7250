@@ -1408,7 +1408,6 @@ static void iwl_mvm_d3_update_keys(struct ieee80211_hw *hw,
 		/* we support these */
 		break;
 	default:
-		/* everything else (even CMAC for MFP) - disconnect from AP */
 		data->unhandled_cipher = true;
 		return;
 	}
@@ -1944,7 +1943,6 @@ out_iterate:
 out:
 	/* no need to reset the device in unified images, if successful */
 	if (unified_image && !ret) {
-		/* nothing else to do if we already sent D0I3_END_CMD */
 		if (d0i3_first)
 			return 0;
 

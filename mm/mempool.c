@@ -416,7 +416,6 @@ repeat_alloc:
 		return NULL;
 	}
 
-	/* Let's wait for someone else to return an element to @pool */
 	init_wait(&wait);
 	prepare_to_wait(&pool->wait, &wait, TASK_UNINTERRUPTIBLE);
 

@@ -841,7 +841,6 @@ static struct request *bfq_find_next_rq(struct bfq_data *bfqd,
 	struct rb_node *rbprev = rb_prev(&last->rb_node);
 	struct request *next, *prev = NULL;
 
-	/* Follow expired path, else get first next available. */
 	next = bfq_check_fifo(bfqq, last);
 	if (next)
 		return next;

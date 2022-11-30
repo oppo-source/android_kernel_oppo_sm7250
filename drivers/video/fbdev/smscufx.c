@@ -1555,7 +1555,6 @@ static int ufx_setup_modes(struct ufx_data *dev, struct fb_info *info,
 						     &info->modelist);
 	}
 
-	/* If everything else has failed, fall back to safe default mode */
 	if (default_vmode == NULL) {
 
 		struct fb_videomode fb_vmode = {0};

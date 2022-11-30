@@ -400,7 +400,6 @@ __stp_policy_node_lookup(struct stp_policy *policy, char *s)
 	if (list_empty(head))
 		return NULL;
 
-	/* return the first entry if everything else fails */
 	item = list_entry(head->next, struct config_item, ci_entry);
 	ret = to_stp_policy_node(item);
 

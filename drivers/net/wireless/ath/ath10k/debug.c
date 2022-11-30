@@ -1414,7 +1414,6 @@ static ssize_t ath10k_write_nf_cal_period(struct file *file,
 	ar->debug.nf_cal_period = period;
 
 	if (ar->state != ATH10K_STATE_ON) {
-		/* firmware is not running, nothing else to do */
 		ret = count;
 		goto exit;
 	}

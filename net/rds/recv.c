@@ -643,7 +643,6 @@ int rds_recvmsg(struct socket *sock, struct msghdr *msg, size_t size,
 		return sock_recv_errqueue(sk, msg, size, SOL_IP, IP_RECVERR);
 
 	while (1) {
-		/* If there are pending notifications, do those - and nothing else */
 		if (!list_empty(&rs->rs_notify_queue)) {
 			ret = rds_notify_queue_get(rs, msg);
 			break;

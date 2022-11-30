@@ -297,7 +297,6 @@ BEGIN_##TYPE##_SECTION							\
 ALT_##TYPE##_SECTION_END(0, 0)						\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Basic alt section test, else case should be taken */		\
 BEGIN_##TYPE##_SECTION							\
 	or	3,3,3;							\
 	or	3,3,3;							\
@@ -309,7 +308,6 @@ BEGIN_##TYPE##_SECTION							\
 ALT_##TYPE##_SECTION_END(0, 1)						\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Alt with smaller else case, should be padded with nops */	\
 BEGIN_##TYPE##_SECTION							\
 	or	3,3,3;							\
 	or	3,3,3;							\
@@ -334,7 +332,6 @@ END_##TYPE##_SECTION_NESTED(0, 1, 95)					\
 ALT_##TYPE##_SECTION_END(0, 0)						\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Alt section with nested section in else, default taken */	\
 BEGIN_##TYPE##_SECTION							\
 	or	3,3,3;							\
 	or	3,3,3;							\
@@ -348,7 +345,6 @@ END_##TYPE##_SECTION_NESTED(0, 1, 95)					\
 ALT_##TYPE##_SECTION_END(0, 0)						\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Alt section with nested section in else, else taken & nop */	\
 BEGIN_##TYPE##_SECTION							\
 	or	3,3,3;							\
 	or	3,3,3;							\
@@ -374,7 +370,6 @@ ALT_##TYPE##_SECTION_END_NESTED(0, 0, 95)				\
 END_##TYPE##_SECTION(0, 0)						\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Feature section with nested alt section, else taken */	\
 BEGIN_##TYPE##_SECTION							\
 	or	2,2,2;							\
 BEGIN_##TYPE##_SECTION_NESTED(95)					\
@@ -418,7 +413,6 @@ ALT_##TYPE##_SECTION_END_NESTED(0, 0, 94)				\
 ALT_##TYPE##_SECTION_END(0, 0)						\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Nested alt sections, default with inner else taken */	\
 BEGIN_##TYPE##_SECTION							\
 	or	2,2,2;							\
 BEGIN_##TYPE##_SECTION_NESTED(95)					\
@@ -438,7 +432,6 @@ ALT_##TYPE##_SECTION_END_NESTED(0, 0, 94)				\
 ALT_##TYPE##_SECTION_END(0, 0)						\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Nested alt sections, else with inner default taken */	\
 BEGIN_##TYPE##_SECTION							\
 	or	2,2,2;							\
 BEGIN_##TYPE##_SECTION_NESTED(95)					\
@@ -458,7 +451,6 @@ ALT_##TYPE##_SECTION_END_NESTED(0, 0, 94)				\
 ALT_##TYPE##_SECTION_END(0, 1)						\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Nested alt sections, else with inner else taken */		\
 BEGIN_##TYPE##_SECTION							\
 	or	2,2,2;							\
 BEGIN_##TYPE##_SECTION_NESTED(95)					\
@@ -478,7 +470,6 @@ ALT_##TYPE##_SECTION_END_NESTED(0, 1, 94)				\
 ALT_##TYPE##_SECTION_END(0, 1)						\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Nested alt sections, else can have large else case */	\
 BEGIN_##TYPE##_SECTION							\
 	or	2,2,2;							\
 	or	2,2,2;							\
@@ -570,7 +561,6 @@ globl(ftr_fixup_test_ ##TYPE##_macros_expected)				\
 /* ALT_##TYPE##_SECTION_END(0, 0) */					\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Basic alt section test, else case should be taken */		\
 /* BEGIN_##TYPE##_SECTION */						\
 	/* or	3,3,3; */						\
 	/* or	3,3,3; */						\
@@ -582,7 +572,6 @@ globl(ftr_fixup_test_ ##TYPE##_macros_expected)				\
 /* ALT_##TYPE##_SECTION_END(0, 1) */					\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Alt with smaller else case, should be padded with nops */	\
 /* BEGIN_##TYPE##_SECTION */						\
 	/* or	3,3,3; */						\
 	/* or	3,3,3; */						\
@@ -609,7 +598,6 @@ globl(ftr_fixup_test_ ##TYPE##_macros_expected)				\
 /* ALT_##TYPE##_SECTION_END(0, 0) */					\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Alt section with nested section in else, default taken */	\
 /* BEGIN_##TYPE##_SECTION */						\
 	or	3,3,3;							\
 	or	3,3,3;							\
@@ -623,7 +611,6 @@ globl(ftr_fixup_test_ ##TYPE##_macros_expected)				\
 /* ALT_##TYPE##_SECTION_END(0, 0) */					\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Alt section with nested section in else, else taken & nop */	\
 /* BEGIN_##TYPE##_SECTION */						\
 	/* or	3,3,3; */						\
 	/* or	3,3,3; */						\
@@ -649,7 +636,6 @@ globl(ftr_fixup_test_ ##TYPE##_macros_expected)				\
 /* END_##TYPE##_SECTION(0, 0) */					\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Feature section with nested alt section, else taken */	\
 /* BEGIN_##TYPE##_SECTION */						\
 	or	2,2,2;							\
 /* BEGIN_##TYPE##_SECTION_NESTED(95) */					\
@@ -693,7 +679,6 @@ globl(ftr_fixup_test_ ##TYPE##_macros_expected)				\
 /* ALT_##TYPE##_SECTION_END(0, 0) */					\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Nested alt sections, default with inner else taken */	\
 /* BEGIN_##TYPE##_SECTION */						\
 	or	2,2,2;							\
 /* BEGIN_##TYPE##_SECTION_NESTED(95) */					\
@@ -713,7 +698,6 @@ globl(ftr_fixup_test_ ##TYPE##_macros_expected)				\
 /* ALT_##TYPE##_SECTION_END(0, 0) */					\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Nested alt sections, else with inner default taken */	\
 /* BEGIN_##TYPE##_SECTION */						\
 	/* or	2,2,2; */						\
 /* BEGIN_##TYPE##_SECTION_NESTED(95) */					\
@@ -733,7 +717,6 @@ globl(ftr_fixup_test_ ##TYPE##_macros_expected)				\
 /* ALT_##TYPE##_SECTION_END(0, 1) */					\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Nested alt sections, else with inner else taken */		\
 /* BEGIN_##TYPE##_SECTION */						\
 	/* or	2,2,2; */						\
 /* BEGIN_##TYPE##_SECTION_NESTED(95) */					\
@@ -753,7 +736,6 @@ globl(ftr_fixup_test_ ##TYPE##_macros_expected)				\
 /* ALT_##TYPE##_SECTION_END(0, 1) */					\
 	or	1,1,1;							\
 	or	1,1,1;							\
-	/* Nested alt sections, else can have large else case */	\
 /* BEGIN_##TYPE##_SECTION */						\
 	/* or	2,2,2; */						\
 	/* or	2,2,2; */						\

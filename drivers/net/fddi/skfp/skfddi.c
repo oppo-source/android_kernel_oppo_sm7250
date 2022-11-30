@@ -857,7 +857,6 @@ static void skfp_ctl_set_multicast_list_wo_lock(struct net_device *dev)
 		mac_drv_rx_mode(smc, RX_ENABLE_PROMISC);
 		pr_debug("PROMISCUOUS MODE ENABLED\n");
 	}
-	/* Else, update multicast address table */
 	else {
 		mac_drv_rx_mode(smc, RX_DISABLE_PROMISC);
 		pr_debug("PROMISCUOUS MODE DISABLED\n");

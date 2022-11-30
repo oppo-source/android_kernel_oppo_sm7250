@@ -1040,7 +1040,6 @@ int saa7134_tvaudio_init2(struct saa7134_dev *dev)
 int saa7134_tvaudio_close(struct saa7134_dev *dev)
 {
 	dev->automute = 1;
-	/* anything else to undo? */
 	return 0;
 }
 

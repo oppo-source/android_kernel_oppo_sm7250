@@ -1432,7 +1432,6 @@ void iwl_mvm_rs_tx_status(struct iwl_mvm *mvm, struct ieee80211_sta *sta,
 			lq_sta->total_failed += retries + (1 - legacy_success);
 		}
 	}
-	/* The last TX rate is cached in lq_sta; it's set in if/else above */
 	lq_sta->last_rate_n_flags = lq_hwrate;
 	IWL_DEBUG_RATE(mvm, "reduced txpower: %d\n", reduced_txp);
 done:
@@ -2396,7 +2395,6 @@ static void rs_rate_scale_perform(struct iwl_mvm *mvm,
 			/* Swap tables; "search" becomes "active" */
 			lq_sta->active_tbl = active_tbl;
 			current_tpt = window->average_tpt;
-		/* Else poor success; go back to mode in "active" table */
 		} else {
 			IWL_DEBUG_RATE(mvm,
 				       "GOING BACK TO THE OLD TABLE: SR %d "

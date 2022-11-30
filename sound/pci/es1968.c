@@ -1983,7 +1983,6 @@ static irqreturn_t snd_es1968_interrupt(int irq, void *dev_id)
 	if (event & ESM_HWVOL_IRQ)
 		schedule_work(&chip->hwvol_work);
 
-	/* else ack 'em all, i imagine */
 	outb(0xFF, chip->io_port + 0x1A);
 
 	if ((event & ESM_MPU401_IRQ) && chip->rmidi) {

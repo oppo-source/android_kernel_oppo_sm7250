@@ -492,7 +492,6 @@ static int jffs2_scan_eraseblock (struct jffs2_sb_info *c, struct jffs2_eraseblo
 				sumlen = c->sector_size - je32_to_cpu(sm->offset);
 			}
 		} else {
-			/* If NAND flash, read a whole page of it. Else just the end */
 			if (c->wbuf_pagesize)
 				buf_len = c->wbuf_pagesize;
 			else

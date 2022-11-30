@@ -582,7 +582,6 @@ struct em28xx_v4l2 {
 	/* Progressive/interlaced mode */
 	bool progressive;
 	int interlaced_fieldmode; /* 1=interlaced fields, 0=just top fields */
-	/* FIXME: everything else than interlaced_fieldmode=1 doesn't work */
 
 	/* Frame properties */
 	int width;		/* current frame width */

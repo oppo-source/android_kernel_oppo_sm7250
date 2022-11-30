@@ -801,7 +801,6 @@ static int get_chip(struct map_info *map, struct flchip *chip, unsigned long adr
 			mutex_unlock(&chip->mutex);
 			cfi_udelay(1);
 			mutex_lock(&chip->mutex);
-			/* Someone else might have been playing with it. */
 			goto retry;
 		}
 

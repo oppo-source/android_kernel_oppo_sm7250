@@ -374,7 +374,6 @@ static void *kvm_mips_build_enter_guest(void *addr)
 	uasm_il_bnez(&p, &r, T0, label_kernel_asid);
 	 UASM_i_ADDIU(&p, T1, K1, offsetof(struct kvm_vcpu_arch,
 					   guest_kernel_mm.context.asid));
-	/* else user */
 	UASM_i_ADDIU(&p, T1, K1, offsetof(struct kvm_vcpu_arch,
 					  guest_user_mm.context.asid));
 	uasm_l_kernel_asid(&l, p);

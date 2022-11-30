@@ -652,7 +652,6 @@ static void odm_rx_phy_status92c_series_parsing(
 			/* 2008/01/30 MH we will judge RF RX path now. */
 			if (dm->rf_path_rx_enable & BIT(i))
 				rf_rx_num++;
-			/* else */
 			/* continue; */
 
 			rx_pwr[i] =
@@ -1327,7 +1326,6 @@ odm_config_bb_with_header_file(struct phy_dm_struct *dm,
 			READ_AND_CONFIG_MP(8822b, _agc_tab);
 		else if (config_type == CONFIG_BB_PHY_REG_PG)
 			READ_AND_CONFIG_MP(8822b, _phy_reg_pg);
-		/*else if (config_type == CONFIG_BB_PHY_REG_MP)*/
 		/*READ_AND_CONFIG_MP(8822b, _phy_reg_mp);*/
 	}
 

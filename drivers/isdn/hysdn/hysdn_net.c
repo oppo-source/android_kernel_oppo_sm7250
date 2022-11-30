@@ -240,7 +240,6 @@ static const struct net_device_ops hysdn_netdev_ops = {
 /*****************************************************************************/
 /* hysdn_net_create creates a new net device for the given card. If a device */
 /* already exists, it will be deleted and created a new one. The return value */
-/* 0 announces success, else a negative error code will be returned.         */
 /*****************************************************************************/
 int
 hysdn_net_create(hysdn_card *card)
@@ -287,7 +286,6 @@ hysdn_net_create(hysdn_card *card)
 
 /***************************************************************************/
 /* hysdn_net_release deletes the net device for the given card. The return */
-/* value 0 announces success, else a negative error code will be returned. */
 /***************************************************************************/
 int
 hysdn_net_release(hysdn_card *card)

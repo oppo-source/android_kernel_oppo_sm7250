@@ -63,7 +63,6 @@ int ivtv_claim_stream(struct ivtv_open_id *id, int type)
 			IVTV_DEBUG_INFO("Start Read VBI\n");
 			return 0;
 		}
-		/* someone else is using this stream already */
 		IVTV_DEBUG_INFO("Stream %d is busy\n", type);
 		return -EBUSY;
 	}
@@ -528,7 +527,6 @@ int ivtv_start_decoding(struct ivtv_open_id *id, int speed)
 
 	if (atomic_read(&itv->decoding) == 0) {
 		if (ivtv_claim_stream(id, s->type)) {
-			/* someone else is using this stream already */
 			IVTV_DEBUG_WARN("start decode, stream already claimed\n");
 			return -EBUSY;
 		}

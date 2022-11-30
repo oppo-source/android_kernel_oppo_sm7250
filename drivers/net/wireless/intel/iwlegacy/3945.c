@@ -1544,7 +1544,6 @@ il3945_hw_reg_get_ch_txpower_limit(struct il_channel_info *ch_info)
 		    min(ch_info->tgd_data.max_power,
 			ch_info->eeprom.max_power_avg);
 
-	/* else just use EEPROM limits */
 	else
 #endif
 		max_power = ch_info->eeprom.max_power_avg;

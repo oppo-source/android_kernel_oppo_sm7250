@@ -3429,7 +3429,6 @@ static void _rcu_barrier(struct rcu_state *rsp)
 	/* Take mutex to serialize concurrent rcu_barrier() requests. */
 	mutex_lock(&rsp->barrier_mutex);
 
-	/* Did someone else do our work for us? */
 	if (rcu_seq_done(&rsp->barrier_sequence, s)) {
 		_rcu_barrier_trace(rsp, TPS("EarlyExit"), -1,
 				   rsp->barrier_sequence);

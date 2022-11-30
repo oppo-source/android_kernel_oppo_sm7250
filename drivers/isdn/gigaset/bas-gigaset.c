@@ -1847,7 +1847,6 @@ static void atrdy_timeout(struct timer_list *t)
 
 	dev_warn(cs->dev, "timeout waiting for HD_READY_SEND_ATDATA\n");
 
-	/* fake the missing signal - what else can I do? */
 	update_basstate(ucs, BS_ATREADY, BS_ATTIMER);
 	start_cbsend(cs);
 }

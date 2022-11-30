@@ -206,7 +206,6 @@ __isp_stat_buf_find(struct ispstat *stat, int look_empty)
 		if (!look_empty && curr->empty)
 			continue;
 
-		/* Pick uninitialised buffer over anything else if look_empty */
 		if (curr->empty) {
 			found = curr;
 			break;

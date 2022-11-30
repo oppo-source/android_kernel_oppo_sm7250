@@ -1394,7 +1394,6 @@ static inline int dvb_dmx_swfilter_buffer_check(
 			continue;
 		}
 
-		/* else - section case */
 		desired_space = feed->feed.sec.tsfeedp + 188; /* upper bound */
 		for (i = 0; i < demux->filternum; i++) {
 			if (demux->sw_filter_abort)

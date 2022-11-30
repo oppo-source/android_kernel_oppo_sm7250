@@ -406,7 +406,6 @@ int msp_pcibios_config_access(unsigned char access_type,
 		value = cpu_to_le32(*data);
 		*PCI_CONFIG_SPACE_REG = value;
 	} else {
-		/* ELSE access is a PCI configuration read */
 		value = le32_to_cpu(*PCI_CONFIG_SPACE_REG);
 		*data = value;
 	}

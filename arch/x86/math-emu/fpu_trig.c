@@ -1160,7 +1160,6 @@ static void fyl2x(FPU_REG *st0_ptr, u_char st0_tag)
 				if (arith_invalid(1) < 0)
 					return;
 			}
-			/* else st(0) is positive and > 1.0 */
 		} else {
 			/* st(0) is positive and < 1.0 */
 

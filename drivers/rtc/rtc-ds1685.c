@@ -691,7 +691,6 @@ ds1685_rtc_work_queue(struct work_struct *work)
 			   (rtc->read(rtc, RTC_EXT_CTRL_4B) |
 			    RTC_CTRL_4B_KSE));
 
-		/* Call the platform pre-poweroff function. Else, shutdown. */
 		if (rtc->prepare_poweroff != NULL)
 			rtc->prepare_poweroff();
 		else
@@ -1289,7 +1288,6 @@ ds1685_rtc_probe(struct platform_device *pdev)
 	else
 		rtc->regstep = 1;
 
-	/* Platform read function, else default if mmio setup */
 	if (pdata->plat_read)
 		rtc->read = pdata->plat_read;
 	else
@@ -1298,7 +1296,6 @@ ds1685_rtc_probe(struct platform_device *pdev)
 		else
 			return -ENXIO;
 
-	/* Platform write function, else default if mmio setup */
 	if (pdata->plat_write)
 		rtc->write = pdata->plat_write;
 	else
@@ -1571,7 +1568,6 @@ ds1685_rtc_poweroff(struct platform_device *pdev)
 	u8 ctrla, ctrl4a, ctrl4b;
 	struct ds1685_priv *rtc;
 
-	/* Check for valid RTC data, else, spin forever. */
 	if (unlikely(!pdev)) {
 		pr_emerg("platform device data not available, spinning forever ...\n");
 		while(1);

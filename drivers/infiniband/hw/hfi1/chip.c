@@ -6588,7 +6588,6 @@ static void adjust_lcb_for_fpga_serdes(struct hfi1_devdata *dd)
 	 */
 	if (is_emulator_s(dd))
 		return;
-	/* else this is _p */
 
 	version = emulator_rev(dd);
 	if (!is_ax(dd))
@@ -14509,7 +14508,6 @@ static void init_qos(struct hfi1_devdata *dd, struct rsm_map_table *rmt)
 
 	/* mark RSM map entries as used */
 	rmt->used += rmt_entries;
-	/* map everything else to the mcast/err/vl15 context */
 	init_qpmap_table(dd, HFI1_CTRL_CTXT, HFI1_CTRL_CTXT);
 	dd->qos_shift = n + 1;
 	return;

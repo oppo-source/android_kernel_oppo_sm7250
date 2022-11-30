@@ -658,7 +658,6 @@ static int c_can_start(struct net_device *dev)
 
 	priv->can.state = CAN_STATE_ERROR_ACTIVE;
 
-	/* Attempt to use "active" if available else use "default" */
 	p = pinctrl_get_select(priv->device, "active");
 	if (!IS_ERR(p))
 		pinctrl_put(p);

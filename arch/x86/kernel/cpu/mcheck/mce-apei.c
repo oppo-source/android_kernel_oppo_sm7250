@@ -128,7 +128,6 @@ retry:
 	if (*record_id == APEI_ERST_INVALID_RECORD_ID)
 		goto out;
 	rc = erst_read(*record_id, &rcd.hdr, sizeof(rcd));
-	/* someone else has cleared the record, try next one */
 	if (rc == -ENOENT)
 		goto retry;
 	else if (rc < 0)

@@ -1170,7 +1170,6 @@ error:
 		}
 	}
 
-	/* resubmit if we need to, else mark this as done */
 	if ((status == 0) && (ctx->pending < ctx->count)) {
 		status = usb_submit_urb(urb, GFP_ATOMIC);
 		if (status != 0) {
@@ -1687,7 +1686,6 @@ static int test_halt(struct usbtest_dev *tdev, int ep, struct urb *urb)
 	if (retval < 0) {
 		int ret;
 
-		/* clear halt anyways, else further tests will fail */
 		ret = usb_clear_halt(urb->dev, urb->pipe);
 		if (ret)
 			ERROR(tdev, "ep %02x couldn't clear halt, %d\n",

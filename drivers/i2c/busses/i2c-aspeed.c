@@ -249,7 +249,6 @@ static bool aspeed_i2c_slave_irq(struct aspeed_i2c_bus *bus)
 		bus->slave_state = ASPEED_I2C_SLAVE_START;
 	}
 
-	/* Slave is not currently active, irq was for someone else. */
 	if (bus->slave_state == ASPEED_I2C_SLAVE_STOP) {
 		irq_handled = false;
 		goto out;

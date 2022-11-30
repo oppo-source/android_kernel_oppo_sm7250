@@ -4277,7 +4277,6 @@ unsigned int send_beacon(struct adapter *padapter)
 
 		if (passing_time > 100 || issue > 3)
 			DBG_871X("%s success, issue:%d, poll:%d, %lu ms\n", __func__, issue, poll, passing_time);
-		/* else */
 		/* 	DBG_871X("%s success, issue:%d, poll:%d, %u ms\n", __func__, issue, poll, passing_time); */
 
 		return _SUCCESS;
@@ -5736,10 +5735,8 @@ void linked_status_chk(struct adapter *padapter)
 		/*  Marked by Kurt 20130715 */
 		/*  For WiDi 3.5 and latered on, they don't ask WiDi sink to do roaming, so we could not check rx limit that strictly. */
 		/*  todo: To check why we under miracast session, rx_chk would be false */
-		/* ifdef CONFIG_INTEL_WIDI */
 		/* if (padapter->mlmepriv.widi_state != INTEL_WIDI_STATE_NONE) */
 		/* 	rx_chk_limit = 1; */
-		/* endif */
 
 		psta = rtw_get_stainfo(pstapriv, pmlmeinfo->network.MacAddress);
 		if (psta != NULL) {
@@ -5898,7 +5895,6 @@ void link_timer_hdl(struct timer_list *t)
 				report_join_res(padapter, -1);
 				return;
 			/*  */
-			/* else */
 			/*  */
 			/* 	pmlmeinfo->auth_algo = dot11AuthAlgrthm_Shared; */
 			/* 	pmlmeinfo->reauth_count = 0; */

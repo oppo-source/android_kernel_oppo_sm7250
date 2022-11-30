@@ -38,7 +38,6 @@
 #define NFC_IP_SRC_PT		0x0200
 /* Dest port. */
 #define NFC_IP_DST_PT		0x0400
-/* Something else about the proto */
 #define NFC_IP_PROTO_UNKNOWN	0x2000
 
 /* IP Hooks */

@@ -371,7 +371,6 @@ static void qh_lines(struct fotg210_hcd *fotg210, struct fotg210_qh *qh,
 			mark = '#'; /* blocked */
 		else if (hw->hw_alt_next == list_end)
 			mark = '.'; /* use hw_qtd_next */
-		/* else alt_next points to some other qtd */
 	}
 	scratch = hc32_to_cpup(fotg210, &hw->hw_info1);
 	hw_curr = (mark == '*') ? hc32_to_cpup(fotg210, &hw->hw_current) : 0;
@@ -2597,7 +2596,6 @@ static struct list_head *qh_urb_transaction(struct fotg210_hcd *fotg210,
 
 	if (is_input)
 		token |= (1 /* "in" */ << 8);
-	/* else it's already initted to "out" pid (0 << 8) */
 
 	maxpacket = max_packet(usb_maxpacket(urb->dev, urb->pipe, !is_input));
 

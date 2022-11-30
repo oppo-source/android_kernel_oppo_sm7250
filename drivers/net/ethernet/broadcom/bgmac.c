@@ -806,7 +806,6 @@ static void bgmac_chip_stats_update(struct bgmac *bgmac)
 					   BGMAC_RX_GOOD_OCTETS + (i * 4));
 	}
 
-	/* TODO: what else? how to handle BCM4706? Specs are needed */
 }
 #endif
 

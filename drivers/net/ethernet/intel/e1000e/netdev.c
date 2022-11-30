@@ -1010,7 +1010,6 @@ static bool e1000_clean_rx_irq(struct e1000_ring *rx_ring, int *work_done,
 				buffer_info->skb = skb;
 				skb = new_skb;
 			}
-			/* else just continue with the old one */
 		}
 		/* end copybreak code */
 		skb_put(skb, length);

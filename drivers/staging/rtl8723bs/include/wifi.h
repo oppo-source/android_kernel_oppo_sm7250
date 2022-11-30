@@ -837,7 +837,6 @@ enum HT_CAP_AMPDU_FACTOR {
 
 
 
-/* endif */
 
 /* 	===============WPS Section =============== */
 /* 	For WPSv1.0 */

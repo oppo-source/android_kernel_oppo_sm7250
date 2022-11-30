@@ -4839,7 +4839,6 @@ static int efx_ef10_filter_match_flags_from_mcdi(bool encap, u32 mcdi_flags)
 		/* VLAN tags refer to the outer packet */
 		MAP_FLAG(INNER_VID, INNER_VLAN);
 		MAP_FLAG(OUTER_VID, OUTER_VLAN);
-		/* everything else refers to the inner packet */
 		MAP_FLAG(LOC_MAC_IG, IFRM_UNKNOWN_UCAST_DST);
 		MAP_FLAG(LOC_MAC_IG, IFRM_UNKNOWN_MCAST_DST);
 		MAP_FLAG(REM_HOST, IFRM_SRC_IP);

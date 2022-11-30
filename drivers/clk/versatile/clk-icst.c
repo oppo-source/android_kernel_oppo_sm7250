@@ -290,7 +290,6 @@ static long icst_round_rate(struct clk_hw *hw, unsigned long rate,
 		 */
 		if (rate <= 25000000 || rate < 29000000)
 			return 25000000;
-		/* Else just return the default frequency */
 		return 33000000;
 	}
 

@@ -874,7 +874,6 @@ static int res_get(struct em28xx *dev, enum v4l2_buf_type f_type)
 
 	/* is it free? */
 	if (dev->resources & res_type) {
-		/* no, someone else uses it */
 		return -EBUSY;
 	}
 

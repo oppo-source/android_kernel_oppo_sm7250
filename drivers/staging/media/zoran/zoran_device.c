@@ -771,7 +771,6 @@ zr36057_set_jpg (struct zoran          *zr,
 
 	btwrite(reg, ZR36057_FPP);
 
-	/* Set proper VCLK Polarity, else colors will be wrong during playback */
 	//btor(ZR36057_VFESPFR_VCLKPol, ZR36057_VFESPFR);
 
 	/* code base address */

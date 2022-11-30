@@ -932,7 +932,6 @@ __FUNC_PROCESS_NON_SAMPLE(mmap2,
 #undef __NON_SAMPLE_SET_FIELD
 #undef __FUNC_PROCESS_NON_SAMPLE
 
-/* If dup < 0, add a prefix. Else, add _dupl_X suffix. */
 static char *change_name(char *name, char *orig_name, int dup)
 {
 	char *new_name = NULL;

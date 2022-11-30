@@ -2713,11 +2713,10 @@ int mmc_resume_bus(struct mmc_host *host)
 		}
 		if (host->card->ext_csd.cmdq_en && !host->cqe_enabled) {
 			err = host->cqe_ops->cqe_enable(host, host->card);
+			host->cqe_enabled = true;
 			if (err)
 				pr_err("%s: %s: cqe enable failed: %d\n",
 				       mmc_hostname(host), __func__, err);
-			else
-				host->cqe_enabled = true;
 		}
 	}
 
@@ -3074,7 +3073,6 @@ static int mmc_do_erase(struct mmc_card *card, unsigned int from,
 		cmd.opcode = MMC_SEND_STATUS;
 		cmd.arg = card->rca << 16;
 		cmd.flags = MMC_RSP_R1 | MMC_CMD_AC;
-		/* Do not retry else we can't see errors */
 		err = mmc_wait_for_cmd(card->host, &cmd, 0);
 		if (err || R1_STATUS(cmd.resp[0])) {
 			pr_err("error %d requesting status %#x\n",
@@ -3709,7 +3707,11 @@ void mmc_stop_host(struct mmc_host *host)
 	}
 
 	host->rescan_disable = 1;
+#ifndef CONFIG_EMMC_SDCARD_OPTIMIZE
 	cancel_delayed_work_sync(&host->detect);
+#else
+	cancel_delayed_work(&host->detect);
+#endif
 
 	/* clear pm flags now and let card drivers set them as needed */
 	host->pm_flags = 0;

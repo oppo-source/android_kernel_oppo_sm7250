@@ -245,7 +245,6 @@ fp_fdiv(struct fp_ext *dest, struct fp_ext *src)
 		/* infinity / infinity = NaN (quiet, as always) */
 		if (IS_INF(src))
 			fp_set_nan(dest);
-		/* infinity / anything else = infinity (with approprate sign) */
 		return dest;
 	}
 	if (IS_INF(src)) {
@@ -262,7 +261,6 @@ fp_fdiv(struct fp_ext *dest, struct fp_ext *src)
 		/* zero / zero = NaN */
 		if (IS_ZERO(src))
 			fp_set_nan(dest);
-		/* zero / anything else = zero */
 		return dest;
 	}
 	if (IS_ZERO(src)) {
@@ -383,7 +381,6 @@ fp_fsgldiv(struct fp_ext *dest, struct fp_ext *src)
 		/* infinity / infinity = NaN (quiet, as always) */
 		if (IS_INF(src))
 			fp_set_nan(dest);
-		/* infinity / anything else = infinity (with approprate sign) */
 		return dest;
 	}
 	if (IS_INF(src)) {
@@ -400,7 +397,6 @@ fp_fsgldiv(struct fp_ext *dest, struct fp_ext *src)
 		/* zero / zero = NaN */
 		if (IS_ZERO(src))
 			fp_set_nan(dest);
-		/* zero / anything else = zero */
 		return dest;
 	}
 	if (IS_ZERO(src)) {

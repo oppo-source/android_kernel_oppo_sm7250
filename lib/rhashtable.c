@@ -466,7 +466,6 @@ static int rhashtable_insert_rehash(struct rhashtable *ht,
 	return err;
 
 fail:
-	/* Do not fail the insert if someone else did a rehash. */
 	if (likely(rcu_access_pointer(tbl->future_tbl)))
 		return 0;
 

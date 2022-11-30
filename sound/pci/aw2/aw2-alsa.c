@@ -336,7 +336,6 @@ static int snd_aw2_probe(struct pci_dev *pci,
 	struct aw2 *chip;
 	int err;
 
-	/* (1) Continue if device is not enabled, else inc dev */
 	if (dev >= SNDRV_CARDS)
 		return -ENODEV;
 	if (!enable[dev]) {

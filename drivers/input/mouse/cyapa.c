@@ -87,7 +87,6 @@ static inline bool cyapa_is_operational_mode(struct cyapa *cyapa)
 	return false;
 }
 
-/* Returns 0 on success, else negative errno on failure. */
 static ssize_t cyapa_i2c_read(struct cyapa *cyapa, u8 reg, size_t len,
 					u8 *values)
 {

@@ -1045,7 +1045,6 @@ static void ftgmac100_adjust_link(struct net_device *netdev)
 	priv->rx_pause = rx_pause;
 	priv->tx_pause = tx_pause;
 
-	/* Link is down, do nothing else */
 	if (!new_speed)
 		return;
 

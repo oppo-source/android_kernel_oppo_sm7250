@@ -153,7 +153,6 @@ static bool tipc_disc_addr_trial_msg(struct tipc_discoverer *d,
 		if (!trial)
 			return true;
 
-		/* Ignore if somebody else already gave new suggestion */
 		if (dst != tn->trial_addr)
 			return true;
 

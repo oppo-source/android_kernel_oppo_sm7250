@@ -66,7 +66,6 @@
 #include <linux/nospec.h>
 
 #include <linux/kmsg_dump.h>
-/* Move somewhere else to avoid recompiling? */
 #include <generated/utsrelease.h>
 
 #include <linux/uaccess.h>

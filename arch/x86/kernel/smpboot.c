@@ -688,7 +688,6 @@ static void __init smp_quirk_init_udelay(void)
 		init_udelay = 0;
 		return;
 	}
-	/* else, use legacy delay */
 	init_udelay = UDELAY_10MS_DEFAULT;
 }
 

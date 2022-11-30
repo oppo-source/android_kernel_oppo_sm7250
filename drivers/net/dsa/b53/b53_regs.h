@@ -403,7 +403,6 @@
 /* VLAN Control 2 (8 bit) */
 #define B53_VLAN_CTRL2			0x02
 
-/* VLAN Control 3 (8 bit when BCM5325, 16 bit else) */
 #define B53_VLAN_CTRL3			0x03
 #define B53_VLAN_CTRL3_63XX		0x04
 #define   VC3_MAXSIZE_1532		BIT(6) /* 5325 only */

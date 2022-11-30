@@ -626,7 +626,6 @@ static int cm_get_battery_temperature(struct charger_manager *cm,
 	} else
 #endif
 	{
-		/* if-else continued from CONFIG_THERMAL */
 		ret = cm_get_battery_temperature_by_psy(cm, temp);
 	}
 

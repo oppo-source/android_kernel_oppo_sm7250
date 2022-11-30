@@ -4,6 +4,8 @@
 
 #include <linux/types.h>
 
+#include <net/oplus_nwpower.h>
+
 struct sk_buff;
 
 /* endpoint node id auto assignment */

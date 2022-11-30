@@ -4419,7 +4419,6 @@ intel_dp_detect_dpcd(struct intel_dp *intel_dp)
 			return connector_status_unknown;
 	}
 
-	/* Anything else is out of spec, warn and ignore */
 	DRM_DEBUG_KMS("Broken DP branch device, ignoring\n");
 	return connector_status_disconnected;
 }

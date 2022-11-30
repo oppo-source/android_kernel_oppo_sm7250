@@ -477,7 +477,6 @@ void omap3xxx_prm_iva_idle(void)
 	/* ensure IVA2 clock is disabled */
 	omap2_cm_write_mod_reg(0, OMAP3430_IVA2_MOD, CM_FCLKEN);
 
-	/* if no clock activity, nothing else to do */
 	if (!(omap2_cm_read_mod_reg(OMAP3430_IVA2_MOD, OMAP3430_CM_CLKSTST) &
 	      OMAP3430_CLKACTIVITY_IVA2_MASK))
 		return;

@@ -749,7 +749,6 @@ static void s626_set_mode_a(struct comedi_device *dev,
 		/* Select ENC_C and ENC_D as clock/direction inputs. */
 		cntsrc = S626_CNTSRC_ENCODER;
 		/* Clock polarity is passed through. */
-		/* Force multiplier to x1 if not legal, else pass through. */
 		clkmult = S626_GET_STD_CLKMULT(setup);
 		if (clkmult == S626_CLKMULT_SPECIAL)
 			clkmult = S626_CLKMULT_1X;

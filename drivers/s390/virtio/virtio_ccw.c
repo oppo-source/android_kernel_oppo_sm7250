@@ -1075,7 +1075,6 @@ static void virtio_ccw_int_handler(struct ccw_device *cdev,
 		    (irb->ecw[0] & SNS0_CMD_REJECT))
 			vcdev->err = -EOPNOTSUPP;
 		else
-			/* Map everything else to -EIO. */
 			vcdev->err = -EIO;
 	}
 	virtio_ccw_check_activity(vcdev, activity);

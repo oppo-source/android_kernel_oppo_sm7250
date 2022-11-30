@@ -68,7 +68,6 @@ wait:
 		}
 	}
 
-	/* Kill anything else in the process group that is still running */
 	kill(-pid, SIGTERM);
 
 	if (WIFEXITED(status))

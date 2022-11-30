@@ -606,7 +606,6 @@ reject:
 						/* then retry descent */
 						retry_descent = 1;
 					else
-						/* else give up */
 						skip_rep = 1;
 					dprintk("  reject %d  collide %d  "
 						"ftotal %u  flocal %u\n",

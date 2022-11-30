@@ -95,7 +95,6 @@ static void __drm_lut_to_dc_gamma(struct drm_color_lut *lut,
 		return;
 	}
 
-	/* else */
 	for (i = 0; i < MAX_COLOR_LUT_ENTRIES; i++) {
 		r = drm_color_lut_extract(lut[i].red, 16);
 		g = drm_color_lut_extract(lut[i].green, 16);

@@ -717,7 +717,6 @@ mptscsih_io_done(MPT_ADAPTER *ioc, MPT_FRAME_HDR *mf, MPT_FRAME_HDR *mr)
 			/* Spoof to SCSI Selection Timeout! */
 			if (ioc->bus_type != FC)
 				sc->result = DID_NO_CONNECT << 16;
-			/* else fibre, just stall until rescan event */
 			else
 				sc->result = DID_REQUEUE << 16;
 

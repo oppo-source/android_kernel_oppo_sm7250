@@ -125,7 +125,6 @@ static int pl111_modeset_init(struct drm_device *dev)
 				 */
 				defer = true;
 			} else if (ret != -ENODEV) {
-				/* Continue, maybe something else is working */
 				dev_err(dev->dev,
 					"endpoint %d returns %d\n", i, ret);
 			}

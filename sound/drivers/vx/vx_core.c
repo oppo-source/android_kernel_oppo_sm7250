@@ -196,7 +196,6 @@ static int vx_read_status(struct vx_core *chip, struct vx_rmh *rmh)
 		rmh->LgStat = size + 1;
 		break;
 	default:
-		/* else retrieve the status length given by the driver */
 		size = rmh->LgStat;
 		rmh->Stat[0] = val;  /* Val is the status 1st word */
 		size--;              /* hence adjust remaining length */

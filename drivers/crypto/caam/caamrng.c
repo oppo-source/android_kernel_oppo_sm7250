@@ -170,7 +170,6 @@ static int caam_read(struct hwrng *rng, void *data, size_t max, bool wait)
 		return max;
 	}
 
-	/* else, copy what's left... */
 	copied_idx = RN_BUF_SIZE - ctx->cur_buf_idx;
 	memcpy(data, bd->buf + ctx->cur_buf_idx, copied_idx);
 	ctx->cur_buf_idx = 0;

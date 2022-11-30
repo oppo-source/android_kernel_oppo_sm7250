@@ -1566,7 +1566,6 @@ static int vc4_dsi_bind(struct device *dev, struct device *master, void *data)
 	}
 
 	init_completion(&dsi->xfer_completion);
-	/* At startup enable error-reporting interrupts and nothing else. */
 	DSI_PORT_WRITE(INT_EN, DSI1_INTERRUPTS_ALWAYS_ENABLED);
 	/* Clear any existing interrupt state. */
 	DSI_PORT_WRITE(INT_STAT, DSI_PORT_READ(INT_STAT));

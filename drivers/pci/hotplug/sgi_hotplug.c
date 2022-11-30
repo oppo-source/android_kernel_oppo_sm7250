@@ -654,7 +654,6 @@ alloc_err:
 	if (bss_hotplug_slot)
 		sn_release_slot(bss_hotplug_slot);
 
-	/* destroy anything else on the list */
 	while ((bss_hotplug_slot = sn_hp_destroy())) {
 		pci_hp_deregister(bss_hotplug_slot);
 		sn_release_slot(bss_hotplug_slot);

@@ -1244,7 +1244,6 @@ static struct list_head *qh_urb_transaction(struct oxu_hcd *oxu,
 
 	if (is_input)
 		token |= (1 /* "in" */ << 8);
-	/* else it's already initted to "out" pid (0 << 8) */
 
 	maxpacket = max_packet(usb_maxpacket(urb->dev, urb->pipe, !is_input));
 
@@ -2406,7 +2405,6 @@ static void unlink_async(struct oxu_hcd *oxu, struct ehci_qh *qh)
 	} else if (!HC_IS_RUNNING(oxu_to_hcd(oxu)->state) && oxu->reclaim)
 		end_unlink_async(oxu);
 
-	/* something else might have unlinked the qh by now */
 	if (qh->qh_state == QH_STATE_LINKED)
 		start_unlink_async(oxu, qh);
 }

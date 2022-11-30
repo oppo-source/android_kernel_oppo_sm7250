@@ -2614,7 +2614,6 @@ static int match_session(struct cifs_ses *ses, struct smb_vol *vol)
 			break;
 		}
 
-		/* anything else takes username/password */
 		if (strncmp(ses->user_name,
 			    vol->username ? vol->username : "",
 			    CIFS_MAX_USERNAME_LEN))

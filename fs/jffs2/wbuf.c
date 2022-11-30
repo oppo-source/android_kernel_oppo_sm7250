@@ -689,7 +689,6 @@ static int __jffs2_flush_wbuf(struct jffs2_sb_info *c, int pad)
 	spin_unlock(&c->erase_completion_lock);
 
 	memset(c->wbuf,0xff,c->wbuf_pagesize);
-	/* adjust write buffer offset, else we get a non contiguous write bug */
 	c->wbuf_ofs += c->wbuf_pagesize;
 	c->wbuf_len = 0;
 	return 0;

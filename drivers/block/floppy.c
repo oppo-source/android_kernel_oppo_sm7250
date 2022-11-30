@@ -3467,7 +3467,6 @@ static int fd_locked_ioctl(struct block_device *bdev, fmode_t mode, unsigned int
 	switch (cmd) {
 	case FDEJECT:
 		if (UDRS->fd_ref != 1)
-			/* somebody else has this drive open */
 			return -EBUSY;
 		if (lock_fdc(drive))
 			return -EINTR;

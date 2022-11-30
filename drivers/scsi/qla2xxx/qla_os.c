@@ -4868,7 +4868,6 @@ void qla24xx_create_new_sess(struct scsi_qla_host *vha, struct qla_work_evt *e)
 		}
 
 		spin_lock_irqsave(&vha->hw->tgt.sess_lock, flags);
-		/* search again to make sure no one else got ahead */
 		tfcp = qla2x00_find_fcport_by_wwpn(vha,
 		    e->u.new_sess.port_name, 1);
 		if (tfcp) {

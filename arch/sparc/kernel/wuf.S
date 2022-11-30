@@ -22,7 +22,6 @@
 #define t_pc        l1
 #define t_npc       l2
 #define t_wim       l3
-/* Don't touch the above registers or else you die horribly... */
 
 /* Now macros for the available scratch registers in this routine. */
 #define twin_tmp1    l4

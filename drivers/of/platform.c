@@ -544,7 +544,6 @@ static int __init of_platform_default_populate_init(void)
 		of_node_put(node);
 	}
 
-	/* Populate everything else. */
 	fw_devlink_pause();
 	of_platform_default_populate(NULL, NULL, NULL);
 	fw_devlink_resume();

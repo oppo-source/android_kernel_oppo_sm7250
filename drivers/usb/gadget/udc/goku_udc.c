@@ -385,7 +385,6 @@ static int write_fifo(struct goku_ep *ep, struct goku_request *req)
 			is_last = 1;
 	}
 #if 0		/* printk seemed to trash is_last...*/
-//#ifdef USB_TRACE
 	VDBG(dev, "wrote %s %u bytes%s IN %u left %p\n",
 		ep->ep.name, count, is_last ? "/last" : "",
 		req->req.length - req->req.actual, req);

@@ -969,7 +969,6 @@ static int process_changeinstatus(struct slot *pslot, struct slot *poldslot)
 			&& (SLOT_CONNECT(poldslot->status) == HPC_SLOT_CONNECTED) && (SLOT_PRESENT(poldslot->status))) {
 			disable = 1;
 		}
-		// else - ignore
 	}
 	// bit 4 - HPC_SLOT_BLINK_ATTN
 	if ((pslot->ext_status & 0x08) != (poldslot->ext_status & 0x08))

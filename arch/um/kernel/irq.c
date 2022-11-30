@@ -464,7 +464,6 @@ static void dummy(struct irq_data *d)
 {
 }
 
-/* This is used for everything else than the timer. */
 static struct irq_chip normal_irq_type = {
 	.name = "SIGIO",
 	.irq_disable = dummy,

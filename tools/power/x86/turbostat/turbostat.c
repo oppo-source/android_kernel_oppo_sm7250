@@ -3093,7 +3093,6 @@ void check_permissions()
 		warn("/dev/cpu/0/msr open failed, try chown or chmod +r /dev/cpu/*/msr");
 	}
 
-	/* if all else fails, thell them to be root */
 	if (do_exit)
 		if (getuid() != 0)
 			warnx("... or simply run as root");

@@ -1676,7 +1676,6 @@ static u16 boot_loader_config_emif(struct hpi_adapter_obj *pao, int dsp_index)
 			return HPI6205_ERROR_DSP_EMIF4;
 
 		/* set EMIF SDRAM control for 2Mx32 SDRAM (512x32x4 bank) */
-		/*  need to use this else DSP code crashes? */
 		boot_loader_write_mem32(pao, dsp_index, 0x01800018,
 			0x07117000);
 

@@ -731,7 +731,6 @@ no_underflow:
 	st.q	SP, FRAME_R(13), r13
 	st.q	SP, FRAME_R(14), r14
 
-	/* SP is somewhere else */
 	st.q	SP, FRAME_R(15), r6
 
 	st.q	SP, FRAME_R(16), r16

@@ -572,7 +572,6 @@ static int mixart_set_format(struct mixart_stream *stream, snd_pcm_format_t form
 		"set SNDRV_PCM_FORMAT sample_type(%d) sample_size(%d) freq(%d) channels(%d)\n",
 		   stream_param.sample_type, stream_param.sample_size, stream_param.sampling_freq, stream->channels);
 
-	/* TODO: what else to configure ? */
 	/* stream_param.samples_per_frame = 2; */
 	/* stream_param.bytes_per_frame = 4; */
 	/* stream_param.bytes_per_sample = 2; */

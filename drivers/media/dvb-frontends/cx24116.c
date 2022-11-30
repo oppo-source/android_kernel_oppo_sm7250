@@ -83,11 +83,9 @@ MODULE_PARM_DESC(debug, "Activates frontend debugging (default:0)");
 /* mask to determine configured fec (not tuned) or actual fec (tuned) */
 #define CX24116_FEC_FECMASK   (0x1f)
 
-/* Select DVB-S demodulator, else DVB-S2 */
 #define CX24116_FEC_DVBS      (0x20)
 #define CX24116_FEC_UNKNOWN   (0x40)    /* Unknown/unused */
 
-/* Pilot mode requested when tuning else always reset when tuned */
 #define CX24116_FEC_PILOT     (0x80)
 
 /* arg buffer size */

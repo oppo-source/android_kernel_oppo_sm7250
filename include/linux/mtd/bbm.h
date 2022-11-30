@@ -74,7 +74,6 @@ struct nand_bbt_descr {
 #define NAND_BBT_8BIT		0x00000008
 /* The bad block table is in the last good block of the device */
 #define NAND_BBT_LASTBLOCK	0x00000010
-/* The bbt is at the given page, else we must scan for the bbt */
 #define NAND_BBT_ABSPAGE	0x00000020
 /* bbt is stored per chip on multichip devices */
 #define NAND_BBT_PERCHIP	0x00000080

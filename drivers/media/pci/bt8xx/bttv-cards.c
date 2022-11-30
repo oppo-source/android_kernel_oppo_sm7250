@@ -4519,7 +4519,6 @@ static void kodicom4400r_muxsel(struct bttv *btv, unsigned int input)
 	yaddr = (btv->c.nr - mctlr->c.nr + 1) & 3; /* the '&' is for safety */
 	yaddr = map[yaddr];
 	xaddr = input & 0xf;
-	/* Check if the controller/camera pair has changed, else ignore */
 	if (mctlr->sw_status[yaddr] != xaddr)
 	{
 		/* "open" the old switch, "close" the new one, save the new */

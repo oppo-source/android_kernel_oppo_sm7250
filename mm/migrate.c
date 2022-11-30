@@ -849,7 +849,6 @@ static int writeout(struct address_space *mapping, struct page *page)
 		return -EINVAL;
 
 	if (!clear_page_dirty_for_io(page))
-		/* Someone else already triggered a write */
 		return -EAGAIN;
 
 	/*

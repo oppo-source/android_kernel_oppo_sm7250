@@ -55,7 +55,6 @@
   ========== P2P Section End ===============
 */
 
-/* ifdef UNDER_MPTEST */
 #define	WIFI_MP_STATE							0x00010000
 #define	WIFI_MP_CTX_BACKGROUND				0x00020000	/*  in continous tx background */
 #define	WIFI_MP_CTX_ST						0x00040000	/*  in continous tx with single-tone */
@@ -63,7 +62,6 @@
 #define	WIFI_MP_CTX_CCK_HW					0x00100000	/*  in continous tx */
 #define	WIFI_MP_CTX_CCK_CS					0x00200000	/*  in continous tx with carrier suppression */
 #define   WIFI_MP_LPBK_STATE					0x00400000
-/* endif */
 
 /* define _FW_UNDER_CMD		WIFI_UNDER_CMD */
 #define _FW_UNDER_LINKING	WIFI_UNDER_LINKING

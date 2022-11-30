@@ -532,7 +532,6 @@ int netxen_pinit_from_rom(struct netxen_adapter *adapter)
 
 		init_delay = 1;
 		/* After writing this register, HW needs time for CRB */
-		/* to quiet down (else crb_window returns 0xffffffff) */
 		if (off == NETXEN_ROMUSB_GLB_SW_RESET) {
 			init_delay = 1000;
 			if (NX_IS_REVISION_P2(adapter->ahw.revision_id)) {

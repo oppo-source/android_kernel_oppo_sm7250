@@ -3379,7 +3379,6 @@ top:
 				continue;
 			}
 
-			/* Everything else is a MIGRATION mle */
 
 			/* The rule for MIGRATION mles is that the master
 			 * becomes UNKNOWN if *either* the original or the new

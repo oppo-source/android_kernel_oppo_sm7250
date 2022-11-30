@@ -3902,7 +3902,6 @@ xfs_bmapi_read(
 		if (bno >= end || n >= *nmap)
 			break;
 
-		/* Else go on to the next record. */
 		if (!xfs_iext_next_extent(ifp, &icur, &got))
 			eof = true;
 	}
@@ -4430,7 +4429,6 @@ xfs_bmapi_write(
 		if (bno >= end || n >= *nmap || bma.nallocs >= *nmap)
 			break;
 
-		/* Else go on to the next record. */
 		bma.prev = bma.got;
 		if (!xfs_iext_next_extent(ifp, &bma.icur, &bma.got))
 			eof = true;
@@ -4607,7 +4605,6 @@ xfs_bmap_split_indlen(
 		stolen = XFS_FILBLKS_MIN(nres - ores, avail);
 	ores += stolen;
 
-	 /* nothing else to do if we've satisfied the new reservation */
 	if (ores >= nres)
 		return stolen;
 

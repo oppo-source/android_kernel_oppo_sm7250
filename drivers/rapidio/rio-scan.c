@@ -962,7 +962,6 @@ static int rio_enum_mport(struct rio_mport *mport, u32 flags)
 	if (mport->nnode.next || mport->nnode.prev)
 		return -EBUSY;
 
-	/* If somebody else enumerated our master port device, bail. */
 	if (rio_enum_host(mport) < 0) {
 		printk(KERN_INFO
 		       "RIO: master port %d device has been enumerated by a remote host\n",

@@ -644,21 +644,18 @@ static int __init pmac_cpufreq_setup(void)
 		   of_machine_is_compatible("PowerBook3,5") ||
 		   of_machine_is_compatible("MacRISC3")) {
 		pmac_cpufreq_init_MacRISC3(cpunode);
-	/* Else check for iBook2 500/600 */
 	} else if (of_machine_is_compatible("PowerBook4,1")) {
 		hi_freq = cur_freq;
 		low_freq = 400000;
 		set_speed_proc = pmu_set_cpu_speed;
 		is_pmu_based = 1;
 	}
-	/* Else check for TiPb 550 */
 	else if (of_machine_is_compatible("PowerBook3,3") && cur_freq == 550000) {
 		hi_freq = cur_freq;
 		low_freq = 500000;
 		set_speed_proc = pmu_set_cpu_speed;
 		is_pmu_based = 1;
 	}
-	/* Else check for TiPb 400 & 500 */
 	else if (of_machine_is_compatible("PowerBook3,2")) {
 		/* We only know about the 400 MHz and the 500Mhz model
 		 * they both have 300 MHz as low frequency
@@ -670,7 +667,6 @@ static int __init pmac_cpufreq_setup(void)
 		set_speed_proc = pmu_set_cpu_speed;
 		is_pmu_based = 1;
 	}
-	/* Else check for 750FX */
 	else if (PVR_VER(mfspr(SPRN_PVR)) == 0x7000)
 		pmac_cpufreq_init_750FX(cpunode);
 out:

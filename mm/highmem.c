@@ -247,7 +247,6 @@ start:
 			remove_wait_queue(pkmap_map_wait, &wait);
 			lock_kmap();
 
-			/* Somebody else might have mapped it while we slept */
 			if (page_address(page))
 				return (unsigned long)page_address(page);
 

@@ -1879,7 +1879,6 @@ static int dvb_init(struct saa7134_dev *dev)
 	/* define general-purpose callback pointer */
 	fe0->dvb.frontend->callback = saa7134_tuner_callback;
 
-	/* register everything else */
 #ifndef CONFIG_MEDIA_CONTROLLER_DVB
 	ret = vb2_dvb_register_bus(&dev->frontends, THIS_MODULE, dev,
 				   &dev->pci->dev, NULL,

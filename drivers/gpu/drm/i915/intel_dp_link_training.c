@@ -315,7 +315,6 @@ intel_dp_link_training_channel_equalization(struct intel_dp *intel_dp)
 		}
 	}
 
-	/* Try 5 times, else fail and try at lower BW */
 	if (tries == 5) {
 		intel_dp_dump_link_status(link_status);
 		DRM_DEBUG_KMS("Channel equalization failed 5 times\n");

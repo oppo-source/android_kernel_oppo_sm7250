@@ -1441,7 +1441,6 @@ static bool i40e_is_non_eop(struct i40e_ring *rx_ring,
 
 	prefetch(I40E_RX_DESC(rx_ring, ntc));
 
-	/* if we are the last buffer then there is nothing else to do */
 #define I40E_RXD_EOF BIT(I40E_RX_DESC_STATUS_EOF_SHIFT)
 	if (likely(i40e_test_staterr(rx_desc, I40E_RXD_EOF)))
 		return false;
@@ -1808,7 +1807,6 @@ static inline int i40evf_tx_prepare_vlan_flags(struct sk_buff *skb,
 	if (skb_vlan_tag_present(skb)) {
 		tx_flags |= skb_vlan_tag_get(skb) << I40E_TX_FLAGS_VLAN_SHIFT;
 		tx_flags |= I40E_TX_FLAGS_HW_VLAN;
-	/* else if it is a SW VLAN, check the next protocol and store the tag */
 	} else if (protocol == htons(ETH_P_8021Q)) {
 		struct vlan_hdr *vhdr, _vhdr;
 

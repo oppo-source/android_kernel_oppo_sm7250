@@ -4966,7 +4966,6 @@ int bnx2x_set_features(struct net_device *dev, netdev_features_t features)
 			rc = bnx2x_reload_if_running(dev);
 			return rc ? rc : 1;
 		}
-		/* else: bnx2x_nic_load() will be called at end of recovery */
 	}
 
 	return 0;

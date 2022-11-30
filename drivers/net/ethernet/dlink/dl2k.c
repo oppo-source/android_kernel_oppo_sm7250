@@ -1553,7 +1553,6 @@ mii_get_media (struct net_device *dev)
 			np->tx_flow = 0;
 			np->rx_flow &= 1;
 		}
-		/* else tx_flow, rx_flow = user select  */
 	} else {
 		__u16 bmcr = mii_read (dev, phy_addr, MII_BMCR);
 		switch (bmcr & (BMCR_SPEED100 | BMCR_SPEED1000)) {
@@ -1707,7 +1706,6 @@ mii_get_media_pcs (struct net_device *dev)
 			np->tx_flow = 0;
 			np->rx_flow &= 1;
 		}
-		/* else tx_flow, rx_flow = user select  */
 	} else {
 		__u16 bmcr = mii_read (dev, phy_addr, PCS_BMCR);
 		printk (KERN_INFO "Operating at 1000 Mbps, ");

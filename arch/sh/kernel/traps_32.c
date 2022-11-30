@@ -480,7 +480,6 @@ asmlinkage void do_address_error(struct pt_regs *regs,
 	insn_size_t instruction;
 	int tmp;
 
-	/* Intentional ifdef */
 #ifdef CONFIG_CPU_HAS_SR_RB
 	error_code = lookup_exception_vector();
 #endif

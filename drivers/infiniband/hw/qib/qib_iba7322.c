@@ -3941,7 +3941,6 @@ static void qib_7322_config_ctxts(struct qib_devdata *dd)
 		dd->rcvctrl |= 2ULL << SYM_LSB(RcvCtrl, ContextCfg);
 	else if (dd->ctxtcnt > 6)
 		dd->rcvctrl |= 1ULL << SYM_LSB(RcvCtrl, ContextCfg);
-	/* else configure for default 6 receive ctxts */
 
 	/* The XRC opcode is 5. */
 	dd->rcvctrl |= 5ULL << SYM_LSB(RcvCtrl, XrcTypeCode);
@@ -6984,7 +6983,6 @@ static u32 qib_7322_setpbc_control(struct qib_pportdata *ppd, u32 plen,
 
 	ret = rcv_mult > snd_mult ? ((plen + 1) >> 1) * snd_mult : 0;
 
-	/* Indicate VL15, else set the VL in the control word */
 	if (vl == 15)
 		ret |= PBC_7322_VL15_SEND_CTRL;
 	else

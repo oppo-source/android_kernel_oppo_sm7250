@@ -56,6 +56,13 @@
 #include <asm/siginfo.h>
 #include <asm/cacheflush.h>
 #include "audit.h"	/* audit_signal_info() */
+#ifdef OPLUS_FEATURE_HANS_FREEZE
+#include <linux/hans.h>
+#endif /*OPLUS_FEATURE_HANS_FREEZE*/
+
+#ifdef OPLUS_BUG_STABILITY
+#include <soc/oplus/system/oppo_process.h>
+#endif
 
 /*
  * SLAB caches for signal bits.
@@ -1094,9 +1101,26 @@ static int __send_signal(int sig, struct siginfo *info, struct task_struct *t,
 	int override_rlimit;
 	int ret = 0, result;
 
+
 	assert_spin_locked(&t->sighand->siglock);
 
 	result = TRACE_SIGNAL_IGNORED;
+
+#ifdef OPLUS_BUG_STABILITY
+        if(1) {
+                /*add the SIGKILL print log for some debug*/
+                if((sig == SIGHUP || sig == 33 || sig == SIGKILL || sig == SIGSTOP || sig == SIGABRT || sig == SIGTERM || sig == SIGCONT) && is_key_process(t)) {
+                        //dump_stack();
+                        printk("Some other process %d:%s want to send sig:%d to pid:%d tgid:%d comm:%s\n", current->pid, current->comm,sig, t->pid, t->tgid, t->comm);
+                }
+#ifdef CONFIG_OPPO_SPECIAL_BUILD
+                else if (sig == SIGSTOP){
+                    printk("Process %d:%s want to send SIGSTOP to %d:%s\n", current->pid, current->comm, t->pid, t->comm);
+                }
+#endif
+        }
+#endif
+
 	if (!prepare_signal(sig, t,
 			from_ancestor_ns || (info == SEND_SIG_PRIV) || (info == SEND_SIG_FORCED)))
 		goto ret;
@@ -1269,6 +1293,24 @@ int do_send_sig_info(int sig, struct siginfo *info, struct task_struct *p,
 {
 	unsigned long flags;
 	int ret = -ESRCH;
+
+#ifdef OPLUS_FEATURE_HANS_FREEZE
+	if (is_frozen_tg(p)  /*signal receiver thread group is frozen?*/
+		&& (sig == SIGKILL || sig == SIGTERM || sig == SIGABRT || sig == SIGQUIT)) {
+		if (hans_report(SIGNAL, task_tgid_nr(current), task_uid(current).val, task_tgid_nr(p), task_uid(p).val, "signal", -1) == HANS_ERROR) {
+			printk(KERN_ERR "HANS: report signal-freeze failed, sig = %d, caller = %d, target_uid = %d\n", sig, task_tgid_nr(current), task_uid(p).val);
+		}
+	}
+#endif /*OPLUS_FEATURE_HANS_FREEZE*/
+
+#if defined(CONFIG_CFS_BANDWIDTH)
+        if (is_belong_cpugrp(p)  /*signal receiver thread group is cpuctl?*/
+                && (sig == SIGKILL || sig == SIGTERM || sig == SIGABRT || sig == SIGQUIT)) {
+				if (hans_report(SIGNAL, task_tgid_nr(current), task_uid(current).val, task_tgid_nr(p), task_uid(p).val, "signal", -1) == HANS_ERROR) {
+                        printk(KERN_ERR "HANS: report signal-cpuctl failed, sig = %d, caller = %d, target_uid = %d\n", sig, task_tgid_nr(current), task_uid(p).val);
+                }
+        }
+#endif
 
 	if (lock_task_sighand(p, &flags)) {
 		ret = send_signal(sig, info, p, type);
@@ -1924,12 +1966,8 @@ bool do_notify_parent(struct task_struct *tsk, int sig)
 		if (psig->action[SIGCHLD-1].sa.sa_handler == SIG_IGN)
 			sig = 0;
 	}
-	/*
-	 * Send with __send_signal as si_pid and si_uid are in the
-	 * parent's namespaces.
-	 */
 	if (valid_signal(sig) && sig)
-		__send_signal(sig, &info, tsk->parent, PIDTYPE_TGID, false);
+		__group_send_sig_info(sig, &info, tsk->parent);
 	__wake_up_parent(tsk, tsk->parent);
 	spin_unlock_irqrestore(&psig->siglock, flags);
 

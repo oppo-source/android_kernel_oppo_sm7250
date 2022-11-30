@@ -2042,7 +2042,6 @@ void ieee80211_softmac_xmit(struct ieee80211_txb *txb, struct ieee80211_device *
 	if (tcb_desc->bMulticast)
 		ieee->stats.multicast++;
 
-	/* if xmit available, just xmit it immediately, else just insert it to the wait queue */
 	for (i = 0; i < txb->nr_frags; i++) {
 #ifdef USB_TX_DRIVER_AGGREGATION_ENABLE
 		if ((skb_queue_len(&ieee->skb_drv_aggQ[queue_index]) != 0) ||
@@ -2708,7 +2707,6 @@ static int ieee80211_wpa_set_auth_algs(struct ieee80211_device *ieee, int value)
 
 	if (ieee->set_security)
 		ieee->set_security(ieee->dev, &sec);
-	//else
 	//	ret = -EOPNOTSUPP;
 
 	return 0;

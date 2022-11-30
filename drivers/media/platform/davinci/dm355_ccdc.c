@@ -641,7 +641,6 @@ static int ccdc_config_raw(void)
 		       (((params->win.width) + 31) >> 5) &
 			CCDC_HSIZE_VAL_MASK);
 	} else {
-		/* else one pixel will take 2 byte */
 		val |= (((params->win.width * 2) + 31) >> 5) &
 			CCDC_HSIZE_VAL_MASK;
 

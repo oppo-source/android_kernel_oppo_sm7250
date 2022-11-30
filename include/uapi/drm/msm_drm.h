@@ -27,6 +27,8 @@
 
 #include "drm.h"
 #include "sde_drm.h"
+//#if defined(OPLUS_FEATURE_PXLW_IRIS5)
+#include "msm_drm_iris.h"
 
 #if defined(__cplusplus)
 extern "C" {

@@ -2669,7 +2669,6 @@ do_next:
 			prepare_write_keepalive(con);
 			goto more;
 		}
-		/* is anything else pending? */
 		if (!list_empty(&con->out_queue)) {
 			prepare_write_message(con);
 			goto more;

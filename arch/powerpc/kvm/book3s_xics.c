@@ -1056,7 +1056,6 @@ static struct kvmppc_ics *kvmppc_xics_create_ics(struct kvm *kvm,
 
 	mutex_lock(&kvm->lock);
 
-	/* ICS already exists - somebody else got here first */
 	if (xics->ics[icsid])
 		goto out;
 

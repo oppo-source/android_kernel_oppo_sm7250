@@ -131,7 +131,6 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
 		return -EINVAL;
 	}
 
-	/* Check if nobody else use the timer */
 	regmap_read(priv->regmap, TIM_CCER, &ccer);
 	if (ccer & TIM_CCER_CCXE)
 		return -EBUSY;

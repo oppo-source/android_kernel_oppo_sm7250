@@ -728,7 +728,6 @@ void hold_metapage(struct metapage *mp)
 void put_metapage(struct metapage *mp)
 {
 	if (mp->count || mp->nohomeok) {
-		/* Someone else will release this */
 		unlock_page(mp->page);
 		return;
 	}

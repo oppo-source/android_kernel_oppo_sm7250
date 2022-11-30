@@ -328,7 +328,6 @@ static const struct usb_device_id	products [] = {
 	.driver_info =  (unsigned long) &blob_info,
 }, {
 	// Linux Ethernet/RNDIS gadget, mostly on PXA, second config
-	// e.g. Gumstix, current OpenZaurus, ... or anything else
 	// that just enables this gadget option.
 	USB_DEVICE (0x0525, 0xa4a2),
 	.driver_info =	(unsigned long) &linuxdev_info,

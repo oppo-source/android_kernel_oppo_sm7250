@@ -1766,7 +1766,6 @@ void iwl_mvm_recalc_tcm(struct iwl_mvm *mvm)
 	}
 
 	spin_lock(&mvm->tcm.lock);
-	/* re-check if somebody else won the recheck race */
 	if (!mvm->tcm.paused && time_after(ts, mvm->tcm.ts + MVM_TCM_PERIOD)) {
 		/* calculate statistics */
 		unsigned long work_delay = iwl_mvm_calc_tcm_stats(mvm, ts,

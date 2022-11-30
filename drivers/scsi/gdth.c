@@ -1268,7 +1268,6 @@ static void gdth_enable_int(gdth_ha_str *ha)
     spin_unlock_irqrestore(&ha->smp_lock, flags);
 }
 
-/* return IStatus if interrupt was from this card else 0 */
 static u8 gdth_get_status(gdth_ha_str *ha)
 {
     u8 IStatus = 0;

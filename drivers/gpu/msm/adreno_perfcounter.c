@@ -524,7 +524,6 @@ int adreno_perfcounter_get(struct adreno_device *adreno_dev,
 		}
 	}
 
-	/* no available counters, so do nothing else */
 	if (empty == -1)
 		return -EBUSY;
 

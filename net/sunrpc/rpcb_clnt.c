@@ -703,7 +703,6 @@ void rpcb_getport_async(struct rpc_task *task)
 		return;
 	}
 
-	/* Someone else may have bound if we slept */
 	if (xprt_bound(xprt)) {
 		status = 0;
 		dprintk("RPC: %5u %s: already bound\n",

@@ -251,7 +251,6 @@ void kvmhv_rm_send_ipi(int cpu)
 	if (WARN_ON_ONCE(xive_enabled()))
 	    return;
 
-	/* Else poke the target with an IPI */
 	xics_phys = paca_ptrs[cpu]->kvm_hstate.xics_phys;
 	if (xics_phys)
 		__raw_rm_writeb(IPI_PRIORITY, xics_phys + XICS_MFRR);

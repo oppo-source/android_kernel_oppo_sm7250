@@ -586,7 +586,6 @@ static void access_flags_to_mode(__le32 ace_flags, int type, umode_t *pmode,
 		cifs_dbg(VFS, "unknown access control type %d\n", type);
 		return;
 	}
-	/* else ACCESS_ALLOWED type */
 
 	if (flags & GENERIC_ALL) {
 		*pmode |= (S_IRWXUGO & (*pbits_to_set));

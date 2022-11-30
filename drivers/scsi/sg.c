@@ -283,7 +283,6 @@ open_wait(Sg_device *sdp, int flags)
 	return retval;
 }
 
-/* Returns 0 on success, else a negated errno value */
 static int
 sg_open(struct inode *inode, struct file *filp)
 {
@@ -1391,7 +1390,6 @@ sg_rq_end_io(struct request *rq, blk_status_t status)
 	if (req->sense_len)
 		memcpy(srp->sense_b, req->sense, SCSI_SENSE_BUFFERSIZE);
 
-	/* Rely on write phase to clean out srp status values, so no "else" */
 
 	/*
 	 * Free the request as soon as it is complete so that its resources

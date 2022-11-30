@@ -3426,7 +3426,6 @@ static void pnv_pci_setup_bridge(struct pci_bus *bus, unsigned long type)
 	/* Extend bridge's windows if necessary */
 	pnv_pci_fixup_bridge_resources(bus, type);
 
-	/* The PE for root bus should be realized before any one else */
 	if (!phb->ioda.root_pe_populated) {
 		pe = pnv_ioda_setup_bus_PE(phb->hose->bus, false);
 		if (pe) {

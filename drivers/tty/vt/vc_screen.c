@@ -148,7 +148,6 @@ vcs_poll_data_get(struct file *file)
 	if (!file->private_data) {
 		file->private_data = poll;
 	} else {
-		/* someone else raced ahead of us */
 		kill = poll;
 		poll = file->private_data;
 	}

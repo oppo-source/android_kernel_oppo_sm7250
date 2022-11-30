@@ -87,7 +87,6 @@ static int bcm63xx_setup_cfg_access(int type, unsigned int busn,
 	val |= (slot << MPI_L2PCFG_DEVNUM_SHIFT);
 	val |= MPI_L2PCFG_CFG_USEREG_MASK;
 	val |= MPI_L2PCFG_CFG_SEL_MASK;
-	/* type 0 cycle for local bus, type 1 cycle for anything else */
 	if (type != 0) {
 		/* FIXME: how to specify bus ??? */
 		val |= (1 << MPI_L2PCFG_CFG_TYPE_SHIFT);

@@ -857,7 +857,6 @@ static short hpi6000_adapter_boot_load_dsp(struct hpi_adapter_obj *pao,
 		   (for Micron 2M32-7 operating at 100Mhz)
 		 */
 
-		/* need to use this else DSP code crashes */
 		hpi_write_word(pdo, 0x01800020, 0x001BDF29);
 
 		/* EMIF SDRAM control - set up for a 2Mx32 SDRAM (512x32x4 bank)
@@ -872,7 +871,6 @@ static short hpi6000_adapter_boot_load_dsp(struct hpi_adapter_obj *pao,
 		   15..12       TRC             0110
 		   11..0        -               -
 		 */
-		/*      need to use this else DSP code crashes */
 		hpi_write_word(pdo, 0x01800018, 0x47117000);
 
 		/* EMIF SDRAM Refresh Timing */

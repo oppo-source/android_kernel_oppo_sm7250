@@ -650,7 +650,6 @@ int dbNextAG(struct inode *ipbmap)
 	 */
 	if (next_best != -1)
 		bmp->db_agpref = next_best;
-	/* else leave db_agpref unchanged */
 unlock:
 	BMAP_UNLOCK(bmp);
 

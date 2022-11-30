@@ -2143,7 +2143,6 @@ static int ctnetlink_new_conntrack(struct net *net, struct sock *ctnl,
 
 		return err;
 	}
-	/* implicit 'else' */
 
 	err = -EEXIST;
 	ct = nf_ct_tuplehash_to_ctrack(h);

@@ -19,7 +19,6 @@
 #include <linux/bug.h>
 #include <linux/of_irq.h>
 
-/* No one else should require these constants, so define them locally here. */
 #define ISR 0x00			/* Interrupt Status Register */
 #define IPR 0x04			/* Interrupt Pending Register */
 #define IER 0x08			/* Interrupt Enable Register */

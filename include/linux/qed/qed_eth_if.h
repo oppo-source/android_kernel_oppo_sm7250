@@ -93,7 +93,6 @@ struct qed_ntuple_filter_params {
 	u8 vport_id;
 	u8 vf_id;
 
-	/* true iff this filter is to be added. Else to be removed */
 	bool b_is_add;
 
 	/* If flow needs to be dropped */

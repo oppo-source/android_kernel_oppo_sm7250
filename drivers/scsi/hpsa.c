@@ -5588,7 +5588,6 @@ static void hpsa_command_resubmit_worker(struct work_struct *work)
 				cmd->result = DID_IMM_RETRY << 16;
 				return hpsa_cmd_free_and_done(h, c, cmd);
 			}
-			/* else, fall thru and resubmit down CISS path */
 		}
 	}
 	hpsa_cmd_partial_init(c->h, c->cmdindex, c);

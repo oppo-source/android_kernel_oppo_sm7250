@@ -1823,7 +1823,6 @@ stall:
 				/* this OUT packet might finish the request */
 				if (read_ep0_fifo(ep, req))
 					done(ep, req, 0);
-				/* else more OUT packets expected */
 			} /* else OUT token before read was issued */
 		} else /* irq was IPR clearing */ {
 			DBG(DBG_VERBOSE, "ep0out premature status\n");

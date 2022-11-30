@@ -1302,7 +1302,6 @@ static int XGIfb_check_var(struct fb_var_screeninfo *var, struct fb_info *info)
 	if (var->yoffset > var->yres_virtual - var->yres)
 		var->yoffset = var->yres_virtual - var->yres - 1;
 
-	/* Set everything else to 0 */
 	var->red.msb_right = 0;
 	var->green.msb_right = 0;
 	var->blue.msb_right = 0;

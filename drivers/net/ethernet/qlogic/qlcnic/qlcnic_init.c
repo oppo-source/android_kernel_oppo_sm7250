@@ -513,7 +513,6 @@ int qlcnic_pinit_from_rom(struct qlcnic_adapter *adapter)
 
 		init_delay = 1;
 		/* After writing this register, HW needs time for CRB */
-		/* to quiet down (else crb_window returns 0xffffffff) */
 		if (off == QLCNIC_ROMUSB_GLB_SW_RESET)
 			init_delay = 1000;
 

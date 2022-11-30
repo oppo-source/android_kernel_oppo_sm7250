@@ -3121,7 +3121,6 @@ static void mwl8k_update_survey(struct mwl8k_priv *priv,
 
 	mwl8k_cmd_bbp_reg_access(priv->hw, 0, BBU_AVG_NOISE_VAL, &nf);
 
-	/* Make sure sign is negative else ACS  at hostapd fails */
 	survey->noise = nf * -1;
 
 	survey->filled = SURVEY_INFO_NOISE_DBM |

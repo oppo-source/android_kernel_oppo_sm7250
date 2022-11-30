@@ -155,7 +155,6 @@
 /* to initialize char*".                                             */
 /*                                                                   */
 /* By defining these ugly macros we can get around this and also     */
-/* not have to copy and #ifdef large sections of code.  I know that  */
 /* these macros are *really* ugly, but they should help reduce       */
 /* maintenance in the long run.                                      */
 /*                                                                   */

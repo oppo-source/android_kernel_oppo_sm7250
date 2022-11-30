@@ -3131,7 +3131,6 @@ void i40iw_receive_ilq(struct i40iw_sc_vsi *vsi, struct i40iw_puda_buf *rbuf)
 	struct vlan_ethhdr *ethh;
 	u16 vtag;
 
-	/* if vlan, then maclen = 18 else 14 */
 	iph = (struct iphdr *)rbuf->iph;
 	memset(&cm_info, 0, sizeof(cm_info));
 

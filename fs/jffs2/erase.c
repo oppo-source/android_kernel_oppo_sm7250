@@ -303,7 +303,6 @@ void jffs2_free_jeb_node_refs(struct jffs2_sb_info *c, struct jffs2_eraseblock *
 		}
 		if (ref->flash_offset != REF_EMPTY_NODE && ref->next_in_ino)
 			jffs2_remove_node_refs_from_ino_list(c, ref, jeb);
-		/* else it was a non-inode node or already removed, so don't bother */
 
 		ref++;
 	}
@@ -447,7 +446,6 @@ static void jffs2_mark_erased_block(struct jffs2_sb_info *c, struct jffs2_eraseb
 			goto filebad;
 		}
 	}
-	/* Everything else got zeroed before the erase */
 	jeb->free_size = c->sector_size;
 
 	mutex_lock(&c->erase_free_sem);

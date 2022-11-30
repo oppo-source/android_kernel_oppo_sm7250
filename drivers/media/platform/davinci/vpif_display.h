@@ -37,7 +37,6 @@
 #define VPIF_VBI_INDEX			(1)
 #define VPIF_HBI_INDEX			(2)
 
-/* Setting it to 1 as HBI/VBI support yet to be added , else 3*/
 #define VPIF_NUMOBJECTS	(1)
 
 /* Macros */

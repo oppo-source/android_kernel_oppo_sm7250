@@ -171,7 +171,6 @@ int mgmt_open_connection(struct beiscsi_hba *phba,
 		beiscsi_ep->dst_tcpport = ntohs(daddr_in->sin_port);
 		beiscsi_ep->ip_type = BEISCSI_IP_TYPE_V4;
 	} else {
-		/* else its PF_INET6 family */
 		req->ip_address.ip_type = BEISCSI_IP_TYPE_V6;
 		memcpy(&req->ip_address.addr,
 		       &daddr_in6->sin6_addr.in6_u.u6_addr8, 16);

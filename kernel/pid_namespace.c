@@ -54,7 +54,6 @@ static struct kmem_cache *create_pid_cachep(unsigned int level)
 	if (!*pkc)
 		*pkc = kmem_cache_create(name, len, 0, SLAB_HWCACHE_ALIGN, 0);
 	mutex_unlock(&pid_caches_mutex);
-	/* current can fail, but someone else can succeed. */
 	return READ_ONCE(*pkc);
 }
 

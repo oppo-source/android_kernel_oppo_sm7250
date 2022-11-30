@@ -25,11 +25,9 @@ struct vring ring;
  * (which skips index reads on consumer in favor of looking at
  * high bits of ring id ^ 0x8000).
  */
-/* #ifdef RING_POLL */
 /* enabling the below activates experimental in-order code
  * (which skips ring updates and reads and writes len in descriptor).
  */
-/* #ifdef INORDER */
 
 #if defined(RING_POLL) && defined(INORDER)
 #error "RING_POLL and INORDER are mutually exclusive"

@@ -337,7 +337,6 @@ xchk_superblock(
 			xchk_block_set_corrupt(sc, bp);
 	}
 
-	/* Everything else must be zero. */
 	if (memchr_inv(sb + 1, 0,
 			BBTOB(bp->b_length) - sizeof(struct xfs_dsb)))
 		xchk_block_set_corrupt(sc, bp);

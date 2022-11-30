@@ -593,7 +593,6 @@ enum sci_status sci_remote_device_event_handler(struct isci_remote_device *idev,
 
 			break;
 		}
-	/* Else, fall through and treat as unhandled... */
 	default:
 		dev_dbg(scirdev_to_dev(idev),
 			"%s: device: %p event code: %x: %s\n",

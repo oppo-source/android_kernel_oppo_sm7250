@@ -1676,7 +1676,6 @@ static void capture_reg_state(struct i915_gpu_state *error)
 		error->gac_eco = I915_READ(GAC_ECO_BITS);
 	}
 
-	/* 4: Everything else */
 	if (INTEL_GEN(dev_priv) >= 11) {
 		error->ier = I915_READ(GEN8_DE_MISC_IER);
 		error->gtier[0] = I915_READ(GEN11_RENDER_COPY_INTR_ENABLE);

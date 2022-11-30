@@ -118,7 +118,6 @@ static u8 charlcd_4bit_read_char(struct charlcd *lcd)
 	u32 val;
 	int i;
 
-	/* If we can, use an IRQ to wait for the data, else poll */
 	if (lcd->irq >= 0)
 		charlcd_wait_complete_irq(lcd);
 	else {

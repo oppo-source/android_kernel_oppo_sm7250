@@ -229,7 +229,6 @@ static int find_lnx1_partitions(struct parsed_partitions *state,
 			if (!strcmp(info->type, "ECKD"))
 				if (geo_size < size)
 					size = geo_size;
-			/* else keep size based on i_size */
 		}
 	}
 	/* first and only partition starts in the first block after the label */

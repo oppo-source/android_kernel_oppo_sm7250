@@ -2055,7 +2055,6 @@ xpc_send_msgs_sn2(struct xpc_channel *ch, s64 initial_put)
 
 		if (cmpxchg_rel(&ch_sn2->local_GP->put, initial_put, put) !=
 		    initial_put) {
-			/* someone else beat us to it */
 			DBUG_ON(ch_sn2->local_GP->put < initial_put);
 			break;
 		}
@@ -2289,7 +2288,6 @@ xpc_acknowledge_msgs_sn2(struct xpc_channel *ch, s64 initial_get, u8 msg_flags)
 
 		if (cmpxchg_rel(&ch_sn2->local_GP->get, initial_get, get) !=
 		    initial_get) {
-			/* someone else beat us to it */
 			DBUG_ON(ch_sn2->local_GP->get <= initial_get);
 			break;
 		}

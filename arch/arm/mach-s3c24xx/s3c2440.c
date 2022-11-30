@@ -58,7 +58,6 @@ int __init s3c2440_init(void)
 	register_syscore_ops(&s3c244x_pm_syscore_ops);
 #endif
 
-	/* register our system device for everything else */
 
 	return device_register(&s3c2440_dev);
 }

@@ -1426,7 +1426,6 @@ encrypt:
 		if (!conn->enc_key_size)
 			return 0;
 
-		/* Nothing else needed, all requirements are met */
 		return 1;
 	}
 

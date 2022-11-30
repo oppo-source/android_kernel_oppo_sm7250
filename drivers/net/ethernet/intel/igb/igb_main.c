@@ -917,7 +917,6 @@ static void igb_configure_msix(struct igb_adapter *adapter)
 		wr32(E1000_IVAR_MISC, tmp);
 		break;
 	default:
-		/* do nothing, since nothing else supports MSI-X */
 		break;
 	} /* switch (hw->mac.type) */
 

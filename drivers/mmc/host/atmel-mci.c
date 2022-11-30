@@ -911,7 +911,6 @@ static void atmci_pdc_set_single_buf(struct atmel_mci *host,
 			atmci_writel(host, counter_reg, host->data_size);
 			atmci_writel(host, ATMCI_MR, host->mode_reg | ATMCI_MR_PDCFBYTE);
 		} else {
-			/* Else transfer 32-bits words */
 			atmci_writel(host, counter_reg, host->data_size / 4);
 		}
 		host->data_size = 0;

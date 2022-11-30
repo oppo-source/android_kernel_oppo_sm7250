@@ -1634,7 +1634,6 @@ static bool __lec_arp_check_expire(struct lec_arp_table *entry,
 		lec_arp_remove(priv, entry);
 		lec_arp_put(entry);
 	} else {
-		/* Something else */
 		if ((entry->status == ESI_VC_PENDING ||
 		     entry->status == ESI_ARP_PENDING) &&
 		    time_after_eq(now, entry->timestamp +

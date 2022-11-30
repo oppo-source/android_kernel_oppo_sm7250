@@ -1342,7 +1342,6 @@ static void igmp_group_added(struct ip_mc_list *im)
 		spin_unlock_bh(&im->lock);
 		return;
 	}
-	/* else, v3 */
 
 	/* Based on RFC3376 5.1, for newly added INCLUDE SSM, we should
 	 * not send filter-mode change record as the mode should be from
@@ -2131,7 +2130,6 @@ static int ip_mc_add_src(struct in_device *in_dev, __be32 *pmca, int sfmode,
 		else if (pmc->sfcount[MCAST_INCLUDE])
 			pmc->sfmode = MCAST_INCLUDE;
 #ifdef CONFIG_IP_MULTICAST
-		/* else no filters; keep old mode for reports */
 
 		pmc->crcount = in_dev->mr_qrv ?: net->ipv4.sysctl_igmp_qrv;
 		in_dev->mr_ifc_count = pmc->crcount;
@@ -2384,7 +2382,6 @@ int ip_mc_source(int add, int omode, struct sock *sk, struct
 		err = 0;
 		goto done;
 	}
-	/* else, add a new source to the filter */
 
 	if (psl && psl->sl_count >= net->ipv4.sysctl_igmp_max_msf) {
 		err = -ENOBUFS;
@@ -2735,6 +2732,7 @@ int ip_check_mc_rcu(struct in_device *in_dev, __be32 mc_addr, __be32 src_addr, u
 		rv = 1;
 	} else if (im) {
 		if (src_addr) {
+			spin_lock_bh(&im->lock);
 			for (psf = im->sources; psf; psf = psf->sf_next) {
 				if (psf->sf_inaddr == src_addr)
 					break;
@@ -2745,6 +2743,7 @@ int ip_check_mc_rcu(struct in_device *in_dev, __be32 mc_addr, __be32 src_addr, u
 					im->sfcount[MCAST_EXCLUDE];
 			else
 				rv = im->sfcount[MCAST_EXCLUDE] != 0;
+			spin_unlock_bh(&im->lock);
 		} else
 			rv = 1; /* unspecified source; tentatively allow */
 	}

@@ -161,7 +161,6 @@ static void close_pdeo(struct proc_dir_entry *pde, struct pde_opener *pdeo)
 	 * signals its completion to the other process which does nothing.
 	 */
 	if (pdeo->closing) {
-		/* somebody else is doing that, just wait */
 		DECLARE_COMPLETION_ONSTACK(c);
 		pdeo->c = &c;
 		spin_unlock(&pde->pde_unload_lock);

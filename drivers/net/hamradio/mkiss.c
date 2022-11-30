@@ -736,7 +736,6 @@ static int mkiss_open(struct tty_struct *tty)
 	if (err)
 		goto out_free_buffers;
 
-	/* after register_netdev() - because else printk smashes the kernel */
 	switch (crc_force) {
 	case 3:
 		ax->crcmode  = CRC_MODE_SMACK;

@@ -1029,7 +1029,6 @@ static irqreturn_t emif_threaded_isr(int irq, void *dev_id)
 	if (emif->temperature_level == SDRAM_TEMP_VERY_HIGH_SHUTDOWN) {
 		dev_emerg(emif->dev, "SDRAM temperature exceeds operating limit.. Needs shut down!!!\n");
 
-		/* If we have Power OFF ability, use it, else try restarting */
 		if (pm_power_off) {
 			kernel_power_off();
 		} else {

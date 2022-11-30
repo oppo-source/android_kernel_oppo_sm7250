@@ -1291,7 +1291,6 @@ csio_scsim_cleanup_io(struct csio_scsim *scm, bool abort)
 	if (list_empty(&scm->active_q))
 		return 0;
 
-	/* Else abort */
 	if (abort) {
 		rv = csio_scsi_abort_io_q(scm, &scm->active_q, 30000);
 		if (rv == 0)

@@ -625,7 +625,6 @@ static int pl011_dma_tx_refill(struct uart_amba_port *uap)
 	 */
 	count -= 1;
 
-	/* Else proceed to copy the TX chars to the DMA buffer and fire DMA */
 	if (count > PL011_DMA_BUFFER_SIZE)
 		count = PL011_DMA_BUFFER_SIZE;
 

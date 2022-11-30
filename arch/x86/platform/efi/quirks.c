@@ -385,7 +385,6 @@ void __init efi_free_boot_services(void)
 			continue;
 		}
 
-		/* Do not free, someone else owns it: */
 		if (md->attribute & EFI_MEMORY_RUNTIME) {
 			num_entries++;
 			continue;

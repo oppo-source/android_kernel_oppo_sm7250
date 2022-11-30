@@ -63,7 +63,6 @@ static int __init arcnet_rfc1051_init(void)
 	    = arc_proto_map[ARC_P_ARP_RFC1051]
 	    = &rfc1051_proto;
 
-	/* if someone else already owns the broadcast, we won't take it */
 	if (arc_bcast_proto == arc_proto_default)
 		arc_bcast_proto = &rfc1051_proto;
 

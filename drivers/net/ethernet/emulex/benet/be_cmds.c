@@ -1564,7 +1564,6 @@ int be_cmd_if_create(struct be_adapter *adapter, u32 cap_flags, u32 en_flags,
 	return status;
 }
 
-/* Uses MCCQ if available else MBOX */
 int be_cmd_if_destroy(struct be_adapter *adapter, int interface_id, u32 domain)
 {
 	struct be_mcc_wrb wrb = {0};

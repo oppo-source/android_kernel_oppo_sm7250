@@ -241,7 +241,6 @@ void __init ar5312_init_devices(void)
 	else if (config->flags & BD_ISCASPER)
 		ath25_soc = ATH25_SOC_AR2312;
 
-	/* Everything else is probably AR5312 or compatible */
 	else
 		ath25_soc = ATH25_SOC_AR5312;
 

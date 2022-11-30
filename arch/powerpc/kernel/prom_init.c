@@ -2031,7 +2031,6 @@ static void __init prom_hold_cpus(void)
 
 static void __init prom_init_client_services(unsigned long pp)
 {
-	/* Get a handle to the prom entry point before anything else */
 	prom_entry = pp;
 
 	/* get a handle for the stdout device */

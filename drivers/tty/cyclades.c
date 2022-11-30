@@ -516,8 +516,6 @@ static void cyy_chip_rx(struct cyclades_card *cinfo, int chip,
 					info->idle_stats.overruns++;
 				/* These two conditions may imply */
 				/* a normal read should be done. */
-				/* } else if(data & CyTIMEOUT) { */
-				/* } else if(data & CySPECHAR) { */
 				} else {
 					tty_insert_flip_char(port, 0,
 							TTY_NORMAL);

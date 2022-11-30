@@ -6411,7 +6411,6 @@ brcms_c_d11hdrs_mac80211(struct brcms_c_info *wlc, struct ieee80211_hw *hw,
 						/* use override */
 					} else if (wlc->mimo_40txbw != AUTO)
 						mimo_txbw = wlc->mimo_40txbw;
-					/* else check if dst is using 40 Mhz */
 					else if (scb->flags & SCB_IS40)
 						mimo_txbw = PHY_TXC1_BW_40MHZ;
 				} else if (is_ofdm_rate(rspec[k])) {

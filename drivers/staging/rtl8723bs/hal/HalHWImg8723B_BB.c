@@ -308,13 +308,11 @@ void ODM_ReadAndConfig_MP_8723B_AGC_TAB(PDM_ODM_T pDM_Odm)
 
 				i -= 2; /*  prevent from for-loop += 2 */
 			} else {
-				/*  Configure matched pairs and skip to end of if-else. */
 				while (v1 < 0x40000000 && i < ArrayLen-2) {
 					odm_ConfigBB_AGC_8723B(pDM_Odm, v1, bMaskDWord, v2);
 					READ_NEXT_PAIR(v1, v2, i);
 				}
 
-				/*  Keeps reading until ENDIF. */
 				cCond = (u8)((v1 & (BIT29|BIT28)) >> 28);
 				while (cCond != COND_ENDIF && i < ArrayLen-2) {
 					READ_NEXT_PAIR(v1, v2, i);
@@ -582,7 +580,6 @@ void ODM_ReadAndConfig_MP_8723B_PHY_REG(PDM_ODM_T pDM_Odm)
 					READ_NEXT_PAIR(v1, v2, i);
 				}
 
-				/*  Keeps reading until ENDIF. */
 				cCond = (u8)((v1 & (BIT29|BIT28)) >> 28);
 				while (cCond != COND_ENDIF && i < ArrayLen-2) {
 					READ_NEXT_PAIR(v1, v2, i);

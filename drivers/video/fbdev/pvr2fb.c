@@ -402,7 +402,6 @@ static int pvr2fb_set_par(struct fb_info *info)
 		}
 	} else {
 		/* VGA mode */
-		/* XXX: What else needs to be checked? */
 		/*
 		 * XXX: We have a little freedom in VGA modes, what ranges
 		 * should be here (i.e. hsync/vsync totals, etc.)?

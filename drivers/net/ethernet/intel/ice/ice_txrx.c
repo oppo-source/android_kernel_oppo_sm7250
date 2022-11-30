@@ -784,7 +784,6 @@ static bool ice_is_non_eop(struct ice_ring *rx_ring,
 
 	prefetch(ICE_RX_DESC(rx_ring, ntc));
 
-	/* if we are the last buffer then there is nothing else to do */
 #define ICE_RXD_EOF BIT(ICE_RX_FLEX_DESC_STATUS0_EOF_S)
 	if (likely(ice_test_staterr(rx_desc, ICE_RXD_EOF)))
 		return false;

@@ -503,7 +503,6 @@ static int pata_macio_cable_detect(struct ata_port *ap)
 	    of_device_is_compatible(priv->node, "shasta-ata"))
 		return ATA_CBL_PATA80;
 
-	/* Anything else is 40 connectors */
 	return ATA_CBL_PATA40;
 }
 

@@ -110,7 +110,6 @@ static int brcm_usb_phy_exit(struct phy *gphy)
 	if (phy->id == BRCM_USB_PHY_3_0)
 		brcm_usb_uninit_xhci(&priv->ini);
 
-	/* If both xhci and eohci are gone, reset everything else */
 	mutex_lock(&priv->mutex);
 	if (--priv->init_count == 0) {
 		brcm_usb_uninit_common(&priv->ini);

@@ -2305,7 +2305,6 @@ static void qib_7220_config_ctxts(struct qib_devdata *dd)
 		dd->rcvctrl |= 2ULL << IBA7220_R_CTXTCFG_SHIFT;
 	else if (dd->ctxtcnt > 5)
 		dd->rcvctrl |= 1ULL << IBA7220_R_CTXTCFG_SHIFT;
-	/* else configure for default 5 receive ctxts */
 	if (dd->qpn_mask)
 		dd->rcvctrl |= 1ULL << QIB_7220_RcvCtrl_RcvQPMapEnable_LSB;
 	qib_write_kreg(dd, kr_rcvctrl, dd->rcvctrl);

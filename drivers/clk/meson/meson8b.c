@@ -687,7 +687,6 @@ static struct clk_regmap meson8b_nand_clk_gate = {
 	},
 };
 
-/* Everything Else (EE) domain gates */
 
 static MESON_GATE(meson8b_ddr, HHI_GCLK_MPEG0, 0);
 static MESON_GATE(meson8b_dos, HHI_GCLK_MPEG0, 1);

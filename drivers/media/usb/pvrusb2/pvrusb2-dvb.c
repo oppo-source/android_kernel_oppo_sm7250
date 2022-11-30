@@ -146,7 +146,6 @@ static int pvr2_dvb_stream_do_start(struct pvr2_dvb_adapter *adap)
 	if (adap->stream_run) return -EIO;
 
 	ret = pvr2_channel_claim_stream(&adap->channel, &pvr->video_stream);
-	/* somebody else already has the stream */
 	if (ret < 0) return ret;
 
 	stream = adap->channel.stream->stream;

@@ -619,7 +619,6 @@ rndis_qc_setup(struct usb_function *f, const struct usb_ctrlrequest *ctrl)
 				rndis_free_response(rndis->params, buf);
 				value = n;
 			}
-			/* else stalls ... spec says to avoid that */
 		}
 		break;
 

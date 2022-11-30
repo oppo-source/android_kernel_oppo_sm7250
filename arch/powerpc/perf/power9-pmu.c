@@ -303,7 +303,6 @@ static u64 power9_bhrb_filter_map(u64 branch_sample_type)
 		return pmu_bhrb_filter;
 	}
 
-	/* Every thing else is unsupported */
 	return -1;
 }
 

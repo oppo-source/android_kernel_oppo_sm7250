@@ -708,7 +708,6 @@ ioeventfd_in_range(struct _ioeventfd *p, gpa_t addr, int len, const void *val)
 		return false;
 
 	if (p->wildcard)
-		/* all else equal, wildcard is always a hit */
 		return true;
 
 	/* otherwise, we have to actually compare the data */

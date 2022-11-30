@@ -310,7 +310,6 @@ static int msi_quota_for_device(struct pci_dev *dev, int request)
 	if (request <= counts.quota)
 		goto out;
 
-	/* else, we have some more calculating to do */
 	counts.requestor = pci_device_to_OF_node(dev);
 	counts.request = request;
 	pci_traverse_device_nodes(pe_dn, count_spare_msis, &counts);

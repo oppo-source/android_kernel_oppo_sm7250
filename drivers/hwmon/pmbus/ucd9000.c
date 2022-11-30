@@ -550,7 +550,6 @@ static int ucd9000_probe(struct i2c_client *client,
 	/* The internal temperature sensor is always active */
 	info->func[0] = PMBUS_HAVE_TEMP;
 
-	/* Everything else is configurable */
 	ret = i2c_smbus_read_block_data(client, UCD9000_MONITOR_CONFIG,
 					block_buffer);
 	if (ret <= 0) {

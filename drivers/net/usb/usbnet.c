@@ -66,7 +66,6 @@
 #define	RX_QLEN(dev)		((dev)->rx_qlen)
 #define	TX_QLEN(dev)		((dev)->tx_qlen)
 
-// reawaken network queue this soon after stopping; else watchdog barks
 #define TX_TIMEOUT_JIFFIES	(5*HZ)
 
 /* throttle rx/tx briefly after some faults, so hub_wq might disconnect()
@@ -563,7 +562,6 @@ static inline void rx_process (struct usbnet *dev, struct sk_buff *skb)
 			dev->net->stats.rx_errors++;
 		goto done;
 	}
-	// else network stack removes extra byte if we forced a short packet
 
 	/* all data was already cloned from skb inside the driver */
 	if (dev->driver_info->flags & FLAG_MULTI_PACKET)
@@ -1750,7 +1748,6 @@ usbnet_probe (struct usb_interface *udev, const struct usb_device_id *prod)
 			goto out1;
 
 		// heuristic:  "usb%d" for links we know are two-host,
-		// else "eth%d" when there's reasonable doubt.  userspace
 		// can rename the link if it knows better.
 		if ((dev->driver_info->flags & FLAG_ETHER) != 0 &&
 		    ((dev->driver_info->flags & FLAG_POINTTOPOINT) == 0 ||

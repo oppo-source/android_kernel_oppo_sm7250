@@ -1811,7 +1811,6 @@ int qla4_82xx_try_start_fw(struct scsi_qla_host *ha)
 void qla4_82xx_rom_lock_recovery(struct scsi_qla_host *ha)
 {
 	if (qla4_82xx_rom_lock(ha)) {
-		/* Someone else is holding the lock. */
 		dev_info(&ha->pdev->dev, "Resetting rom_lock\n");
 	}
 
@@ -3388,7 +3387,6 @@ qla4_82xx_need_reset_handler(struct scsi_qla_host *ha)
 	ql4_printk(KERN_INFO, ha, "Device state is 0x%x = %s\n", dev_state,
 		   dev_state < MAX_STATES ? qdev_state[dev_state] : "Unknown");
 
-	/* Force to DEV_COLD unless someone else is starting a reset */
 	if (dev_state != QLA8XXX_DEV_INITIALIZING) {
 		ql4_printk(KERN_INFO, ha, "HW State: COLD/RE-INIT\n");
 		qla4_82xx_wr_32(ha, QLA82XX_CRB_DEV_STATE, QLA8XXX_DEV_COLD);

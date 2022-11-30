@@ -49,7 +49,6 @@ static int ptrace_dump_regs(int pid)
  */
 #define STUB_SIG_MASK ((1 << SIGALRM) | (1 << SIGWINCH))
 
-/* Signals that the stub will finish with - anything else is an error */
 #define STUB_DONE_MASK (1 << SIGTRAP)
 
 void wait_stub_done(int pid)

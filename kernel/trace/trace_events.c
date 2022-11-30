@@ -412,7 +412,6 @@ static int __ftrace_event_enable_disable(struct trace_event_file *file,
 
 			call->class->reg(call, TRACE_REG_UNREGISTER, file);
 		}
-		/* If in SOFT_MODE, just set the SOFT_DISABLE_BIT, else clear it */
 		if (file->flags & EVENT_FILE_FL_SOFT_MODE)
 			set_bit(EVENT_FILE_FL_SOFT_DISABLED_BIT, &file->flags);
 		else

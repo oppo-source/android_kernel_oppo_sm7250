@@ -621,13 +621,11 @@ smb2_get_mid_entry(struct cifs_ses *ses, struct smb2_sync_hdr *shdr,
 		if ((shdr->Command != SMB2_SESSION_SETUP) &&
 		    (shdr->Command != SMB2_NEGOTIATE))
 			return -EAGAIN;
-		/* else ok - we are setting up session */
 	}
 
 	if (ses->status == CifsExiting) {
 		if (shdr->Command != SMB2_LOGOFF)
 			return -EAGAIN;
-		/* else ok - we are shutting down the session */
 	}
 
 	*mid = smb2_mid_entry_alloc(shdr, ses->server);

@@ -220,7 +220,6 @@ void qedf_fip_recv(struct qedf_ctx *qedf, struct sk_buff *skb)
 					do_reset = true;
 				break;
 			default:
-				/* Ignore anything else */
 				break;
 			}
 			desc = (struct fip_desc *)((char *)desc + dlen);
@@ -236,7 +235,6 @@ void qedf_fip_recv(struct qedf_ctx *qedf, struct sk_buff *skb)
 		}
 		kfree_skb(skb);
 	} else {
-		/* Everything else is handled by libfcoe */
 		__skb_pull(skb, ETH_HLEN);
 		fcoe_ctlr_recv(&qedf->ctlr, skb);
 	}

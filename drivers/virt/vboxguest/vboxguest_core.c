@@ -1145,7 +1145,6 @@ static int vbg_req_allowed(struct vbg_dev *gdev, struct vbg_session *session,
 		}
 		break;
 
-	/* Anything else is not allowed. */
 	default:
 		vbg_err("Denying userspace vmm call type %#08x\n",
 			req->request_type);

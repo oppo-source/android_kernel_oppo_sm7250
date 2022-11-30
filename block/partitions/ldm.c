@@ -1400,7 +1400,6 @@ static bool ldm_get_vblks(struct parsed_partitions *state, unsigned long base,
 				if (!ldm_frag_add (data, size, &frags))
 					goto out;	/* Already logged */
 			}
-			/* else Record is not in use, ignore it. */
 		}
 		put_dev_sector (sect);
 		data = NULL;
@@ -1498,7 +1497,6 @@ int ldm_partition(struct parsed_partitions *state)
 		ldm_debug ("Parsed LDM database successfully.");
 		result = 1;
 	}
-	/* else Already logged */
 
 cleanup:
 	ldm_free_vblks (&ldb->v_dgrp);

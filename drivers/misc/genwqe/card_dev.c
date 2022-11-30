@@ -1348,7 +1348,6 @@ static int genwqe_inform_and_stop_processes(struct genwqe_dev *cd)
 			msleep(1000);
 		}
 
-		/* if no open files we can safely continue, else ... */
 		if (!genwqe_open_files(cd))
 			return 0;
 

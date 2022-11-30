@@ -22,7 +22,6 @@ int saa7146_res_get(struct saa7146_fh *fh, unsigned int bit)
 	if (vv->resources & bit) {
 		DEB_D("locked! vv->resources:0x%02x, we want:0x%02x\n",
 		      vv->resources, bit);
-		/* no, someone else uses it */
 		return 0;
 	}
 	/* it's free, grab it */

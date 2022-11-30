@@ -165,7 +165,6 @@ struct as3645a {
 #define iled_cdev_to_as3645a(__iled_cdev) \
 	container_of(__iled_cdev, struct as3645a, iled_cdev)
 
-/* Return negative errno else zero on success */
 static int as3645a_write(struct as3645a *flash, u8 addr, u8 val)
 {
 	struct i2c_client *client = flash->client;
@@ -179,7 +178,6 @@ static int as3645a_write(struct as3645a *flash, u8 addr, u8 val)
 	return rval;
 }
 
-/* Return negative errno else a data byte received from the device. */
 static int as3645a_read(struct as3645a *flash, u8 addr)
 {
 	struct i2c_client *client = flash->client;

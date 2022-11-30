@@ -90,7 +90,6 @@ struct tea5767_priv {
 /* Activates stereo noise control */
 #define TEA5767_ST_NOISE_CTL	0x02
 
-/* If activate PORT 1 indicates SEARCH or else it is used as PORT1 */
 #define TEA5767_SRCH_IND	0x01
 
 /* Fifth register */
@@ -98,7 +97,6 @@ struct tea5767_priv {
 /* By activating, it will use Xtal at 13 MHz as reference for divider */
 #define TEA5767_PLLREF_ENABLE	0x80
 
-/* By activating, deemphasis=50, or else, deemphasis of 50us */
 #define TEA5767_DEEMPH_75	0X40
 
 /*****************************

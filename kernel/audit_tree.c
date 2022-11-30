@@ -647,7 +647,6 @@ void audit_trim_trees(void)
 		spin_lock(&hash_lock);
 		list_for_each_entry(node, &tree->chunks, list) {
 			struct audit_chunk *chunk = find_chunk(node);
-			/* this could be NULL if the watch is dying else where... */
 			node->index |= 1U<<31;
 			if (iterate_mounts(compare_root,
 					   (void *)(chunk->key),

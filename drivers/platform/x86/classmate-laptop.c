@@ -293,7 +293,6 @@ static ssize_t cmpc_accel_g_select_store_v4(struct device *dev,
 	if (r)
 		return r;
 
-	/* 0 means 1.5g, 1 means 6g, everything else is wrong */
 	if (g_select != 0 && g_select != 1)
 		return -EINVAL;
 

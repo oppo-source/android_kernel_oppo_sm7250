@@ -693,7 +693,6 @@ int check_alloc_btres_lock(struct bttv *btv, struct bttv_fh *fh, int bit)
 
 	/* is it free? */
 	if (btv->resources & xbits) {
-		/* no, someone else uses it */
 		goto fail;
 	}
 

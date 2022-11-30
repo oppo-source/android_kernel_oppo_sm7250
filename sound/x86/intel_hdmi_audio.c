@@ -500,7 +500,6 @@ static void had_build_channel_allocation_map(struct snd_intelhad *intelhaddata)
 	 * Refer eld_speaker_allocation_bits, for sink speaker allocation
 	 */
 
-	/* if 0x2F < eld < 0x4F fall back to 0x2f, else fall back to 0x4F */
 	eld_high = intelhaddata->eld[DRM_ELD_SPEAKER] & eld_high_mask;
 	if ((eld_high & (eld_high-1)) && (eld_high > 0x1F)) {
 		/* eld_high & (eld_high-1): if more than 1 bit set */

@@ -489,7 +489,6 @@ void qla8044_flash_lock_recovery(struct scsi_qla_host *vha)
 {
 
 	if (qla8044_flash_lock(vha)) {
-		/* Someone else is holding the lock. */
 		ql_log(ql_log_warn, vha, 0xb120, "Resetting flash_lock\n");
 	}
 

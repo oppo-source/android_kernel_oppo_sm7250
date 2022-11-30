@@ -487,7 +487,6 @@ static long cpwd_compat_ioctl(struct file *file, unsigned int cmd,
 		mutex_unlock(&cpwd_mutex);
 		break;
 
-	/* everything else is handled by the generic compat layer */
 	default:
 		break;
 	}

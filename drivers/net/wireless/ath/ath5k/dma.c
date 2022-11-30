@@ -313,7 +313,6 @@ ath5k_hw_stop_tx_dma(struct ath5k_hw *ah, unsigned int queue)
 		}
 	}
 
-	/* TODO: Check for success on 5210 else return error */
 	return 0;
 }
 

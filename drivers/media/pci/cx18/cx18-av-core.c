@@ -238,7 +238,6 @@ static void cx18_av_initialize(struct v4l2_subdev *sd)
 
 /*	if(dwEnable && dw3DCombAvailable) { */
 /*		CxDevWrReg(CXADEC_SRC_COMB_CFG, 0x7728021F); */
-/*    } else { */
 /*		CxDevWrReg(CXADEC_SRC_COMB_CFG, 0x6628021F); */
 /*    } */
 	cx18_av_write4(cx, CXADEC_SRC_COMB_CFG, 0x6628021F);

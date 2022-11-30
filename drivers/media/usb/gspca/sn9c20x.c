@@ -2204,7 +2204,6 @@ static void transfer_check(struct gspca_dev *gspca_dev,
 		new_qual = -5;
 	} else {
 
-		/* else, compute the filling rate and a new JPEG quality */
 		r = (sd->pktsz * 100) /
 			(sd->npkt *
 				gspca_dev->urb[0]->iso_frame_desc[0].length);

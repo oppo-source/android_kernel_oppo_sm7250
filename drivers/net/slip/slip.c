@@ -1450,7 +1450,6 @@ static void sl_keepalive(struct timer_list *t)
 			printk(KERN_DEBUG "%s: no packets received during keepalive timeout, hangup.\n", sl->dev->name);
 			/* this must hangup tty & close slip */
 			tty_hangup(sl->tty);
-			/* I think we need not something else */
 			goto out;
 		} else
 			set_bit(SLF_KEEPTEST, &sl->flags);

@@ -971,7 +971,6 @@ static int dw_mci_get_cd(struct mmc_host *mmc)
 	struct dw_mci *host = slot->host;
 	int gpio_cd = mmc_gpio_get_cd(mmc);
 
-	/* Use platform get_cd function, else try onboard card detect */
 	if (((mmc->caps & MMC_CAP_NEEDS_POLL)
 				|| !mmc_card_is_removable(mmc))) {
 		present = 1;
@@ -1589,7 +1588,6 @@ static int dw_mci_get_ro(struct mmc_host *mmc)
 	struct dw_mci_slot *slot = mmc_priv(mmc);
 	int gpio_ro = mmc_gpio_get_ro(mmc);
 
-	/* Use platform get_ro function, else try on board write protect */
 	if (gpio_ro >= 0)
 		read_only = gpio_ro;
 	else

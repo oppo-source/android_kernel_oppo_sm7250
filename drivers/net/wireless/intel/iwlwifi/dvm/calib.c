@@ -269,7 +269,6 @@ static int iwl_sens_energy_cck(struct iwl_priv *priv,
 		/* increase energy threshold (reduce nrg value)
 		 *   to decrease sensitivity */
 		data->nrg_th_cck = data->nrg_th_cck - NRG_STEP_CCK;
-	/* Else if we got fewer than desired, increase sensitivity */
 	} else if (false_alarms < min_false_alarms) {
 		data->nrg_curr_state = IWL_FA_TOO_FEW;
 
@@ -300,7 +299,6 @@ static int iwl_sens_energy_cck(struct iwl_priv *priv,
 			IWL_DEBUG_CALIB(priv, "... but not changing sensitivity\n");
 		}
 
-	/* Else we got a healthy number of false alarms, keep status quo */
 	} else {
 		IWL_DEBUG_CALIB(priv, " FA in safe zone\n");
 		data->nrg_curr_state = IWL_FA_GOOD_RANGE;
@@ -399,7 +397,6 @@ static int iwl_sens_auto_corr_ofdm(struct iwl_priv *priv,
 			min((u32)ranges->auto_corr_max_ofdm_mrc_x1, val);
 	}
 
-	/* Else if we got fewer than desired, increase sensitivity */
 	else if (false_alarms < min_false_alarms) {
 
 		IWL_DEBUG_CALIB(priv, "norm FA %u < min FA %u\n",

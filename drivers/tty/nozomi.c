@@ -778,7 +778,6 @@ static int send_data(enum port_type index, struct nozomi *dc)
 	return 1;
 }
 
-/* If all data has been read, return 1, else 0 */
 static int receive_data(enum port_type index, struct nozomi *dc)
 {
 	u8 buf[RECEIVE_BUF_MAX] = { 0 };

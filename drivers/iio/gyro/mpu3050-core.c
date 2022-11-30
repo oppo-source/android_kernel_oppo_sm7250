@@ -973,7 +973,6 @@ static int mpu3050_drdy_trigger_set_state(struct iio_trigger *trig,
 
 		return 0;
 	} else {
-		/* Else we're enabling the trigger from this point */
 		pm_runtime_get_sync(mpu3050->dev);
 		mpu3050->hw_irq_trigger = true;
 

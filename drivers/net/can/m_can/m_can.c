@@ -1259,7 +1259,6 @@ static bool m_can_niso_supported(const struct m_can_priv *priv)
 
 	m_can_config_endisable(priv, false);
 
-	/* return false if time out (-ETIMEDOUT), else return true */
 	return !niso_timeout;
 }
 

@@ -700,7 +700,6 @@ static int __init cell_iommu_get_window(struct device_node *np,
 	const __be32 *dma_window;
 	unsigned long index;
 
-	/* Use ibm,dma-window if available, else, hard code ! */
 	dma_window = of_get_property(np, "ibm,dma-window", NULL);
 	if (dma_window == NULL) {
 		*base = 0;

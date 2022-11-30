@@ -803,7 +803,6 @@ static struct dentry *cramfs_lookup(struct inode *dir, struct dentry *dentry, un
 			inode = get_cramfs_inode(dir->i_sb, de, dir_off);
 			break;
 		}
-		/* else (retval < 0) */
 		if (sorted)
 			break;
 	}

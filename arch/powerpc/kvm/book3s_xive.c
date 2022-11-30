@@ -1435,7 +1435,6 @@ static struct kvmppc_xive_src_block *xive_create_src_block(struct kvmppc_xive *x
 
 	mutex_lock(&kvm->lock);
 
-	/* block already exists - somebody else got here first */
 	if (xive->src_blocks[bid])
 		goto out;
 

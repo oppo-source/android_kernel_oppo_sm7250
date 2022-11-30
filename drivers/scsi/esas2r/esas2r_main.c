@@ -1899,7 +1899,6 @@ int esas2r_req_status_to_error(u8 req_stat)
 		return DID_BUS_BUSY;
 	}
 
-	/* everything else is just an error. */
 
 	return DID_ERROR;
 }

@@ -387,7 +387,6 @@ int afu_dma_map_region(struct dfl_feature_platform_data *pdata,
 		goto free_region;
 	}
 
-	/* Only accept continuous pages, return error else */
 	if (!afu_dma_check_continuous_pages(region)) {
 		dev_err(&pdata->dev->dev, "pages are not continuous\n");
 		ret = -EINVAL;

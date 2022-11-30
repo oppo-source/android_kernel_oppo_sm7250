@@ -291,7 +291,6 @@ GLOBAL_ENTRY(do_csum)
 
 //	I (Jun Nakajima) wrote an equivalent code (see below), but it was
 //	not much better than the original. So keep the original there so that
-//	someone else can challenge.
 //
 //	shr.u word1[0]=result1[0],32
 //	zxt4 result1[0]=result1[0]

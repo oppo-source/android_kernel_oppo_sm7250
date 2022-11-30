@@ -156,7 +156,6 @@ typedef struct _MPT_CONTEXT
     u8          mptOutBuf[100];
 
 }MPT_CONTEXT, *PMPT_CONTEXT;
-/* endif */
 
 /* E-Fuse */
 #define EFUSE_MAP_SIZE		512

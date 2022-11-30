@@ -4636,7 +4636,6 @@ void ring_buffer_free_read_page(struct ring_buffer *buffer, int cpu, void *data)
 	struct page *page = virt_to_page(bpage);
 	unsigned long flags;
 
-	/* If the page is still in use someplace else, we can't reuse it */
 	if (page_ref_count(page) > 1)
 		goto out;
 

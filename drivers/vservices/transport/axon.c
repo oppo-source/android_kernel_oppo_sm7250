@@ -2683,7 +2683,6 @@ static void transport_rx_tasklet(unsigned long data)
 		/* There are more messages waiting; reschedule */
 		tasklet_schedule(&transport->rx_tasklet);
 	} else if (status < 0 && status != -ECONNRESET) {
-		/* Something else went wrong, other than a reset */
 		dev_err(transport->axon_dev, "Fatal RX error %d\n", status);
 		transport_fatal_error(transport, "rx failure");
 	} else {

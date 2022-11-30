@@ -909,7 +909,6 @@ ixgb_check_for_link(struct ixgb_hw *hw)
 		 */
 		hw->link_up = ixgb_link_reset(hw);
 	}
-	/*  Anything else for 10 Gig?? */
 }
 
 /******************************************************************************

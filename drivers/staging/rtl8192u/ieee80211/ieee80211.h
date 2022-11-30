@@ -1144,7 +1144,6 @@ struct ieee80211_tim_parameters {
 	u8 tim_period;
 } __packed;
 
-//#else
 struct ieee80211_wmm_ts_info {
 	u8 ac_dir_tid;
 	u8 ac_up_psb;
@@ -1652,10 +1651,8 @@ struct ieee80211_device {
 	struct list_head		Rx_TS_Pending_List;
 	struct list_head		Rx_TS_Unused_List;
 	struct rx_ts_record		RxTsRecord[TOTAL_TS_NUM];
-//#ifdef TO_DO_LIST
 	RX_REORDER_ENTRY	RxReorderEntry[128];
 	struct list_head		RxReorder_Unused_List;
-//#endif
 	// Qos related. Added by Annie, 2005-11-01.
 //	PSTA_QOS			pStaQos;
 	u8				ForcedPriority;		// Force per-packet priority 1~7. (default: 0, not to force it.)

@@ -1154,7 +1154,6 @@ static int lmc_ifdown (struct net_device *dev) /*fold00*/
 
     lmc_trace(dev, "lmc_ifdown in");
 
-    /* Don't let anything else go on right now */
     //    dev->start = 0;
     netif_stop_queue(dev);
     sc->extra_stats.tx_tbusy1++;

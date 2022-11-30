@@ -1289,7 +1289,6 @@ static int follow_automount(struct path *path, struct nameidata *nd,
 
 	switch (err) {
 	case -EBUSY:
-		/* Someone else made a mount here whilst we were busy */
 		return 0;
 	case 0:
 		path_put(path);

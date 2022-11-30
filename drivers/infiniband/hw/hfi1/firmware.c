@@ -762,7 +762,6 @@ static int retry_firmware(struct hfi1_devdata *dd, int load_result)
 		__obtain_firmware(dd);
 		retry = (fw_state == FW_FINAL);
 	} else {
-		/* else in FW_FINAL or FW_ERR, no retry in either case */
 		retry = 0;
 	}
 
@@ -886,7 +885,6 @@ static int run_rsa(struct hfi1_devdata *dd, const char *who,
 			ret = -EINVAL;
 			break;
 		}
-		/* else still active */
 
 		if (time_after(jiffies, timeout)) {
 			/*

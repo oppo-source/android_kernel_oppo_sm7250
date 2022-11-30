@@ -221,7 +221,6 @@ void acpi_ex_release_global_lock(u32 field_flags)
 	status = acpi_ex_release_mutex_object(acpi_gbl_global_lock_mutex);
 	if (ACPI_FAILURE(status)) {
 
-		/* Report the error, but there isn't much else we can do */
 
 		ACPI_EXCEPTION((AE_INFO, status,
 				"Could not release Global Lock"));

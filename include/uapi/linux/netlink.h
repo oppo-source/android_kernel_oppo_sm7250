@@ -1,6 +1,7 @@
 /* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
 #ifndef _UAPI__LINUX_NETLINK_H
 #define _UAPI__LINUX_NETLINK_H
+#define OPLUS_FEATURE_WIFI_LUCKYMONEY
 
 #include <linux/kernel.h>
 #include <linux/socket.h> /* for __kernel_sa_family_t */
@@ -32,7 +33,33 @@
 #define NETLINK_SOCKEV		23	/* Socket Administrative Events */
 #define NETLINK_INET_DIAG	NETLINK_SOCK_DIAG
 
-#define MAX_LINKS 32		
+#ifdef OPLUS_FEATURE_WIFI_LUCKYMONEY
+#define NETLINK_OPLUS_NF_HOOKS	32
+#endif /* OPLUS_FEATURE_WIFI_LUCKYMONEY */
+
+#ifdef OPLUS_FEATURE_HANS_FREEZE
+#define NETLINK_OPPO_HANS       29      /* Socket for freezing solution*/
+#endif /*OPLUS_FEATURE_HANS_FREEZE*/
+
+//Add for apps network monitors
+#define NETLINK_OPLUS_APPS_MONITOR  35      /* Apps monitor NETLINK SOCK */
+
+#define NETLINK_OPLUS_NWPOWERSTATE	36	/*OPLUS NW PowerState*/
+
+#define NETLINK_OPLUS_KERNEL2USER  37      /* kernel data info to user space */
+
+#define NETLINK_OPLUS_DHCP 38
+
+#define NETLINK_OPLUS_WIFI_CAP_CENTER_SYNC 39
+#define NETLINK_OPLUS_WIFI_CAP_CENTER_ASYNC 40
+
+#define NETLINK_OPLUS_IPV6_RTO  42
+
+//should match with oppo_theia/include/TheiaKeventThread.h define
+#define OPLUS_NETLINK_THEIA_KEVENT 43
+
+//#define MAX_LINKS 40
+#define MAX_LINKS 44
 
 struct sockaddr_nl {
 	__kernel_sa_family_t	nl_family;	/* AF_NETLINK	*/

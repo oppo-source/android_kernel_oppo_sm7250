@@ -1892,7 +1892,6 @@ __nvme_rdma_options_match(struct nvme_rdma_ctrl *ctrl,
 		if (strcmp(stdport, ctrl->ctrl.opts->trsvcid))
 			return false;
 	}
-	/* else, it's a match as both have stdport. Fall to next checks */
 
 	/*
 	 * checking the local address is rough. In most cases, one

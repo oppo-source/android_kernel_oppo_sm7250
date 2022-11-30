@@ -432,7 +432,6 @@ static irqreturn_t ni_660x_interrupt(int irq, void *d)
 
 	if (!dev->attached)
 		return IRQ_NONE;
-	/* make sure dev->attached is checked before doing anything else */
 	smp_mb();
 
 	/* lock to avoid race with comedi_poll */

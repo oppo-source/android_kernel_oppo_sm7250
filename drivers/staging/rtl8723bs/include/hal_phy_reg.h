@@ -10,8 +10,6 @@
 /* for PutRFRegsetting & GetRFRegSetting BitMask */
 /* if (RTL92SE_FPGA_VERIFY == 1) */
 /* define		bRFRegOffsetMask	0xfff */
-/* else */
 #define			bRFRegOffsetMask	0xfffff
-/* endif */
 
 #endif /* __HAL_PHY_REG_H__ */

@@ -318,7 +318,6 @@ void sas_free_device(struct kref *kref)
 	sas_port_put_phy(dev->phy);
 	dev->phy = NULL;
 
-	/* remove the phys and ports, everything else should be gone */
 	if (dev->dev_type == SAS_EDGE_EXPANDER_DEVICE || dev->dev_type == SAS_FANOUT_EXPANDER_DEVICE)
 		kfree(dev->ex_dev.ex_phy);
 

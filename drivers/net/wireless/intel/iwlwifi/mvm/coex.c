@@ -190,7 +190,6 @@ iwl_get_coex_type(struct iwl_mvm *mvm, const struct ieee80211_vif *vif)
 		ret = le32_to_cpu(mvm->last_bt_notif.primary_ch_lut);
 	else if (secondary_ch_phy_id == phy_ctx_id)
 		ret = le32_to_cpu(mvm->last_bt_notif.secondary_ch_lut);
-	/* else - default = TX TX disallowed */
 
 	rcu_read_unlock();
 

@@ -142,7 +142,6 @@
 #define IE31200_MAD_DIMM_A_WIDTH_SKL		GENMASK_ULL(9, 8)
 #define IE31200_MAD_DIMM_A_WIDTH_SKL_SHIFT	8
 
-/* Skylake reports 1GB increments, everything else is 256MB */
 #define IE31200_PAGES(n, skl)	\
 	(n << (28 + (2 * skl) - PAGE_SHIFT))
 

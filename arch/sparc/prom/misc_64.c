@@ -141,7 +141,6 @@ void prom_halt_power_off(void)
 	args[2] = 0;
 	p1275_cmd_direct(args);
 
-	/* if nothing else helps, we just halt */
 	prom_halt();
 }
 

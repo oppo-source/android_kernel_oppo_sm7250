@@ -253,7 +253,6 @@ static int handle_one_ule_extension( struct dvb_net_priv *p )
 					/* This assures the extension handling loop will terminate. */
 				}
 			}
-			// else: extension handler failed or SNDU should be discarded
 		} else
 			ext_len = -1;	/* SNDU has to be discarded. */
 	} else {
@@ -644,7 +643,6 @@ static int dvb_net_ule_should_drop(struct dvb_net_ule_handle *h)
 			 * all multicast mode: accept all multicast packets
 			 */
 		}
-		/* else: broadcast */
 	} else if (!ether_addr_equal(h->priv->ule_skb->data, h->dev->dev_addr))
 		return 1;
 
@@ -747,7 +745,6 @@ static void dvb_net_ule_check_crc(struct dvb_net_ule_handle *h,
 		eth_zero_addr(h->ethh->h_source);
 		h->ethh->h_proto = htons(h->priv->ule_sndu_type);
 	}
-	/* else:  skb is in correct state; nothing to do. */
 	h->priv->ule_bridged = 0;
 
 	/* Stuff into kernel's protocol stack. */

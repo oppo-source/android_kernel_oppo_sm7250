@@ -114,12 +114,10 @@ static int vgg2432a4_lcd_init(struct ili9320 *lcd,
 	unsigned int addr;
 	int ret;
 
-	/* Set VCore before anything else (VGG243237-6UFLWA) */
 	ret = ili9320_write(lcd, 0x00e5, 0x8000);
 	if (ret)
 		goto err_initial;
 
-	/* Start the oscillator up before we can do anything else. */
 	ret = ili9320_write(lcd, ILI9320_OSCILATION, ILI9320_OSCILATION_OSC);
 	if (ret)
 		goto err_initial;

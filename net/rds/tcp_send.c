@@ -143,7 +143,6 @@ int rds_tcp_xmit(struct rds_connection *conn, struct rds_message *rm,
 
 out:
 	if (ret <= 0) {
-		/* write_space will hit after EAGAIN, all else fatal */
 		if (ret == -EAGAIN) {
 			rds_tcp_stats_inc(s_tcp_sndbuf_full);
 			ret = 0;

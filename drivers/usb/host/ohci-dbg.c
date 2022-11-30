@@ -322,7 +322,6 @@ ohci_dump_ed (const struct ohci_hcd *ohci, const char *label,
 	switch (tmp & (ED_IN|ED_OUT)) {
 	case ED_OUT: type = "-OUT"; break;
 	case ED_IN: type = "-IN"; break;
-	/* else from TDs ... control */
 	}
 	ohci_dbg (ohci,
 		"  info %08x MAX=%d%s%s%s%s EP=%d%s DEV=%d\n", tmp,

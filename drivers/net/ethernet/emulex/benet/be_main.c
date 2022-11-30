@@ -5816,7 +5816,6 @@ static int be_drv_init(struct be_adapter *adapter)
 	adapter->rx_fc = true;
 	adapter->tx_fc = true;
 
-	/* Must be a power of 2 or else MODULO will BUG_ON */
 	adapter->be_get_temp_freq = 64;
 
 	INIT_LIST_HEAD(&adapter->vxlan_port_list);

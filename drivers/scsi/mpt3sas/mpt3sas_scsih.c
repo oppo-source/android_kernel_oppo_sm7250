@@ -441,7 +441,6 @@ _scsih_get_sas_address(struct MPT3SAS_ADAPTER *ioc, u16 handle,
 	if (ioc_status == MPI2_IOCSTATUS_CONFIG_INVALID_PAGE)
 		return -ENXIO;
 
-	/* else error case */
 	pr_err(MPT3SAS_FMT
 		"handle(0x%04x), ioc_status(0x%04x), failure at %s:%d/%s()!\n",
 		ioc->name, handle, ioc_status,

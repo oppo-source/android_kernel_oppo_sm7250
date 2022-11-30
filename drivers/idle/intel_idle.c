@@ -1198,7 +1198,6 @@ static void ivt_idle_state_table_update(void)
 	if (num_sockets > 2)
 		cpuidle_state_table = ivt_cstates_4s;
 
-	/* else, 1 and 2 socket systems use default ivt_cstates */
 }
 
 /*

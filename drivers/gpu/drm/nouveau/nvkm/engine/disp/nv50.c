@@ -746,7 +746,6 @@ nv50_disp_init(struct nv50_disp *disp)
 	/* point at display engine memory area (hash table, objects) */
 	nvkm_wr32(device, 0x610010, (disp->inst->addr >> 8) | 9);
 
-	/* enable supervisor interrupts, disable everything else */
 	nvkm_wr32(device, 0x61002c, 0x00000370);
 	nvkm_wr32(device, 0x610028, 0x00000000);
 	return 0;

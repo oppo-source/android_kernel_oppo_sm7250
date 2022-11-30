@@ -258,7 +258,6 @@ static char *maptype(struct mmc_command *cmd)
 	}
 }
 
-/* return zero, else negative errno after setting cmd->error */
 static int mmc_spi_response_get(struct mmc_spi_host *host,
 		struct mmc_command *cmd, int cs_on)
 {
@@ -348,7 +347,6 @@ checkstatus:
 		else if ((R1_SPI_ERASE_SEQ | R1_SPI_ERASE_RESET)
 				& cmd->resp[0])
 			value = -EIO;    /* I/O error */
-		/* else R1_SPI_IDLE, "it's resetting" */
 	}
 
 	switch (mmc_spi_resp_type(cmd)) {
@@ -517,7 +515,6 @@ mmc_spi_command_send(struct mmc_spi_host *host,
 			cp += 4;
 		else if (cmd->flags & MMC_RSP_BUSY)	/* R1B */
 			cp = data->status + sizeof(data->status);
-		/* else:  R1 (most commands) */
 	}
 
 	dev_dbg(&host->spi->dev, "  mmc_spi: CMD%d, resp %s\n",

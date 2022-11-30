@@ -1100,7 +1100,6 @@ static void handle_registers(struct fw_card *card, struct fw_request *request,
 			rcode = RCODE_ADDRESS_ERROR;
 			break;
 		}
-		/* else fall through */
 
 	case CSR_NODE_IDS:
 		/*

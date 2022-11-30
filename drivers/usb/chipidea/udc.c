@@ -889,7 +889,6 @@ __acquires(hwep->lock)
 		num =  le16_to_cpu(setup->wIndex) & USB_ENDPOINT_NUMBER_MASK;
 		*(u16 *)req->buf = hw_ep_get_halt(ci, num, dir);
 	}
-	/* else do nothing; reserved for future use */
 
 	retval = _ep_queue(&hwep->ep, req, gfp_flags);
 	if (retval)

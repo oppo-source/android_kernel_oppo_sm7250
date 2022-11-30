@@ -251,7 +251,6 @@ static int adu_open(struct inode *inode, struct file *file)
 		goto exit_no_device;
 	}
 
-	/* check that nobody else is using the device */
 	if (dev->open_count) {
 		retval = -EBUSY;
 		goto exit_no_device;

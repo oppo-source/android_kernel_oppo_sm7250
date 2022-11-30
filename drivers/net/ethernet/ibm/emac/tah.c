@@ -29,7 +29,6 @@ int tah_attach(struct platform_device *ofdev, int channel)
 	struct tah_instance *dev = platform_get_drvdata(ofdev);
 
 	mutex_lock(&dev->lock);
-	/* Reset has been done at probe() time... nothing else to do for now */
 	++dev->users;
 	mutex_unlock(&dev->lock);
 

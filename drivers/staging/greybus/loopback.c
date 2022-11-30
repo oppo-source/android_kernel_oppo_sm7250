@@ -901,7 +901,6 @@ static int gb_loopback_fn(void *data)
 		if (ktime_to_ns(gb->ts) == 0)
 			gb->ts = ktime_get();
 
-		/* Else operations to perform */
 		if (gb->async) {
 			if (type == GB_LOOPBACK_TYPE_PING)
 				error = gb_loopback_async_ping(gb);

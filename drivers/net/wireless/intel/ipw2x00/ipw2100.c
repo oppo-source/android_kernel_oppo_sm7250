@@ -2167,7 +2167,6 @@ static void isr_indicate_rf_kill(struct ipw2100_priv *priv, u32 status)
 	IPW_DEBUG_INFO("%s: RF Kill state changed to radio OFF.\n",
 		       priv->net_dev->name);
 
-	/* RF_KILL is now enabled (else we wouldn't be here) */
 	wiphy_rfkill_set_hw_state(priv->ieee->wdev.wiphy, true);
 	priv->status |= STATUS_RF_KILL_HW;
 

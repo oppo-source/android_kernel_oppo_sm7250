@@ -412,7 +412,6 @@ int ip6_mc_source(int add, int omode, struct sock *sk,
 		err = 0;
 		goto done;
 	}
-	/* else, add a new source to the filter */
 
 	if (psl && psl->sl_count >= sysctl_mld_max_msf) {
 		err = -ENOBUFS;
@@ -684,7 +683,6 @@ static void igmp6_group_added(struct ifmcaddr6 *mc)
 		igmp6_join_group(mc);
 		return;
 	}
-	/* else v2 */
 
 	/* Based on RFC3810 6.1, for newly added INCLUDE SSM, we
 	 * should not send filter-mode change record as the mode
@@ -2375,7 +2373,6 @@ static int ip6_mc_add_src(struct inet6_dev *idev, const struct in6_addr *pmca,
 			pmc->mca_sfmode = MCAST_EXCLUDE;
 		else if (pmc->mca_sfcount[MCAST_INCLUDE])
 			pmc->mca_sfmode = MCAST_INCLUDE;
-		/* else no filters; keep old mode for reports */
 
 		pmc->mca_crcount = idev->mc_qrv;
 		idev->mc_ifc_count = pmc->mca_crcount;

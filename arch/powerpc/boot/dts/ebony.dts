@@ -77,7 +77,6 @@
 	CPC0: cpc {
 		compatible = "ibm,cpc-440gp";
 		dcr-reg = <0x0b0 0x003 0x0e0 0x010>;
-		// FIXME: anything else?
 	};
 
 	plb {
@@ -90,7 +89,6 @@
 		SDRAM0: memory-controller {
 			compatible = "ibm,sdram-440gp";
 			dcr-reg = <0x010 0x002>;
-			// FIXME: anything else?
 		};
 
 		SRAM0: sram {

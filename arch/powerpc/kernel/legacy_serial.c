@@ -110,7 +110,6 @@ static int __init add_legacy_port(struct device_node *np, int want_index,
 
 	/* Check if there is a port who already claimed our slot */
 	if (legacy_serial_infos[index].np != NULL) {
-		/* if we still have some room, move it, else override */
 		if (legacy_serial_count < MAX_LEGACY_SERIAL_PORTS) {
 			printk(KERN_DEBUG "Moved legacy port %d -> %d\n",
 			       index, legacy_serial_count);
@@ -215,7 +214,6 @@ static int __init add_legacy_isa_port(struct device_node *np,
 	if (reg == NULL)
 		return -1;
 
-	/* Verify it's an IO port, we don't support anything else */
 	if (!(be32_to_cpu(reg[0]) & 0x00000001))
 		return -1;
 

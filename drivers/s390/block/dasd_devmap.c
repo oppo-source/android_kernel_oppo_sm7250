@@ -563,7 +563,6 @@ dasd_create_device(struct ccw_device *cdev)
 		device->cdev = cdev;
 		rc = 0;
 	} else
-		/* Someone else was faster. */
 		rc = -EBUSY;
 	spin_unlock(&dasd_devmap_lock);
 

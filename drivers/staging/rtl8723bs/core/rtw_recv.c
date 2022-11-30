@@ -608,7 +608,6 @@ union recv_frame *portctrl(struct adapter *adapter, union recv_frame *precv_fram
 
 			/* 	prtnframe =precv_frame; */
 			/*  */
-			/* else { */
 			/* 	RT_TRACE(_module_rtl871x_recv_c_, _drv_info_, ("########portctrl:ether_type = 0x%04x\n", ether_type)); */
 			/*  */
 		}

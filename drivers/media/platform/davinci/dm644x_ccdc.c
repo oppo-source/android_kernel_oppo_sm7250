@@ -484,7 +484,6 @@ static void ccdc_config_raw(void)
 		regw((params->win.width + CCDC_32BYTE_ALIGN_VAL) &
 		    CCDC_HSIZE_OFF_MASK, CCDC_HSIZE_OFF);
 	else
-		/* else one pixel will take 2 byte */
 		regw(((params->win.width * CCDC_TWO_BYTES_PER_PIXEL) +
 		    CCDC_32BYTE_ALIGN_VAL) & CCDC_HSIZE_OFF_MASK,
 		    CCDC_HSIZE_OFF);

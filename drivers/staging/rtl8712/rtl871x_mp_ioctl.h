@@ -148,7 +148,6 @@ uint oid_rt_set_power_down_hdl(
 uint oid_rt_get_power_mode_hdl(
 				struct oid_par_priv *poid_par_priv);
 #ifdef _RTL871X_MP_IOCTL_C_ /* CAUTION!!! */
-/* This ifdef _MUST_ be left in!! */
 static const struct oid_obj_priv oid_rtl_seg_81_80_00[] = {
 	/* 0x00	OID_RT_PRO_RESET_DUT */
 	{1, oid_null_function},
@@ -385,7 +384,6 @@ enum RTL871X_MP_IOCTL_SUBCODE {
 unsigned int mp_ioctl_xmit_packet_hdl(struct oid_par_priv *poid_par_priv);
 
 #ifdef _RTL871X_MP_IOCTL_C_ /* CAUTION!!! */
-/* This ifdef _MUST_ be left in!! */
 
 static struct mp_ioctl_handler mp_ioctl_hdl[] = {
 	{sizeof(u32), oid_rt_pro_start_test_hdl,

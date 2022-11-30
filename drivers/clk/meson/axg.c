@@ -980,7 +980,6 @@ static struct clk_regmap axg_gen_clk = {
 	},
 };
 
-/* Everything Else (EE) domain gates */
 static MESON_GATE(axg_ddr, HHI_GCLK_MPEG0, 0);
 static MESON_GATE(axg_audio_locker, HHI_GCLK_MPEG0, 2);
 static MESON_GATE(axg_mipi_dsi_host, HHI_GCLK_MPEG0, 3);

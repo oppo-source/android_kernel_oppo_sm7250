@@ -351,7 +351,6 @@ struct rxrpc_peer *rxrpc_lookup_peer(struct rxrpc_sock *rx,
 
 		spin_lock_bh(&rxnet->peer_hash_lock);
 
-		/* Need to check that we aren't racing with someone else */
 		peer = __rxrpc_lookup_peer_rcu(local, srx, hash_key);
 		if (peer && !rxrpc_get_peer_maybe(peer))
 			peer = NULL;

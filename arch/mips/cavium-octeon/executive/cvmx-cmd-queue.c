@@ -137,7 +137,6 @@ cvmx_cmd_queue_result_t cvmx_cmd_queue_initialize(cvmx_cmd_queue_id_t queue_id,
 	if ((pool_size < 128) || (pool_size > 65536))
 		return CVMX_CMD_QUEUE_INVALID_PARAM;
 
-	/* See if someone else has already initialized the queue */
 	if (qstate->base_ptr_div128) {
 		if (max_depth != (int)qstate->max_depth) {
 			cvmx_dprintf("ERROR: cvmx_cmd_queue_initialize: "

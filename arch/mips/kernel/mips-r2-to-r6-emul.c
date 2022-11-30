@@ -274,7 +274,6 @@ static int jr_func(struct pt_regs *regs, u32 ir)
 
 	MIPS_R2BR_STATS(jrs);
 
-	/* If nir == 0(NOP), then nothing else to do */
 	if (nir) {
 		/*
 		 * Negative err means FPU instruction in BD-slot,

@@ -64,7 +64,6 @@ struct onyx {
 };
 #define codec_to_onyx(c) container_of(c, struct onyx, codec)
 
-/* both return 0 if all ok, else on error */
 static int onyx_read_register(struct onyx *onyx, u8 reg, u8 *value)
 {
 	s32 v;

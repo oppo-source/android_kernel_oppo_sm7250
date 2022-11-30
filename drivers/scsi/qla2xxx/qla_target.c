@@ -5095,7 +5095,6 @@ static int qlt_24xx_handle_els(struct scsi_qla_host *vha,
 				qlt_schedule_sess_for_deletion(sess);
 				res = 0;
 			}
-			/* else logo will be ack */
 		}
 		break;
 	case ELS_PDISC:

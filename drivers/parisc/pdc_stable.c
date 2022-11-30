@@ -206,7 +206,6 @@ pdcspath_store(struct pdcspath_entry *entry)
 		BUG_ON(!entry->dev);
 		device_to_hwpath(entry->dev, (struct hardware_path *)devpath);
 	}
-	/* else, we expect the provided hwpath to be valid. */
 	
 	DPRINTK("%s: store: 0x%p, 0x%p, addr: 0x%lx\n", __func__,
 			entry, devpath, entry->addr);
@@ -977,7 +976,6 @@ pdcs_register_pathentries(void)
 	struct pdcspath_entry *entry;
 	int err;
 	
-	/* Initialize the entries rw_lock before anything else */
 	for (i = 0; (entry = pdcspath_entries[i]); i++)
 		rwlock_init(&entry->rw_lock);
 

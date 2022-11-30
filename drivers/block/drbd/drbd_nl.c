@@ -4264,7 +4264,6 @@ int drbd_adm_new_resource(struct sk_buff *skb, struct genl_info *info)
 			retcode = ERR_INVALID_REQUEST;
 			drbd_msg_put_info(adm_ctx.reply_skb, "resource exists");
 		}
-		/* else: still NO_ERROR */
 		goto out;
 	}
 
@@ -4324,7 +4323,6 @@ int drbd_adm_new_minor(struct sk_buff *skb, struct genl_info *info)
 	if (adm_ctx.device) {
 		if (info->nlhdr->nlmsg_flags & NLM_F_EXCL)
 			retcode = ERR_MINOR_OR_VOLUME_EXISTS;
-		/* else: still NO_ERROR */
 		goto out;
 	}
 

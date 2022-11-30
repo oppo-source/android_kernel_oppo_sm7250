@@ -62,7 +62,6 @@ int cx18_claim_stream(struct cx18_open_id *id, int type)
 			CX18_DEBUG_INFO("Start Read VBI\n");
 			return 0;
 		}
-		/* someone else is using this stream already */
 		CX18_DEBUG_INFO("Stream %d is busy\n", type);
 		return -EBUSY;
 	}

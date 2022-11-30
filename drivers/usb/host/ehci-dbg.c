@@ -391,7 +391,6 @@ static void qh_lines(struct ehci_hcd *ehci, struct ehci_qh *qh,
 			mark = '#';	/* blocked */
 		else if (hw->hw_alt_next == list_end)
 			mark = '.';	/* use hw_qtd_next */
-		/* else alt_next points to some other qtd */
 	}
 	scratch = hc32_to_cpup(ehci, &hw->hw_info1);
 	hw_curr = (mark == '*') ? hc32_to_cpup(ehci, &hw->hw_current) : 0;

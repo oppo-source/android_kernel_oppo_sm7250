@@ -142,7 +142,6 @@ static void phydm_init_trx_antenna_setting(struct phy_dm_struct *dm)
 		dm->tx_ant_status = 0x1;
 		dm->rx_ant_status = 0x1;
 	}
-	/*#endif*/
 }
 
 static void phydm_traffic_load_decision(void *dm_void)

@@ -767,7 +767,6 @@ static void xpad_presence_work(struct work_struct *work)
 	if (xpad->pad_present) {
 		error = xpad_init_input(xpad);
 		if (error) {
-			/* complain only, not much else we can do here */
 			dev_err(&xpad->dev->dev,
 				"unable to init device: %d\n", error);
 		} else {

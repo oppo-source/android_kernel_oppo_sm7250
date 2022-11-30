@@ -141,7 +141,6 @@ int __init platform_setup(void)
 
 	/* Start-up imaginary PCI ... */
 
-	/* And whatever else ... */
 
 	return 0;
 }

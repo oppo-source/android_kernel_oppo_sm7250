@@ -266,7 +266,6 @@ commit:
 
 	spin_lock_irqsave(&amd_lock, flags);
 	if (amd_chipset.probe_count > 0) {
-		/* race - someone else was faster - drop devices */
 
 		/* Mark that we where here */
 		amd_chipset.probe_count++;

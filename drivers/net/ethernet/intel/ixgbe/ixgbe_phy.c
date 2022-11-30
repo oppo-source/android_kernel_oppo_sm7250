@@ -1322,7 +1322,6 @@ s32 ixgbe_identify_sfp_module_generic(struct ixgbe_hw *hw)
 		return IXGBE_ERR_SFP_NOT_SUPPORTED;
 	}
 
-	/* Anything else 82598-based is supported */
 	if (hw->mac.type == ixgbe_mac_82598EB)
 		return 0;
 

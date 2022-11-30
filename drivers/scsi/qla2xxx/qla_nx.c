@@ -2823,7 +2823,6 @@ qla82xx_rom_lock_recovery(struct qla_hw_data *ha)
 
 	if (qla82xx_rom_lock(ha)) {
 		lock_owner = qla82xx_rd_32(ha, QLA82XX_ROM_LOCK_ID);
-		/* Someone else is holding the lock. */
 		ql_log(ql_log_info, vha, 0xb022,
 		    "Resetting rom_lock, Lock Owner %u.\n", lock_owner);
 	}
@@ -3101,7 +3100,6 @@ qla82xx_need_reset_handler(scsi_qla_host_t *vha)
 	    dev_state,
 	    dev_state < MAX_STATES ? qdev_state(dev_state) : "Unknown");
 
-	/* Force to DEV_COLD unless someone else is starting a reset */
 	if (dev_state != QLA8XXX_DEV_INITIALIZING &&
 	    dev_state != QLA8XXX_DEV_COLD) {
 		ql_log(ql_log_info, vha, 0x00b7,

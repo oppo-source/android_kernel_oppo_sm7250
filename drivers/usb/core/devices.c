@@ -479,7 +479,6 @@ static ssize_t usb_device_dump(char __user **buffer, size_t *nbytes,
 	ssize_t total_written = 0;
 	struct usb_device *childdev = NULL;
 
-	/* don't bother with anything else if we're not writing any data */
 	if (*nbytes <= 0)
 		return 0;
 

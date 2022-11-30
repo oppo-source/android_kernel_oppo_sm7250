@@ -203,7 +203,6 @@ struct qusb2_phy_cfg {
 	/* true if PHY has PLL_TEST register to select clk_scheme */
 	bool has_pll_test;
 
-	/* true if TUNE1 register must be updated by fused value, else TUNE2 */
 	bool update_tune1_with_efuse;
 
 	/* true if PHY has PLL_CORE_INPUT_OVERRIDE register to reset PLL */

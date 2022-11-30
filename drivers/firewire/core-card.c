@@ -394,7 +394,6 @@ static void bm_work(struct work_struct *work)
 		spin_unlock_irq(&card->lock);
 
 		if (rcode == RCODE_COMPLETE && bm_id != 0x3f) {
-			/* Somebody else is BM.  Only act as IRM. */
 			if (local_id == irm_id)
 				allocate_broadcast_channel(card, generation);
 

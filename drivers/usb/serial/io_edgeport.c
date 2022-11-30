@@ -1821,7 +1821,6 @@ static void process_rcvd_data(struct edgeport_serial *edge_serial,
 					edge_serial->rxState = EXPECT_DATA;
 					break;
 				}
-				/* Else, drop through */
 			}
 		case EXPECT_DATA: /* Expect data */
 			if (bufferLength < edge_serial->rxBytesRemaining) {

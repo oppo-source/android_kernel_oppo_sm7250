@@ -80,7 +80,6 @@
 
 #define S3C2410_IICLC_FILTER_ON		(1 << 2)
 
-/* Treat S3C2410 as baseline hardware, anything else is supported via quirks */
 #define QUIRK_S3C2440		(1 << 0)
 #define QUIRK_HDMIPHY		(1 << 1)
 #define QUIRK_NO_GPIO		(1 << 2)

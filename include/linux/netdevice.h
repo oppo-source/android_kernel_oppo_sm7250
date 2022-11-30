@@ -4809,7 +4809,6 @@ do {								\
 })
 #endif
 
-/* if @cond then downgrade to debug, else print at @level */
 #define netif_cond_dbg(priv, type, netdev, cond, level, fmt, args...)     \
 	do {                                                              \
 		if (cond)                                                 \

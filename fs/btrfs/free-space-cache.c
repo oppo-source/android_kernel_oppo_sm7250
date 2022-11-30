@@ -2690,7 +2690,6 @@ int btrfs_return_cluster_to_free_space(
 			return 0;
 		}
 	} else if (cluster->block_group != block_group) {
-		/* someone else has already freed it don't redo their work */
 		spin_unlock(&cluster->lock);
 		return 0;
 	}

@@ -3148,7 +3148,6 @@ static int do_convert(struct dlm_rsb *r, struct dlm_lkb *lkb)
 			queue_cast(r, lkb, 0);
 			goto out;
 		}
-		/* else fall through and move to convert queue */
 	}
 
 	if (can_be_queued(lkb)) {

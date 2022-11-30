@@ -1658,7 +1658,6 @@ long vhost_dev_ioctl(struct vhost_dev *d, unsigned int ioctl, void __user *argp)
 		goto done;
 	}
 
-	/* You must be the owner to do anything else */
 	r = vhost_dev_check_owner(d);
 	if (r)
 		goto done;

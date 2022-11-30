@@ -822,7 +822,6 @@ static ssize_t cifs_security_flags_proc_write(struct file *file,
 		}
 	}
 
-	/* else we have a number */
 	rc = kstrtouint(flags_string, 0, &flags);
 	if (rc) {
 		cifs_dbg(VFS, "Invalid SecurityFlags: %s\n",

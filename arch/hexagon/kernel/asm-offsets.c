@@ -36,7 +36,6 @@
 int main(void)
 {
 	COMMENT("This is a comment.");
-	/*  might get these from somewhere else.  */
 	DEFINE(_PAGE_SIZE, PAGE_SIZE);
 	DEFINE(_PAGE_SHIFT, PAGE_SHIFT);
 	BLANK();

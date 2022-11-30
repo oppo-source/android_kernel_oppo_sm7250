@@ -1236,7 +1236,6 @@ int xdr_buf_read_netobj(struct xdr_buf *buf, struct xdr_netobj *obj, unsigned in
 }
 EXPORT_SYMBOL_GPL(xdr_buf_read_netobj);
 
-/* Returns 0 on success, or else a negative error code. */
 static int
 xdr_xcode_array2(struct xdr_buf *buf, unsigned int base,
 		 struct xdr_array2_desc *desc, int encode)

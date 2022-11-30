@@ -454,7 +454,6 @@ static void card_state_change(struct rsxx_cardinfo *card,
 			"Hardware Fault reported!\n");
 		/* Fall through. */
 
-	/* Everything else, detach DMA interface if it's attached. */
 	case CARD_STATE_SHUTDOWN:
 	case CARD_STATE_STARTING:
 	case CARD_STATE_FORMATTING:

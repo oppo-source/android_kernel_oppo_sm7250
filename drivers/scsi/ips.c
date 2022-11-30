@@ -4155,7 +4155,6 @@ ips_msense(ips_ha_t * ha, ips_scb_t * scb)
 		mdata.pdata.pg8.PageLength = sizeof (IPS_SCSI_MODE_PAGE8);
 		mdata.hdr.DataLength =
 		    3 + mdata.hdr.BlockDescLength + mdata.pdata.pg8.PageLength;
-		/* everything else is left set to 0 */
 		break;
 
 	default:
@@ -6773,7 +6772,6 @@ module_exit(ips_module_exit);
 /*     Add One Adapter ( Hot Plug )                                          */
 /*                                                                           */
 /*   Return Value:                                                           */
-/*     0 if Successful, else non-zero                                        */
 /*---------------------------------------------------------------------------*/
 static int
 ips_insert_device(struct pci_dev *pci_dev, const struct pci_device_id *ent)
@@ -6827,7 +6825,6 @@ err_out:
 /*     Adapter Initialization                                                */
 /*                                                                           */
 /*   Return Value:                                                           */
-/*     0 if Successful, else non-zero                                        */
 /*---------------------------------------------------------------------------*/
 static int
 ips_init_phase1(struct pci_dev *pci_dev, int *indexPtr)
@@ -7046,7 +7043,6 @@ ips_init_phase1(struct pci_dev *pci_dev, int *indexPtr)
 /*     Adapter Initialization Phase 2                                        */
 /*                                                                           */
 /*   Return Value:                                                           */
-/*     0 if Successful, else non-zero                                        */
 /*---------------------------------------------------------------------------*/
 static int
 ips_init_phase2(int index)

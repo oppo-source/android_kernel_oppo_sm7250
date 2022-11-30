@@ -2306,7 +2306,6 @@ static long smb3_simple_falloc(struct file *file, struct cifs_tcon *tcon,
 		else if (i_size_read(inode) >= off + len)
 			/* not extending file and already not sparse */
 			rc = 0;
-		/* BB: in future add else clause to extend file */
 		else
 			rc = -EOPNOTSUPP;
 		free_xid(xid);
@@ -2330,7 +2329,6 @@ static long smb3_simple_falloc(struct file *file, struct cifs_tcon *tcon,
 
 		rc = smb2_set_sparse(xid, tcon, cfile, inode, false);
 	}
-	/* BB: else ... in future add code to extend file and set sparse */
 
 
 	free_xid(xid);

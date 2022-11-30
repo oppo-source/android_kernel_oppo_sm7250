@@ -2268,7 +2268,6 @@ static void dfx_ctl_set_multicast_list(struct net_device *dev)
 	if (dev->flags & IFF_PROMISC)
 		bp->ind_group_prom = PI_FSTATE_K_PASS;		/* Enable LLC ind/group prom mode */
 
-	/* Else, update multicast address table */
 
 	else
 		{

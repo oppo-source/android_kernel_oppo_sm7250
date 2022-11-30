@@ -619,7 +619,6 @@ net2272_pio_advance(struct net2272_ep *ep)
 	(ep->is_in ? net2272_write_fifo : net2272_read_fifo)(ep, req);
 }
 
-/* returns 0 on success, else negative errno */
 static int
 net2272_request_dma(struct net2272 *dev, unsigned ep, u32 buf,
 	unsigned len, unsigned dir)
@@ -698,7 +697,6 @@ net2272_start_dma(struct net2272 *dev)
 #endif
 }
 
-/* returns 0 on success, else negative errno */
 static int
 net2272_kick_dma(struct net2272_ep *ep, struct net2272_request *req)
 {
@@ -1969,7 +1967,6 @@ net2272_handle_stat1_irqs(struct net2272 *dev, u8 stat)
 {
 	u8 tmp, mask;
 
-	/* after disconnect there's nothing else to do! */
 	tmp = (1 << VBUS_INTERRUPT) | (1 << ROOT_PORT_RESET_INTERRUPT);
 	mask = (1 << USB_HIGH_SPEED) | (1 << USB_FULL_SPEED);
 

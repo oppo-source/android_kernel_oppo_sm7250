@@ -703,7 +703,6 @@ force_sigbus:
 		return;
 	}
 
-	/* else we handled it, let life go on. */
 	regs->gr[0]|=PSW_N;
 }
 

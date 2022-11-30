@@ -367,7 +367,6 @@ int cyapa_pip_cmd_state_initialize(struct cyapa *cyapa)
 	return 0;
 }
 
-/* Return negative errno, or else the number of bytes read. */
 ssize_t cyapa_i2c_pip_read(struct cyapa *cyapa, u8 *buf, size_t size)
 {
 	int ret;

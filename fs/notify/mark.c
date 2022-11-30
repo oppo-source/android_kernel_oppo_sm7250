@@ -386,7 +386,6 @@ void fsnotify_detach_mark(struct fsnotify_mark *mark)
 			!!(mark->flags & FSNOTIFY_MARK_FLAG_ATTACHED));
 
 	spin_lock(&mark->lock);
-	/* something else already called this function on this mark */
 	if (!(mark->flags & FSNOTIFY_MARK_FLAG_ATTACHED)) {
 		spin_unlock(&mark->lock);
 		return;
@@ -414,7 +413,6 @@ void fsnotify_free_mark(struct fsnotify_mark *mark)
 	struct fsnotify_group *group = mark->group;
 
 	spin_lock(&mark->lock);
-	/* something else already called this function on this mark */
 	if (!(mark->flags & FSNOTIFY_MARK_FLAG_ALIVE)) {
 		spin_unlock(&mark->lock);
 		return;
@@ -496,7 +494,6 @@ static int fsnotify_attach_connector_to_object(fsnotify_connp_t *connp,
 	 * only initialized structure
 	 */
 	if (cmpxchg(connp, NULL, conn)) {
-		/* Someone else created list structure for us */
 		if (inode)
 			iput(inode);
 		kmem_cache_free(fsnotify_mark_connector_cachep, conn);

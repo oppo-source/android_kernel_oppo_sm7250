@@ -160,7 +160,6 @@ static int __init dmabrg_init(void)
 		return -ENOMEM;
 
 #ifdef CONFIG_SH_DMA
-	/* request DMAC channel 0 before anyone else can get it */
 	ret = request_dma(0, "DMAC 0 (DMABRG)");
 	if (ret < 0)
 		printk(KERN_INFO "DMABRG: DMAC ch0 not reserved!\n");

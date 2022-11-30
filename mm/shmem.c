@@ -398,7 +398,6 @@ static bool shmem_confirm_swap(struct address_space *mapping,
 #define SHMEM_HUGE_FORCE	(-2)
 
 #ifdef CONFIG_TRANSPARENT_HUGE_PAGECACHE
-/* ifdef here to avoid bloating shmem.o when not necessary */
 
 static int shmem_huge __read_mostly;
 
@@ -2836,7 +2835,6 @@ static int shmem_statfs(struct dentry *dentry, struct kstatfs *buf)
 		buf->f_files = sbinfo->max_inodes;
 		buf->f_ffree = sbinfo->free_inodes;
 	}
-	/* else leave those fields 0 like simple_statfs */
 	return 0;
 }
 

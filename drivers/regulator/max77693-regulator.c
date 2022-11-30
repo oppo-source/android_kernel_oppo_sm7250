@@ -108,7 +108,6 @@ static struct regmap *max77693_get_regmap(enum max77693_types type,
 	if (type == TYPE_MAX77693)
 		return max77693->regmap;
 
-	/* Else: TYPE_MAX77843 */
 	switch (reg_id) {
 	case MAX77843_SAFEOUT1:
 	case MAX77843_SAFEOUT2:

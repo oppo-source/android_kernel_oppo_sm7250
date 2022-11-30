@@ -615,7 +615,6 @@ static void pch_spi_set_tx(struct pch_spi_data *data, int *bpw)
 		}
 	}
 
-	/* if len greater than PCH_MAX_FIFO_DEPTH, write 16,else len bytes */
 	n_writes = data->bpw_len;
 	if (n_writes > PCH_MAX_FIFO_DEPTH)
 		n_writes = PCH_MAX_FIFO_DEPTH;

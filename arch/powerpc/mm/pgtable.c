@@ -136,7 +136,6 @@ static pte_t set_pte_filter(pte_t pte)
 		return pte;
 	}
 
-	/* Else, we filter out _PAGE_EXEC */
 	return __pte(pte_val(pte) & ~_PAGE_EXEC);
 }
 

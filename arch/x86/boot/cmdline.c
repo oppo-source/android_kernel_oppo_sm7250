@@ -53,7 +53,6 @@ int __cmdline_find_option(unsigned long cmdline_ptr, const char *option, char *b
 			if (myisspace(c))
 				break;
 
-			/* else */
 			state = st_wordcmp;
 			opptr = option;
 			/* fall through */

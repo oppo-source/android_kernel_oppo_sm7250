@@ -310,7 +310,6 @@ acr_r352_ls_img_fill_headers(struct acr_r352 *acr,
 	whdr->bootstrap_owner = acr->base.boot_falcon;
 	whdr->status = LSF_IMAGE_STATUS_COPY;
 
-	/* Skip bootstrapping falcons started by someone else than ACR */
 	if (acr->lazy_bootstrap & BIT(_img->falcon_id))
 		whdr->lazy_bootstrap = 1;
 
@@ -1009,7 +1008,6 @@ acr_r352_reset(struct nvkm_acr *_acr, struct nvkm_secboot *sb,
 		/* Redo secure boot entirely if it was already done */
 		if (wpr_already_set)
 			return acr_r352_reset_nopmu(acr, sb, falcon_mask);
-		/* Else return the result of the initial invokation */
 		else
 			return ret;
 	}

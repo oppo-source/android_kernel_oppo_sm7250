@@ -6783,7 +6783,6 @@ static bool nf_tables_valid_genid(struct net *net, u32 genid)
 	if (!genid_ok)
 		mutex_unlock(&net->nft.commit_mutex);
 
-	/* else, commit mutex has to be released by commit or abort function */
 	return genid_ok;
 }
 

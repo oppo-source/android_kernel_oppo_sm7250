@@ -1313,7 +1313,6 @@ int ef4_farch_ev_process(struct ef4_channel *channel, int budget)
 			if (efx->type->handle_global_event &&
 			    efx->type->handle_global_event(channel, &event))
 				break;
-			/* else fall through */
 		default:
 			netif_err(channel->efx, hw, channel->efx->net_dev,
 				  "channel %d unknown event type %d (data "

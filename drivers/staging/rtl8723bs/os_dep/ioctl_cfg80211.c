@@ -1536,9 +1536,7 @@ static int cfg80211_rtw_scan(struct wiphy *wiphy
 	pwdev_priv = adapter_wdev_data(padapter);
 	pmlmepriv = &padapter->mlmepriv;
 
-/* ifdef DEBUG_CFG80211 */
 	DBG_871X(FUNC_ADPT_FMT"\n", FUNC_ADPT_ARG(padapter));
-/* endif */
 
 	spin_lock_bh(&pwdev_priv->scan_req_lock);
 	pwdev_priv->scan_request = request;

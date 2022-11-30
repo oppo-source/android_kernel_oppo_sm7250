@@ -537,7 +537,6 @@ ebt_check_entry_size_and_hooks(const struct ebt_entry *e,
 	   e->target_offset >= e->next_offset)
 		return -EINVAL;
 
-	/* this is not checked anywhere else */
 	if (e->next_offset - e->target_offset < sizeof(struct ebt_entry_target))
 		return -EINVAL;
 

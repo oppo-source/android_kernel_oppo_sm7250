@@ -1609,14 +1609,11 @@ SiS_SearchModeID(struct SiS_Private *SiS_Pr, unsigned short *ModeNo,
 
       if((*ModeNo) == 0x07) {
 	  if(VGAINFO & 0x10) (*ModeIdIndex)++;   /* 400 lines */
-	  /* else 350 lines */
       }
       if((*ModeNo) <= 0x03) {
 	 if(!(VGAINFO & 0x80)) (*ModeIdIndex)++;
 	 if(VGAINFO & 0x10)    (*ModeIdIndex)++; /* 400 lines  */
-	 /* else 350 lines  */
       }
-      /* else 200 lines  */
 
    } else {
 

@@ -295,7 +295,6 @@ void fix_range_common(struct mm_struct *mm, unsigned long start_addr,
 	if (!ret)
 		ret = do_ops(&hvc, hvc.index, 1);
 
-	/* This is not an else because ret is modified above */
 	if (ret) {
 		printk(KERN_ERR "fix_range_common: failed, killing current "
 		       "process: %d\n", task_tgid_vnr(current));

@@ -85,7 +85,6 @@ flush_tlb(void)
 	flush_tlb_current(current->active_mm);
 }
 
-/* Flush someone else's user mapping.  */
 static inline void
 flush_tlb_other(struct mm_struct *mm)
 {

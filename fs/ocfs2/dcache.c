@@ -87,7 +87,6 @@ static int ocfs2_dentry_revalidate(struct dentry *dentry, unsigned int flags)
 		goto bail;
 
 	spin_lock(&OCFS2_I(inode)->ip_lock);
-	/* did we or someone else delete this inode? */
 	if (OCFS2_I(inode)->ip_flags & OCFS2_INODE_DELETED) {
 		spin_unlock(&OCFS2_I(inode)->ip_lock);
 		trace_ocfs2_dentry_revalidate_delete(

@@ -444,11 +444,9 @@ static int snd_opti9xx_configure(struct snd_opti9xx *chip,
 
 __skip_base:
 	switch (irq) {
-//#ifdef OPTi93X
 	case 5:
 		irq_bits = 0x05;
 		break;
-//#endif	/* OPTi93X */
 	case 7:
 		irq_bits = 0x01;
 		break;

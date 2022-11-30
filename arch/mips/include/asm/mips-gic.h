@@ -340,7 +340,6 @@ mips_gic_vx_map_reg(enum mips_gic_local_interrupt intr)
 	if (intr == GIC_LOCAL_INT_FDC)
 		return GIC_LOCAL_INT_TIMER + 1;
 
-	/* As a result everything else is offset by 1 */
 	return intr + 1;
 }
 

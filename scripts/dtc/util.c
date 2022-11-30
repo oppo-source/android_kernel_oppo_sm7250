@@ -66,7 +66,6 @@ int xasprintf(char **strp, const char *fmt, ...)
 		/* If that worked, return the string. */
 		if (n > -1 && n < size)
 			break;
-		/* Else try again with more space. */
 		if (n > -1)	/* glibc 2.1 */
 			size = n + 1; /* precisely what is needed */
 		else		/* glibc 2.0 */

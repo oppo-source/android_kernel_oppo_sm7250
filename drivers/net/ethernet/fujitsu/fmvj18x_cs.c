@@ -67,7 +67,6 @@ MODULE_LICENSE("GPL");
 #define INT_MODULE_PARM(n, v) static int n = v; module_param(n, int, 0)
 
 /* SRAM configuration */
-/* 0:4KB*2 TX buffer   else:8KB*2 TX buffer */
 INT_MODULE_PARM(sram_config, 0);
 
 

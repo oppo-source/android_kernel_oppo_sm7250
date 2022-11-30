@@ -341,7 +341,6 @@ static void hdmi_codec_eld_chmap(struct hdmi_codec_priv *hcp)
 	spk_alloc = drm_eld_get_spk_alloc(hcp->eld);
 	spk_mask = hdmi_codec_spk_mask_from_alloc(spk_alloc);
 
-	/* Detect if only stereo supported, else return 8 channels mappings */
 	if ((spk_mask & ~(FL | FR)) && hcp->chmap_info->max_channels > 2)
 		hcp->chmap_info->chmap = hdmi_codec_8ch_chmaps;
 	else

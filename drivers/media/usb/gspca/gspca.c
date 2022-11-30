@@ -1068,7 +1068,6 @@ static int try_fmt_vid_cap(struct gspca_dev *gspca_dev,
 	if (gspca_dev->cam.cam_mode[mode].pixelformat
 						!= fmt->fmt.pix.pixelformat) {
 
-		/* else, search the closest mode with the same pixel format */
 		mode2 = gspca_get_mode(gspca_dev, mode,
 					fmt->fmt.pix.pixelformat);
 		if (mode2 >= 0)

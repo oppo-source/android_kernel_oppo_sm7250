@@ -167,7 +167,6 @@ static void ascii_ssetup_strings(char **pbcc_area, struct cifs_ses *ses,
 		strncpy(bcc_ptr, ses->user_name, CIFS_MAX_USERNAME_LEN);
 		bcc_ptr += strnlen(ses->user_name, CIFS_MAX_USERNAME_LEN);
 	}
-	/* else null user mount */
 	*bcc_ptr = 0;
 	bcc_ptr++; /* account for null termination */
 
@@ -1276,7 +1275,6 @@ out:
 		return;
 	}
 
-	/* Else error. Cleanup */
 	kfree(ses->auth_key.response);
 	ses->auth_key.response = NULL;
 	kfree(ses->ntlmssp);

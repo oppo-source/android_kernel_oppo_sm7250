@@ -2553,7 +2553,6 @@ static void brcmf_sdio_dpc(struct brcmf_sdio *bus)
 					   &err);
 #endif				/* DEBUG */
 
-		/* Read CSR, if clock on switch to AVAIL, else ignore */
 		clkctl = brcmf_sdiod_readb(bus->sdiodev,
 					   SBSDIO_FUNC1_CHIPCLKCSR, &err);
 

@@ -3034,7 +3034,6 @@ static int sisusb_probe(struct usb_interface *intf,
 	sisusb->mmiobase   = SISUSB_PCI_MMIOBASE;
 	sisusb->mmiosize   = SISUSB_PCI_MMIOSIZE;
 	sisusb->ioportbase = SISUSB_PCI_IOPORTBASE;
-	/* Everything else is zero */
 
 	/* Register device */
 	retval = usb_register_dev(intf, &usb_sisusb_class);

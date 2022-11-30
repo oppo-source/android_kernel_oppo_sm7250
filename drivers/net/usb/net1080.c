@@ -59,7 +59,6 @@ struct nc_header {		// packed:
 	__le16	packet_id;		// detects dropped packets
 #define MIN_HEADER	6
 
-	// all else is optional, and must start with:
 	// __le16	vendorId;	// from usb-if
 	// __le16	productId;
 } __packed;

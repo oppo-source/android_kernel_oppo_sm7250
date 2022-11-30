@@ -110,7 +110,6 @@ struct wdm_device {
 
 static struct usb_driver wdm_driver;
 
-/* return intfdata if we own the interface, else look up intf in the list */
 static struct wdm_device *wdm_find_device(struct usb_interface *intf)
 {
 	struct wdm_device *desc;

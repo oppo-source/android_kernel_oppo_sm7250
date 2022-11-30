@@ -200,7 +200,6 @@ static irqreturn_t gsc_hpdi_interrupt(int irq, void *d)
 	if (hpdi_intr_status)
 		writel(hpdi_intr_status, dev->mmio + INTERRUPT_STATUS_REG);
 
-	/* spin lock makes sure no one else changes plx dma control reg */
 	spin_lock_irqsave(&dev->spinlock, flags);
 	dma0_status = readb(devpriv->plx9080_mmio + PLX_REG_DMACSR0);
 	if (plx_status & PLX_INTCSR_DMA0IA) {
@@ -213,7 +212,6 @@ static irqreturn_t gsc_hpdi_interrupt(int irq, void *d)
 	}
 	spin_unlock_irqrestore(&dev->spinlock, flags);
 
-	/* spin lock makes sure no one else changes plx dma control reg */
 	spin_lock_irqsave(&dev->spinlock, flags);
 	dma1_status = readb(devpriv->plx9080_mmio + PLX_REG_DMACSR1);
 	if (plx_status & PLX_INTCSR_DMA1IA) {

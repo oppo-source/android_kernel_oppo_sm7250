@@ -1142,7 +1142,6 @@ static void poke_swift(void)
 {
 	unsigned long mreg;
 
-	/* Clear any crap from the cache or else... */
 	swift_flush_cache_all();
 
 	/* Enable I & D caches */
@@ -1323,7 +1322,6 @@ static void poke_turbosparc(void)
 	unsigned long mreg = srmmu_get_mmureg();
 	unsigned long ccreg;
 
-	/* Clear any crap from the cache or else... */
 	turbosparc_flush_cache_all();
 	/* Temporarily disable I & D caches */
 	mreg &= ~(TURBOSPARC_ICENABLE | TURBOSPARC_DCENABLE);

@@ -157,7 +157,6 @@ struct lru_cache *lc_create(const char *name, struct kmem_cache *cache,
 	if (i == e_count)
 		return lc;
 
-	/* else: could not allocate all elements, give up */
 	for (i--; i; i--) {
 		void *p = element[i];
 		kmem_cache_free(cache, p - e_off);
@@ -399,7 +398,6 @@ static struct lc_element *__lc_get(struct lru_cache *lc, unsigned int enr, unsig
 			++lc->hits;
 			RETURN(e);
 		}
-		/* else: lc_new_number == lc_number; a real hit. */
 		++lc->hits;
 		if (e->refcnt++ == 0)
 			lc->used++;

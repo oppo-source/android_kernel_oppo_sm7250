@@ -628,7 +628,6 @@ void pvr2_i2c_core_init(struct pvr2_hdw *hdw)
 		hdw->i2c_func[0x1b] = i2c_hack_wm8775;
 	}
 
-	// Configure the adapter and set up everything else related to it.
 	hdw->i2c_adap = pvr2_i2c_adap_template;
 	hdw->i2c_algo = pvr2_i2c_algo_template;
 	strlcpy(hdw->i2c_adap.name,hdw->name,sizeof(hdw->i2c_adap.name));

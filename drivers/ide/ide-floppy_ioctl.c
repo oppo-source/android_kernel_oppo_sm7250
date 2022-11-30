@@ -214,7 +214,6 @@ static int ide_floppy_get_format_progress(ide_drive_t *drive,
 		    floppy->ascq == 4)
 			progress_indication = floppy->progress_indication;
 
-		/* Else assume format_unit has finished, and we're at 0x10000 */
 	} else {
 		ide_hwif_t *hwif = drive->hwif;
 		unsigned long flags;

@@ -1723,7 +1723,6 @@ static int smu7_get_evv_voltages(struct pp_hwmgr *hwmgr)
 				if (0 == atomctrl_get_voltage_evv_on_sclk
 				    (hwmgr, VOLTAGE_TYPE_VDDGFX, sclk,
 				     vv_id, &vddgfx)) {
-					/* need to make sure vddgfx is less than 2v or else, it could burn the ASIC. */
 					PP_ASSERT_WITH_CODE((vddgfx < 2000 && vddgfx != 0), "Invalid VDDGFX value!", return -EINVAL);
 
 					/* the voltage should not be zero nor equal to leakage ID */

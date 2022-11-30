@@ -309,7 +309,6 @@ static int __init cs553x_init(void)
 	   do mtdconcat etc. if we want to. */
 	for (i = 0; i < NR_CS553X_CONTROLLERS; i++) {
 		if (cs553x_mtd[i]) {
-			/* If any devices registered, return success. Else the last error. */
 			mtd_device_register(cs553x_mtd[i], NULL, 0);
 			err = 0;
 		}

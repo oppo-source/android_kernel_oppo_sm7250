@@ -167,7 +167,6 @@ acr_r367_ls_img_fill_headers(struct acr_r352 *acr,
 	whdr->bin_version = lhdr->signature.version;
 	whdr->status = LSF_IMAGE_STATUS_COPY;
 
-	/* Skip bootstrapping falcons started by someone else than ACR */
 	if (acr->lazy_bootstrap & BIT(_img->falcon_id))
 		whdr->lazy_bootstrap = 1;
 

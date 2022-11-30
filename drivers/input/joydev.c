@@ -742,7 +742,6 @@ static void joydev_cleanup(struct joydev *joydev)
 	joydev_mark_dead(joydev);
 	joydev_hangup(joydev);
 
-	/* joydev is marked dead so no one else accesses joydev->open */
 	if (joydev->open)
 		input_close_device(handle);
 }

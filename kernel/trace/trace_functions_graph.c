@@ -304,7 +304,6 @@ unsigned long ftrace_return_to_handler(unsigned long frame_pointer)
 	if (unlikely(!ret)) {
 		ftrace_graph_stop();
 		WARN_ON(1);
-		/* Might as well panic. What else to do? */
 		ret = (unsigned long)panic;
 	}
 

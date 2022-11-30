@@ -90,7 +90,6 @@ MODULE_PARM_DESC(debug, "turn on debugging (default: 0)");
 #define SOC_8090_P1G_11R1 0x86
 #define SOC_8090_P1G_21R1 0x8e
 
-/* else use thos ones to check */
 #define P1A_B      0x0
 #define P1C	   0x1
 #define P1D_E_F    0x3

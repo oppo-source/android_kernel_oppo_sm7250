@@ -96,7 +96,6 @@ acpi_ds_exec_begin_control_op(struct acpi_walk_state *walk_state,
 	case AML_ELSE_OP:
 
 		/* Predicate is in the state object */
-		/* If predicate is true, the IF was executed, ignore ELSE part */
 
 		if (walk_state->last_predicate) {
 			status = AE_CTRL_TRUE;

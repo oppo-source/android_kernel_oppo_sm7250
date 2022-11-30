@@ -726,7 +726,6 @@ static int read_fifo(struct net2280_ep *ep, struct net2280_request *req)
 			start_out_naking(ep);
 			prevent = 1;
 		}
-		/* else: hope we don't see the problem */
 	}
 
 	/* never overflow the rx buffer. the fifo reads packets until
@@ -1043,7 +1042,6 @@ net2280_queue(struct usb_ep *_ep, struct usb_request *_req, gfp_t gfp_flags)
 		!((dev->quirks & PLX_PCIE) && ep->dma &&
 		  (readl(&ep->regs->ep_rsp) & BIT(CLEAR_ENDPOINT_HALT)))) {
 
-		/* use DMA if the endpoint supports it, else pio */
 		if (ep->dma)
 			start_dma(ep, req);
 		else {
@@ -3351,7 +3349,6 @@ __acquires(dev->lock)
 	struct net2280_ep	*ep;
 	u32			tmp, num, mask, scratch;
 
-	/* after disconnect there's nothing else to do! */
 	tmp = BIT(VBUS_INTERRUPT) | BIT(ROOT_PORT_RESET_INTERRUPT);
 	mask = BIT(SUPER_SPEED) | BIT(HIGH_SPEED) | BIT(FULL_SPEED);
 
@@ -3497,7 +3494,6 @@ __acquires(dev->lock)
 		 */
 		scan_dma_completions(ep);
 
-		/* disable dma on inactive queues; else maybe restart */
 		if (!list_empty(&ep->queue)) {
 			tmp = readl(&dma->dmactl);
 			restart_dma(ep);

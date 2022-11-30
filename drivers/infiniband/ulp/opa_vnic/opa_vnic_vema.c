@@ -836,7 +836,6 @@ void opa_vnic_vema_send_trap(struct opa_vnic_adapter *adapter,
 	trap->veswportindex = data->veswportindex;
 	trap->opcode = data->opcode;
 
-	/* If successful send set up rate limit timeout else bail */
 	if (ib_post_send_mad(send_buf, NULL)) {
 		ib_free_send_mad(send_buf);
 	} else {

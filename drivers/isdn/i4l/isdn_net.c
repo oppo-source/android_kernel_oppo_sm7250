@@ -2184,7 +2184,6 @@ isdn_net_find_icall(int di, int ch, int idx, setup_parm *setup)
 									isdn_net_swapbind(di);
 									swapped = 1;
 								} else {
-									/* ... else iterate next device */
 									p = (isdn_net_dev *) p->next;
 									continue;
 								}

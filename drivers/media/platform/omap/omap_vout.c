@@ -1954,7 +1954,6 @@ static int __init omap_vout_create_video_devices(struct platform_device *pdev)
 		if (pdev->num_resources == 1)
 			vout->vid_info.overlays[0] = vid_dev->overlays[k + 2];
 		else
-			/* Else select video1 and video2 one by one. */
 			vout->vid_info.overlays[0] = vid_dev->overlays[k + 1];
 		vout->vid_info.num_overlays = 1;
 		vout->vid_info.id = k + 1;

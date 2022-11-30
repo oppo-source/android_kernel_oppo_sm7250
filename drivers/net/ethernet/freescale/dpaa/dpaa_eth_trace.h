@@ -133,7 +133,6 @@ DEFINE_EVENT(dpaa_eth_fd, dpaa_tx_conf_fd,
 
 #endif /* _DPAA_ETH_TRACE_H */
 
-/* This must be outside ifdef _DPAA_ETH_TRACE_H */
 #undef TRACE_INCLUDE_PATH
 #define TRACE_INCLUDE_PATH .
 #undef TRACE_INCLUDE_FILE

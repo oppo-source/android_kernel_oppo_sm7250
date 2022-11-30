@@ -130,7 +130,6 @@ static void leaf_copy_dir_entries(struct buffer_info *dest_bi,
  * (see the return 0 below) from SOURCE to the end (if last_first)
  * or beginning (!last_first) of the DEST
  */
-/* returns 1 if anything was copied, else 0 */
 static int leaf_copy_boundary_item(struct buffer_info *dest_bi,
 				   struct buffer_head *src, int last_first,
 				   int bytes_or_entries)

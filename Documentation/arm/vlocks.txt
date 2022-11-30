@@ -46,7 +46,6 @@ The easiest way to explain the vlocks algorithm is with some pseudo-code:
 		last_vote = this_cpu;
 		currently_voting[this_cpu] = 0;
 
-		/* then wait until everyone else is done voting */
 		for_each_cpu(i) {
 			while (currently_voting[i] != 0)
 				/* wait */;

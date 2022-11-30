@@ -4617,7 +4617,6 @@ xlog_recover_process_data(
 	end = dp + be32_to_cpu(rhead->h_len);
 	num_logops = be32_to_cpu(rhead->h_num_logops);
 
-	/* check the log format matches our own - else we can't recover */
 	if (xlog_header_check_recover(log->l_mp, rhead))
 		return -EIO;
 

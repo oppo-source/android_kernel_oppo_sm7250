@@ -298,7 +298,6 @@ static void return_hosed_msg(struct smi_info *smi_info, int cCode)
 
 	if (cCode < 0 || cCode > IPMI_ERR_UNSPECIFIED)
 		cCode = IPMI_ERR_UNSPECIFIED;
-	/* else use it as is */
 
 	/* Make it a response */
 	msg->rsp[0] = msg->data[0] | 4;
@@ -1971,7 +1970,6 @@ static int try_smi_init(struct smi_info *new_smi)
 		break;
 
 	default:
-		/* No support for anything else yet. */
 		rv = -EIO;
 		goto out_err;
 	}

@@ -2375,7 +2375,6 @@ bool rtl92se_gpio_radio_on_off_checking(struct ieee80211_hw *hw, u8 *valid)
 		spin_unlock_irqrestore(&rtlpriv->locks.rf_ps_lock, flag);
 
 	/* this not include ifconfig wlan0 down case */
-	/* } else if (rfpwr_toset == ERFOFF || cur_rfstate == ERFOFF) { */
 	} else {
 		/* because power_domain_init may be happen when
 		 * _rtl92s_phy_set_rfhalt, this will open some powers

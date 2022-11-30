@@ -1379,7 +1379,6 @@ static inline bool __pkru_allows_write(u32 pkru, u16 pkey)
 static inline u16 pte_flags_pkey(unsigned long pte_flags)
 {
 #ifdef CONFIG_X86_INTEL_MEMORY_PROTECTION_KEYS
-	/* ifdef to avoid doing 59-bit shift on 32-bit values */
 	return (pte_flags & _PAGE_PKEY_MASK) >> _PAGE_BIT_PKEY_BIT0;
 #else
 	return 0;

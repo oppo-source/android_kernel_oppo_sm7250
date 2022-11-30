@@ -1282,7 +1282,6 @@ static inline int input_state_high(struct logical_input *input)
 		return 1;
 	}
 
-	/* else signal falling down. Let's fall through. */
 	input->state = INPUT_ST_FALLING;
 	input->fall_timer = 0;
 

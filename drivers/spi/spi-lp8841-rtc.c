@@ -77,7 +77,6 @@ bitbang_txrx_be_cpha0_lsb(struct spi_lp8841_rtc *data,
 		unsigned usecs, unsigned cpol, unsigned flags,
 		u32 word, u8 bits)
 {
-	/* if (cpol == 0) this is SPI_MODE_0; else this is SPI_MODE_2 */
 
 	u32 shift = 32 - bits;
 	/* clock starts at inactive polarity */

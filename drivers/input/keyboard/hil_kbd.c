@@ -129,7 +129,6 @@ static void hil_dev_handle_command_response(struct hil_dev *dev)
 	default:
 		/* These occur when device isn't present */
 		if (p != (HIL_ERR_INT | HIL_PKT_CMD)) {
-			/* Anything else we'd like to know about. */
 			printk(KERN_WARNING PREFIX "Device sent unknown record %x\n", p);
 		}
 		goto out;

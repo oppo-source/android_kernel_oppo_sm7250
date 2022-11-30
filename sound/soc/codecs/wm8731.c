@@ -512,7 +512,6 @@ static int wm8731_set_bias_level(struct snd_soc_component *component,
 			regcache_sync(wm8731->regmap);
 		}
 
-		/* Clear PWROFF, gate CLKOUT, everything else as-is */
 		reg = snd_soc_component_read32(component, WM8731_PWR) & 0xff7f;
 		snd_soc_component_write(component, WM8731_PWR, reg | 0x0040);
 		break;
@@ -607,7 +606,6 @@ static int wm8731_hw_init(struct device *dev, struct wm8731_priv *wm8731)
 		goto err_regulator_enable;
 	}
 
-	/* Clear POWEROFF, keep everything else disabled */
 	regmap_write(wm8731->regmap, WM8731_PWR, 0x7f);
 
 	/* Latch the update bits */

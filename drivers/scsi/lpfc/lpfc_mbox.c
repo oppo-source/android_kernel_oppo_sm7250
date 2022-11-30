@@ -2502,7 +2502,6 @@ lpfc_reg_fcfi(struct lpfc_hba *phba, struct lpfcMboxq *mbox)
 
 		bf_set(lpfc_reg_fcfi_rq_id1, reg_fcfi,
 		       phba->sli4_hba.hdr_rq->queue_id);
-		/* Match everything else - rq_id1 */
 		bf_set(lpfc_reg_fcfi_type_match1, reg_fcfi, 0);
 		bf_set(lpfc_reg_fcfi_type_mask1, reg_fcfi, 0);
 		bf_set(lpfc_reg_fcfi_rctl_match1, reg_fcfi, 0);

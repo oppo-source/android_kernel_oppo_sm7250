@@ -529,7 +529,6 @@ vc4_validate_bin_cl(struct drm_device *dev,
 		if (cmd != VC4_PACKET_GEM_HANDLES)
 			dst_offset += info->len;
 
-		/* When the CL hits halt, it'll stop reading anything else. */
 		if (cmd == VC4_PACKET_HALT)
 			break;
 	}

@@ -371,7 +371,6 @@ acpi_ns_init_one_object(acpi_handle obj_handle,
 		return (AE_OK);
 	}
 
-	/* If the object is already initialized, nothing else to do */
 
 	if (obj_desc->common.flags & AOPOBJ_DATA_VALID) {
 		return (AE_OK);

@@ -1371,7 +1371,6 @@ static int dlfb_setup_modes(struct dlfb_data *dlfb,
 						     &info->modelist);
 	}
 
-	/* If everything else has failed, fall back to safe default mode */
 	if (default_vmode == NULL) {
 
 		struct fb_videomode fb_vmode = {0};

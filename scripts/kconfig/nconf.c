@@ -1005,7 +1005,6 @@ static void adj_match_dir(match_f *match_direction)
 	else if (*match_direction == FIND_NEXT_MATCH_UP)
 		*match_direction =
 			MATCH_TINKER_PATTERN_UP;
-	/* else, do no change.. */
 }
 
 struct match_state

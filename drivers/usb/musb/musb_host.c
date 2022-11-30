@@ -360,7 +360,6 @@ static void musb_advance_schedule(struct musb *musb, struct urb *urb,
 				qh = first_qh(head);
 				break;
 			}
-			/* else: fall through */
 
 		case USB_ENDPOINT_XFER_ISOC:
 		case USB_ENDPOINT_XFER_INT:
@@ -2005,7 +2004,6 @@ static int musb_schedule(
 		goto success;
 	}
 
-	/* else, periodic transfers get muxed to other endpoints */
 
 	/*
 	 * We know this qh hasn't been scheduled, so all we need to do

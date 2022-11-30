@@ -343,7 +343,6 @@
 #define	rZebra1_ChargePump		0x5
 #define	rZebra1_Channel			0x7	/*  RF channel switch */
 
-/* endif */
 #define	rZebra1_TxGain			0x8	/*  Useless now */
 #define	rZebra1_TxLPF			0x9
 #define	rZebra1_RxLPF			0xb

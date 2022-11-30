@@ -2968,7 +2968,6 @@ static void rtl8723b_cal_txdesc_chksum(struct tx_desc *ptxdesc)
 
 	/*  checksume is always calculated by first 32 bytes, */
 	/*  and it doesn't depend on TX DESC length. */
-	/*  Thomas, Lucas@SD4, 20130515 */
 	count = 16;
 
 	for (index = 0; index < count; index++) {
@@ -4055,7 +4054,6 @@ void SetHwReg8723B(struct adapter *padapter, u8 variable, u8 *val)
 
 			/* if (psmode != PS_MODE_ACTIVE)	{ */
 			/* 	rtl8723b_set_lowpwr_lps_cmd(padapter, true); */
-			/*  else { */
 			/* 	rtl8723b_set_lowpwr_lps_cmd(padapter, false); */
 			/*  */
 			rtl8723b_set_FwPwrMode_cmd(padapter, psmode);

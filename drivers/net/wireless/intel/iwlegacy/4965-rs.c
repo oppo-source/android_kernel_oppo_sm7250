@@ -981,7 +981,6 @@ il4965_rs_tx_status(void *il_r, struct ieee80211_supported_band *sband,
 			lq_sta->total_failed += retries + (1 - legacy_success);
 		}
 	}
-	/* The last TX rate is cached in lq_sta; it's set in if/else above */
 	lq_sta->last_rate_n_flags = tx_rate;
 done:
 	/* See if there's a better rate or modulation mode to try. */
@@ -1142,7 +1141,6 @@ il4965_rs_get_best_rate(struct il_priv *il, struct il_lq_sta *lq_sta,
 			else
 				break;
 
-			/* Else try to raise the "search" rate to match "active" */
 		} else {
 			/* (2nd or later pass)
 			 * If we've already tried to lower the rate, and are
@@ -1912,7 +1910,6 @@ il4965_rs_rate_scale_perform(struct il_priv *il, struct sk_buff *skb,
 			lq_sta->active_tbl = active_tbl;
 			current_tpt = win->average_tpt;
 
-			/* Else poor success; go back to mode in "active" table */
 		} else {
 
 			D_RATE("LQ: GOING BACK TO THE OLD TBL "

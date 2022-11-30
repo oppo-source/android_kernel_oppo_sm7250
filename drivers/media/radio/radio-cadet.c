@@ -607,7 +607,6 @@ static int __init cadet_init(void)
 	if (dev->io < 0)
 		cadet_probe(dev);
 
-	/* Else we bail out */
 	if (dev->io < 0) {
 #ifdef MODULE
 		v4l2_err(v4l2_dev, "you must set an I/O address with io=0x330, 0x332, 0x334,\n");

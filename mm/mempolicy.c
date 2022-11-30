@@ -858,7 +858,6 @@ static void get_policy_nodemask(struct mempolicy *p, nodemask_t *nodes)
 	case MPOL_PREFERRED:
 		if (!(p->flags & MPOL_F_LOCAL))
 			node_set(p->v.preferred_node, *nodes);
-		/* else return empty node mask for local allocation */
 		break;
 	default:
 		BUG();

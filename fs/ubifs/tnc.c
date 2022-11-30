@@ -3224,7 +3224,6 @@ static struct ubifs_znode *lookup_znode(struct ubifs_info *c,
 	/* Check if the child is the one we are looking for */
 	if (znode->zbranch[n].lnum == lnum && znode->zbranch[n].offs == offs)
 		return get_znode(c, znode, n);
-	/* If the key is unique, there is nowhere else to look */
 	if (!is_hash_key(c, key))
 		return NULL;
 	/*

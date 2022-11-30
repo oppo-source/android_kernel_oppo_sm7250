@@ -59,7 +59,6 @@ static int serverworks_create_page_map(struct serverworks_page_map *page_map)
 
 	for (i = 0; i < PAGE_SIZE / sizeof(unsigned long); i++)
 		writel(agp_bridge->scratch_page, page_map->remapped+i);
-		/* Red Pen: Everyone else does pci posting flush here */
 
 	return 0;
 }

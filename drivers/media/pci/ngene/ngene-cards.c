@@ -1121,7 +1121,6 @@ static const struct ngene_info ngene_info_m780 = {
 	.io_type        = { NGENE_IO_NONE, NGENE_IO_TSIN },
 	.demod_attach   = { NULL, demod_attach_lg330x },
 
-	/* Ensure these are NULL else the frame will call them (as funcs) */
 	.tuner_attach   = { NULL, NULL, NULL, NULL },
 	.fe_config      = { NULL, &aver_m780 },
 	.avf            = { 0 },

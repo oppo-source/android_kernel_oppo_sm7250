@@ -974,7 +974,6 @@ static irqreturn_t s3c2410_udc_irq(int dummy, void *_dev)
 		}
 	}
 
-	/* what else causes this interrupt? a receive! who is it? */
 	if (!usb_status && !usbd_status && !pwr_reg && !ep0csr) {
 		for (i = 1; i < S3C2410_ENDPOINTS; i++) {
 			idx2 = udc_read(S3C2410_UDC_INDEX_REG);

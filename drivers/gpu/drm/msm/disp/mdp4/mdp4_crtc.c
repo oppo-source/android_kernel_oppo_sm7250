@@ -327,7 +327,6 @@ static int mdp4_crtc_atomic_check(struct drm_crtc *crtc,
 {
 	struct mdp4_crtc *mdp4_crtc = to_mdp4_crtc(crtc);
 	DBG("%s: check", mdp4_crtc->name);
-	// TODO anything else to check?
 	return 0;
 }
 

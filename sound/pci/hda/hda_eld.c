@@ -762,7 +762,6 @@ int snd_hdmi_get_eld_ati(struct hda_codec *codec, hda_nid_t nid,
 		if (video_latency_hdmi <= 0xfb && audio_latency_hdmi <= 0xfb &&
 		    video_latency_hdmi > audio_latency_hdmi)
 			buf[6] = video_latency_hdmi - audio_latency_hdmi;
-		/* else unknown/invalid or 0ms or video ahead of audio, so use zero */
 	}
 
 	/* SAD count */

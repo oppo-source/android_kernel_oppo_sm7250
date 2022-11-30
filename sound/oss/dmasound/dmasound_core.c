@@ -841,7 +841,6 @@ static void sq_reset(void)
 	   think it is probably still rather non-obvious to application writer
 	*/
 
-	/* we release everything else though */
 	shared_resources_initialised = 0 ;
 }
 

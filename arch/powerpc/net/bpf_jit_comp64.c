@@ -702,7 +702,6 @@ emit_clear:
 			 */
 			if (i != flen - 1)
 				PPC_JMP(exit_addr);
-			/* else fall through to the epilogue */
 			break;
 
 		/*

@@ -1938,7 +1938,6 @@ static pci_ers_result_t cxl_pci_error_detected(struct pci_dev *pdev,
 	 *     * In resume, clear the flag to allow things to start.
 	 */
 
-	/* Make sure no one else changes the afu list */
 	spin_lock(&adapter->afu_list_lock);
 
 	for (i = 0; i < adapter->slices; i++) {

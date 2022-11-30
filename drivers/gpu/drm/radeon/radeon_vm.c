@@ -563,7 +563,6 @@ int radeon_vm_bo_set_addr(struct radeon_device *rdev,
 		/* aquire mutex again */
 		mutex_lock(&vm->mutex);
 		if (vm->page_tables[pt_idx].bo) {
-			/* someone else allocated the pt in the meantime */
 			mutex_unlock(&vm->mutex);
 			radeon_bo_unref(&pt);
 			mutex_lock(&vm->mutex);

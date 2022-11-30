@@ -893,7 +893,6 @@ ahc_pci_config(struct ahc_softc *ahc, const struct ahc_pci_identity *entry)
 		 * Should only be used if the adapter does not have
 		 * a SEEPROM.
 		 */
-		/* See if someone else set us up already */
 		if ((ahc->flags & AHC_NO_BIOS_INIT) == 0
 		 && scsiseq != 0) {
 			printk("%s: Using left over BIOS settings\n",

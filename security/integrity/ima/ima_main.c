@@ -254,7 +254,6 @@ static int process_measurement(struct file *file, const struct cred *cred,
 	if ((action & IMA_MEASURE) && (iint->measured_pcrs & (0x1 << pcr)))
 		action ^= IMA_MEASURE;
 
-	/* HASH sets the digital signature and update flags, nothing else */
 	if ((action & IMA_HASH) &&
 	    !(test_bit(IMA_DIGSIG, &iint->atomic_flags))) {
 		xattr_len = ima_read_xattr(file_dentry(file), &xattr_value);

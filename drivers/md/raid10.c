@@ -4727,7 +4727,6 @@ static void end_reshape(struct r10conf *conf)
 static int handle_reshape_read_error(struct mddev *mddev,
 				     struct r10bio *r10_bio)
 {
-	/* Use sync reads to get the blocks from somewhere else */
 	int sectors = r10_bio->sectors;
 	struct r10conf *conf = mddev->private;
 	struct r10bio *r10b;

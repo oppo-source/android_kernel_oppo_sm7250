@@ -331,7 +331,6 @@ static inline cvmx_cmd_queue_result_t cvmx_cmd_queue_write(cvmx_cmd_queue_id_t
 {
 	__cvmx_cmd_queue_state_t *qptr = __cvmx_cmd_queue_get_state(queue_id);
 
-	/* Make sure nobody else is updating the same queue */
 	if (likely(use_locking))
 		__cvmx_cmd_queue_lock(queue_id, qptr);
 
@@ -429,7 +428,6 @@ static inline cvmx_cmd_queue_result_t cvmx_cmd_queue_write2(cvmx_cmd_queue_id_t
 {
 	__cvmx_cmd_queue_state_t *qptr = __cvmx_cmd_queue_get_state(queue_id);
 
-	/* Make sure nobody else is updating the same queue */
 	if (likely(use_locking))
 		__cvmx_cmd_queue_lock(queue_id, qptr);
 
@@ -530,7 +528,6 @@ static inline cvmx_cmd_queue_result_t cvmx_cmd_queue_write3(cvmx_cmd_queue_id_t
 {
 	__cvmx_cmd_queue_state_t *qptr = __cvmx_cmd_queue_get_state(queue_id);
 
-	/* Make sure nobody else is updating the same queue */
 	if (likely(use_locking))
 		__cvmx_cmd_queue_lock(queue_id, qptr);
 

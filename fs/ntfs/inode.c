@@ -2274,7 +2274,6 @@ void ntfs_evict_big_inode(struct inode *vi)
 	}
 #endif /* NTFS_RW */
 
-	/* No need to lock at this stage as no one else has a reference. */
 	if (ni->nr_extents > 0) {
 		int i;
 

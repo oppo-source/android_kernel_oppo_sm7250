@@ -605,7 +605,6 @@ struct wl1271_acx_keep_alive_config {
 	__le32 period;
 } __packed;
 
-/* TODO: maybe this needs to be moved somewhere else? */
 #define HOST_IF_CFG_RX_FIFO_ENABLE     BIT(0)
 #define HOST_IF_CFG_TX_EXTRA_BLKS_SWAP BIT(1)
 #define HOST_IF_CFG_TX_PAD_TO_SDIO_BLK BIT(3)

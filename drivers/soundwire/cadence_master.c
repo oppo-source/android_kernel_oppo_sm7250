@@ -1121,7 +1121,6 @@ int sdw_cdns_get_stream(struct sdw_cdns *cdns,
 	else
 		pdis = cdns_get_num_pdi(cdns, stream->out, stream->num_out, ch);
 
-	/* check if we found PDI, else find in bi-directional */
 	if (!pdis)
 		pdis = cdns_get_num_pdi(cdns, stream->bd, stream->num_bd, ch);
 
@@ -1149,7 +1148,6 @@ int sdw_cdns_alloc_stream(struct sdw_cdns *cdns,
 	else
 		pdi = cdns_find_pdi(cdns, stream->num_out, stream->out);
 
-	/* check if we found a PDI, else find in bi-directional */
 	if (!pdi)
 		pdi = cdns_find_pdi(cdns, stream->num_bd, stream->bd);
 

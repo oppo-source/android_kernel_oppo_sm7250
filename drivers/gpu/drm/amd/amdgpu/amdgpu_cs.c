@@ -476,12 +476,10 @@ static bool amdgpu_cs_try_evict(struct amdgpu_cs_parser *p,
 		if (!(other & domain))
 			continue;
 
-		/* Check if we can move this BO somewhere else */
 		other = bo->allowed_domains & ~domain;
 		if (!other)
 			continue;
 
-		/* Good we can try to move this BO somewhere else */
 		update_bytes_moved_vis =
 				!amdgpu_gmc_vram_full_visible(&adev->gmc) &&
 				amdgpu_bo_in_cpu_visible_vram(bo);

@@ -554,7 +554,6 @@ static int vega10_get_evv_voltages(struct pp_hwmgr *hwmgr)
 					continue);
 
 
-			/* need to make sure vddc is less than 2v or else, it could burn the ASIC. */
 			PP_ASSERT_WITH_CODE((vddc < 2000 && vddc != 0),
 					"Invalid VDDC value", result = -EINVAL;);
 

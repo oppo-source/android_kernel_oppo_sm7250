@@ -203,7 +203,6 @@ static void prism2sta_disconnect_usb(struct usb_interface *interface)
 		 */
 		msleep(100);
 
-		/* Now delete the CTLXs, because no-one else can now. */
 		list_for_each_entry_safe(ctlx, temp, &cleanlist, list)
 			kfree(ctlx);
 

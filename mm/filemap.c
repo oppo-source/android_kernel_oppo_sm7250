@@ -2325,7 +2325,6 @@ page_not_up_to_date_locked:
 			continue;
 		}
 
-		/* Did somebody else fill it already? */
 		if (PageUptodate(page)) {
 			unlock_page(page);
 			goto page_ok;
@@ -3034,7 +3033,6 @@ filler:
 		goto repeat;
 	}
 
-	/* Someone else locked and filled the page in a very small window */
 	if (PageUptodate(page)) {
 		unlock_page(page);
 		goto out;

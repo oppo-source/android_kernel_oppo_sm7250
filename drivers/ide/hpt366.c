@@ -574,7 +574,6 @@ static u8 hpt3xx_udma_filter(ide_drive_t *drive)
 		if (!HPT370_ALLOW_ATA100_5 ||
 		    check_in_drive_list(drive, bad_ata100_5))
 			return ATA_UDMA4;
-		/* else: fall through */
 	case HPT372 :
 	case HPT372A:
 	case HPT372N:
@@ -601,7 +600,6 @@ static u8 hpt3xx_mdma_filter(ide_drive_t *drive)
 	case HPT374 :
 		if (ata_id_is_sata(drive->id))
 			return 0x00;
-		/* else: fall through */
 	default:
 		return 0x07;
 	}

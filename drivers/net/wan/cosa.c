@@ -1352,7 +1352,6 @@ static void cosa_kick(struct cosa_data *cosa)
 	clear_dma_ff(cosa->dma);
 	release_dma_lock(flags1);
 
-	/* FIXME: Anything else? */
 	udelay(100);
 	cosa_putstatus(cosa, 0);
 	udelay(100);

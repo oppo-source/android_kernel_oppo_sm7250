@@ -2670,7 +2670,6 @@ static s32 ixgbe_setup_internal_phy_t_x550em(struct ixgbe_hw *hw)
 		force_speed = IXGBE_LINK_SPEED_1GB_FULL;
 		break;
 	default:
-		/* Internal PHY does not support anything else */
 		return IXGBE_ERR_INVALID_LINK_SETTINGS;
 	}
 

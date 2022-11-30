@@ -114,7 +114,6 @@ static void odm_RxPhyStatus92CSeries_Parsing(
 
 		/* if (pHalData->eRFPowerState == eRfOn) */
 		cck_highpwr = pDM_Odm->bCckHighPower;
-		/* else */
 		/* cck_highpwr = false; */
 
 		cck_agc_rpt =  pPhyStaRpt->cck_agc_rpt_ofdm_cfosho_a ;
@@ -169,7 +168,6 @@ static void odm_RxPhyStatus92CSeries_Parsing(
 			/*  2008/01/30 MH we will judge RF RX path now. */
 			if (pDM_Odm->RFPathRxEnable & BIT(i))
 				rf_rx_num++;
-			/* else */
 				/* continue; */
 
 			rx_pwr[i] = ((pPhyStaRpt->path_agc[i].gain&0x3F)*2) - 110;

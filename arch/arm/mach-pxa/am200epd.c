@@ -146,7 +146,6 @@ static void am200_cleanup(struct metronomefb_par *par)
 
 static int am200_share_video_mem(struct fb_info *info)
 {
-	/* rough check if this is our desired fb and not something else */
 	if ((info->var.xres != am200_fb_info.modes->xres)
 		|| (info->var.yres != am200_fb_info.modes->yres))
 		return 0;

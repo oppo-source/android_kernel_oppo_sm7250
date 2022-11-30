@@ -337,7 +337,6 @@ static int isci_task_execute_tmf(struct isci_host *ihost,
 			__func__);
 		ret =  TMF_RESP_FUNC_COMPLETE;
 	}
-	/* Else - leave the default "failed" status alone. */
 
 	dev_dbg(&ihost->pdev->dev,
 		"%s: completed request = %p\n",

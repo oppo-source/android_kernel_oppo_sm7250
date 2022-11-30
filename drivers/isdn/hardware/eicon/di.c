@@ -196,7 +196,6 @@ void pr_out(ADAPTER *a)
 				req_queue(a, this->No);
 			}
 		}
-		/* else it's a ASSIGN                                       */
 		else {
 			/* save the request code used for buffer chaining           */
 			this->MInd = 0;

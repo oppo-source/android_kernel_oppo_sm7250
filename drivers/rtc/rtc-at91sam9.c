@@ -237,7 +237,6 @@ static int at91_rtc_setalarm(struct device *dev, struct rtc_wkalrm *alrm)
 		return 0;
 	}
 
-	/* else set alarm and maybe enable it */
 	rtt_writel(rtc, AR, secs - offset);
 	if (alrm->enabled)
 		rtt_writel(rtc, MR, mr | AT91_RTT_ALMIEN);

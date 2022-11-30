@@ -1911,7 +1911,6 @@ int iwl_dump_nic_event_log(struct iwl_priv *priv, bool full_log,
 			pos = iwl_print_event_log(priv, next_entry,
 						capacity - next_entry, mode,
 						pos, buf, bufsz);
-		/* (then/else) start at top of log */
 		pos = iwl_print_event_log(priv, 0,
 					  next_entry, mode, pos, buf, bufsz);
 	} else

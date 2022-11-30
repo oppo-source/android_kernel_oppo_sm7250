@@ -460,7 +460,6 @@ i40e_status i40e_configure_lan_hmc(struct i40e_hw *hw,
 			goto try_type_paged;
 		else if (ret_code)
 			goto configure_lan_hmc_out;
-		/* else clause falls through the break */
 		break;
 	case I40E_HMC_MODEL_PAGED_ONLY:
 try_type_paged:

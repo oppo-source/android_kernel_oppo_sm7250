@@ -1005,7 +1005,6 @@ static int make_ua(struct scsi_cmnd *scp, struct sdebug_dev_info *devip)
 	return 0;
 }
 
-/* Build SCSI "data-in" buffer. Returns 0 if ok else (DID_ERROR << 16). */
 static int fill_from_dev_buffer(struct scsi_cmnd *scp, unsigned char *arr,
 				int arr_len)
 {
@@ -3280,7 +3279,6 @@ static int resp_write_same(struct scsi_cmnd *scp, u64 lba, u32 num,
 	}
 	lbaa = lba;
 	block = do_div(lbaa, sdebug_store_sectors);
-	/* if ndob then zero 1 logical block, else fetch 1 logical block */
 	fs1p = fake_storep + (block * lb_size);
 	if (ndob) {
 		memset(fs1p, 0, lb_size);

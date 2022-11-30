@@ -321,7 +321,6 @@ static void __init chrp_setup_arch(void)
 		briq_SPOR = ioremap(0xff0000e8, 4);
 		ppc_md.restart = briq_restart;
 	} else {
-		/* Let's assume it is an IBM chrp if all else fails */
 		_chrp_type = _CHRP_IBM;
 	}
 	of_node_put(root);

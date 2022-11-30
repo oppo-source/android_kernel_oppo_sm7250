@@ -433,7 +433,6 @@ static bool HTIOTActIsDisableMCS15(struct ieee80211_device *ieee)
 	// Enable MCS15 if the peer is Cisco AP. by Emily, 2008.05.12
 //	if(pBssDesc->bCiscoCapExist)
 //		retValue = false;
-//	else
 		retValue = false;
 #endif
 #endif

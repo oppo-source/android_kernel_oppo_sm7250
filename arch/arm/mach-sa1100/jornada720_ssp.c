@@ -138,7 +138,6 @@ static int jornada_ssp_probe(struct platform_device *dev)
 
 	ret = ssp_init();
 
-	/* worked fine, lets not bother with anything else */
 	if (!ret) {
 		printk(KERN_INFO "SSP: device initialized with irq\n");
 		return ret;

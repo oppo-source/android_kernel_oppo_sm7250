@@ -78,7 +78,6 @@ static void release_io_space(struct pcmcia_socket *s, struct resource *res)
 				release_resource(res);
 			res->start = res->end = 0;
 			res->flags = IORESOURCE_IO;
-			/* Free the window if no one else is using it */
 			if (s->io[i].InUse == 0) {
 				release_resource(s->io[i].res);
 				kfree(s->io[i].res);

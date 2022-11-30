@@ -830,7 +830,6 @@ static int chip_ready (struct map_info *map, struct flchip *chip, unsigned long 
 			mutex_unlock(&chip->mutex);
 			cfi_udelay(1);
 			mutex_lock(&chip->mutex);
-			/* Someone else might have been playing with it. */
 			return -EAGAIN;
 		}
 		/* Fall through */

@@ -150,7 +150,6 @@ TRACE_EVENT(dpaa2_eth_buf_seed,
 
 #endif /* _DPAA2_ETH_TRACE_H */
 
-/* This must be outside ifdef _DPAA2_ETH_TRACE_H */
 #undef TRACE_INCLUDE_PATH
 #define TRACE_INCLUDE_PATH .
 #undef TRACE_INCLUDE_FILE

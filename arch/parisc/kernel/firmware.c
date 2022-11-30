@@ -677,7 +677,6 @@ int pdc_lan_station_id(char *lan_addr, unsigned long hpa)
 	retval = mem_pdc_call(PDC_LAN_STATION_ID, PDC_LAN_STATION_ID_READ,
 			__pa(pdc_result), hpa);
 	if (retval < 0) {
-		/* FIXME: else read MAC from NVRAM */
 		memset(lan_addr, 0, PDC_LAN_STATION_ID_SIZE);
 	} else {
 		memcpy(lan_addr, pdc_result, PDC_LAN_STATION_ID_SIZE);

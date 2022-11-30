@@ -10155,7 +10155,6 @@ word li_total_channels;
 /*         0xfe - chi wrong coding                                  */
 /*         0xfd - D-channel                                         */
 /*         0x00 - no channel                                        */
-/*         else channel number / PRI: timeslot                      */
 /* if channels is provided we accept more than one channel.         */
 /*------------------------------------------------------------------*/
 

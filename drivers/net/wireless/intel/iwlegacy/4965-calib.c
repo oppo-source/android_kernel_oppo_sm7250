@@ -196,7 +196,6 @@ il4965_sens_energy_cck(struct il_priv *il, u32 norm_fa, u32 rx_enable_time,
 		/* increase energy threshold (reduce nrg value)
 		 *   to decrease sensitivity */
 		data->nrg_th_cck = data->nrg_th_cck - NRG_STEP_CCK;
-		/* Else if we got fewer than desired, increase sensitivity */
 	} else if (false_alarms < min_false_alarms) {
 		data->nrg_curr_state = IL_FA_TOO_FEW;
 
@@ -227,7 +226,6 @@ il4965_sens_energy_cck(struct il_priv *il, u32 norm_fa, u32 rx_enable_time,
 			D_CALIB("... but not changing sensitivity\n");
 		}
 
-		/* Else we got a healthy number of false alarms, keep status quo */
 	} else {
 		D_CALIB(" FA in safe zone\n");
 		data->nrg_curr_state = IL_FA_GOOD_RANGE;
@@ -323,7 +321,6 @@ il4965_sens_auto_corr_ofdm(struct il_priv *il, u32 norm_fa, u32 rx_enable_time)
 		    min((u32) ranges->auto_corr_max_ofdm_mrc_x1, val);
 	}
 
-	/* Else if we got fewer than desired, increase sensitivity */
 	else if (false_alarms < min_false_alarms) {
 
 		D_CALIB("norm FA %u < min FA %u\n", false_alarms,

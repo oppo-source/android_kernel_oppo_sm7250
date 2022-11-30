@@ -15,6 +15,7 @@
 #include <linux/cpumask.h>
 
 #include "internals.h"
+#include <soc/oplus/system/oplus_project.h>
 
 /* For !GENERIC_IRQ_EFFECTIVE_AFF_MASK this looks at general affinity mask */
 static inline bool irq_needs_fixup(struct irq_data *d)

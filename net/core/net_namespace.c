@@ -519,7 +519,6 @@ static void cleanup_net(struct work_struct *work)
 
 	down_read(&pernet_ops_rwsem);
 
-	/* Don't let anyone else find us. */
 	down_write(&net_rwsem);
 	llist_for_each_entry(net, net_kill_list, cleanup_list)
 		list_del_rcu(&net->list);

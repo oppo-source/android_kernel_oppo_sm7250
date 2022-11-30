@@ -698,7 +698,6 @@ thumb2arm(u16 tinstr)
 			return subset[(L<<1) | ((tinstr & (1<<8)) >> 8)] |
 			    (tinstr & 255);		/* register_list */
 		}
-		/* Else fall through for illegal instruction case */
 
 	default:
 		return BAD_INSTR;
@@ -745,7 +744,6 @@ do_alignment_t32_to_handler(unsigned long *pinstr, struct pt_regs *regs,
 			*pinstr = subset[L] | (1<<RD_BITS(instr));
 			return do_alignment_ldmstm;
 		}
-		/* Else fall through for illegal instruction case */
 		break;
 
 	/* A6.3.6 Load/store double, STRD/LDRD(immed, lit, reg) */

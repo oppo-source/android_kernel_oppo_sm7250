@@ -246,7 +246,6 @@ void func3(void)
 	mutex_lock(L2);
 	mutex_lock(L3);
 
-	/* do something else */
 
 	mutex_unlock(L3);
 	mutex_unlock(L2);

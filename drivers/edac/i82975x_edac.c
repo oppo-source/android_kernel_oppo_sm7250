@@ -335,7 +335,6 @@ static void i82975x_check(struct mem_ctl_info *mci)
 	i82975x_process_error_info(mci, &info, 1);
 }
 
-/* Return 1 if dual channel mode is active.  Else return 0. */
 static int dual_channel_active(void __iomem *mch_window)
 {
 	/*

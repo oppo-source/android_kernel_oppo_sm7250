@@ -135,7 +135,6 @@ static int ebt_vlan_mt_check(const struct xt_mtchk_param *par)
 			 */
 			info->bitmask &= ~EBT_VLAN_PRIO;
 		}
-		/* Else, id=0 (null VLAN ID)  => user_priority range (any?) */
 	}
 
 	if (GET_BITMASK(EBT_VLAN_PRIO)) {

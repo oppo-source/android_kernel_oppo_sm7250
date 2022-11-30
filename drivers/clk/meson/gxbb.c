@@ -1701,7 +1701,6 @@ static struct clk_regmap gxbb_gen_clk = {
 	},
 };
 
-/* Everything Else (EE) domain gates */
 static MESON_GATE(gxbb_ddr, HHI_GCLK_MPEG0, 0);
 static MESON_GATE(gxbb_dos, HHI_GCLK_MPEG0, 1);
 static MESON_GATE(gxbb_isa, HHI_GCLK_MPEG0, 5);

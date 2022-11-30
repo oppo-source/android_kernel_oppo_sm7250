@@ -34,7 +34,6 @@ int pl080_get_signal(const struct pl08x_channel_data *cd)
 
 	spin_lock_irqsave(&lock, flags);
 
-	/* Return if signal is already acquired by somebody else */
 	if (signals[signal].busy &&
 			(signals[signal].val != cd->muxval)) {
 		spin_unlock_irqrestore(&lock, flags);

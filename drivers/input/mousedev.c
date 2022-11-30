@@ -819,7 +819,6 @@ static void mousedev_cleanup(struct mousedev *mousedev)
 	mousedev_mark_dead(mousedev);
 	mousedev_hangup(mousedev);
 
-	/* mousedev is marked dead so no one else accesses mousedev->open */
 	if (mousedev->open)
 		input_close_device(handle);
 }

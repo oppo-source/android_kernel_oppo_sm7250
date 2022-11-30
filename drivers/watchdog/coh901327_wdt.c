@@ -132,7 +132,6 @@ static void coh901327_disable(void)
 		       virtbase + U300_WDOG_D1R);
 		writew(U300_WDOG_D2R_DISABLE2_DISABLE_TIMER,
 		       virtbase + U300_WDOG_D2R);
-		/* Write this twice (else problems occur) */
 		writew(U300_WDOG_D2R_DISABLE2_DISABLE_TIMER,
 		       virtbase + U300_WDOG_D2R);
 	}

@@ -419,7 +419,6 @@ static inline bool shadow_invalid(u8 tag, s8 shadow_byte)
 		return shadow_byte < 0 ||
 			shadow_byte >= KASAN_SHADOW_SCALE_SIZE;
 
-	/* else CONFIG_KASAN_SW_TAGS: */
 	if ((u8)shadow_byte == KASAN_TAG_INVALID)
 		return true;
 	if ((tag != KASAN_TAG_KERNEL) && (tag != (u8)shadow_byte))

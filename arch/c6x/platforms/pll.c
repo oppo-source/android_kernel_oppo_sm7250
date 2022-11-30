@@ -176,7 +176,6 @@ int clk_register(struct clk *clk)
 	if (clk->rate)
 		return 0;
 
-	/* Else, see if there is a way to calculate it */
 	if (clk->recalc)
 		clk->rate = clk->recalc(clk);
 
@@ -335,7 +334,6 @@ static void __init __init_clk(struct clk *clk)
 		if (clk->pll_data)
 			clk->recalc = clk_pllclk_recalc;
 
-		/* Else, if it is a PLL-derived clock */
 		else if (clk->flags & CLK_PLL)
 			clk->recalc = clk_sysclk_recalc;
 

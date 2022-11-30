@@ -454,7 +454,6 @@ static int ucsi_reset_ppm(struct ucsi *ucsi)
 		if (ucsi->ppm->data->cci.reset_complete)
 			break;
 
-		/* If the PPM is still doing something else, reset it again. */
 		if (ucsi->ppm->data->raw_cci) {
 			dev_warn_ratelimited(ucsi->dev,
 				"Failed to reset PPM! Trying again..\n");

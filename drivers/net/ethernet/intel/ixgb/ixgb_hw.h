@@ -756,7 +756,6 @@ u16 ixgb_get_ee_device_id(struct ixgb_hw *hw);
 bool ixgb_get_eeprom_data(struct ixgb_hw *hw);
 __le16 ixgb_get_eeprom_word(struct ixgb_hw *hw, u16 index);
 
-/* Everything else */
 void ixgb_led_on(struct ixgb_hw *hw);
 void ixgb_led_off(struct ixgb_hw *hw);
 void ixgb_write_pci_cfg(struct ixgb_hw *hw,

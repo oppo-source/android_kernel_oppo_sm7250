@@ -3311,7 +3311,6 @@ static unsigned int ata_scsi_pass_thru(struct ata_queued_cmd *qc)
 		qc->sect_size = scmd->device->sector_size;
 		break;
 
-	/* Everything else uses 512 byte "sectors" */
 	default:
 		qc->sect_size = ATA_SECT_SIZE;
 	}

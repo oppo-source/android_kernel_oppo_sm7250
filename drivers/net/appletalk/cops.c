@@ -282,7 +282,6 @@ static int __init cops_probe1(struct net_device *dev, int ioaddr)
         if(cops_debug && version_printed++ == 0)
 		printk("%s", version);
 
-	/* Grab the region so no one else tries to probe our ioports. */
 	if (!request_region(ioaddr, COPS_IO_EXTENT, dev->name))
 		return -EBUSY;
 

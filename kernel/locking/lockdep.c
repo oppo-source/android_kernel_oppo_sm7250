@@ -391,7 +391,6 @@ static int class_filter(struct lock_class *class)
 			!strcmp(class->name, "&struct->lockfield"))
 		return 1;
 #endif
-	/* Filter everything else. 1 would be to allow everything else */
 	return 0;
 }
 #endif

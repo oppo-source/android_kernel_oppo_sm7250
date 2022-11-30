@@ -300,7 +300,6 @@ int ntfs_map_runlist(ntfs_inode *ni, VCN vcn)
 	int err = 0;
 
 	down_write(&ni->runlist.lock);
-	/* Make sure someone else didn't do the work while we were sleeping. */
 	if (likely(ntfs_rl_vcn_to_lcn(ni->runlist.rl, vcn) <=
 			LCN_RL_NOT_MAPPED))
 		err = ntfs_map_runlist_nolock(ni, vcn, NULL);

@@ -1045,7 +1045,6 @@ static int get_sdram_scrub_rate(struct mem_ctl_info *mci)
 
 }
 
-/* Return 1 if dual channel mode is active.  Else return 0. */
 static inline int dual_channel_active(u16 ddrcsr)
 {
 	return (((ddrcsr >> 12) & 3) == 3);
@@ -1215,7 +1214,6 @@ static void e752x_init_sysbus_parity_mask(struct e752x_pvt *pvt)
 	struct pci_dev *dev = pvt->dev_d0f1;
 	int enable = 1;
 
-	/* Allow module parameter override, else see if CPU supports parity */
 	if (sysbus_parity != -1) {
 		enable = sysbus_parity;
 	} else if (cpu_id[0] && !strstr(cpu_id, "Xeon")) {

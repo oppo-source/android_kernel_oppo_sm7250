@@ -626,7 +626,6 @@ static void MGAG100_progPixClock(const struct matrox_fb_info *minfo, int flags,
 	outDAC1064(minfo, reg++, n);
 	outDAC1064(minfo, reg, p);
 	selClk = mga_inb(M_MISC_REG_READ) & ~0xC;
-	/* there should be flags & 0x03 & case 0/1/else */
 	/* and we should first select source and after that we should wait for PLL */
 	/* and we are waiting for PLL with oscilator disabled... Is it right? */
 	switch (flags & 0x03) {

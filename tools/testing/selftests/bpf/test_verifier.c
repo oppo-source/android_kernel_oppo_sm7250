@@ -11783,7 +11783,6 @@ static struct bpf_test tests[] = {
 			/* subprog 1 */
 			/* if (ctx == 0) return; */
 			BPF_JMP_IMM(BPF_JEQ, BPF_REG_1, 0, 8),
-			/* else bpf_map_lookup() and *(fp - 8) = r0 */
 			BPF_MOV64_REG(BPF_REG_6, BPF_REG_2),
 			BPF_MOV64_REG(BPF_REG_2, BPF_REG_10),
 			BPF_ALU64_IMM(BPF_ADD, BPF_REG_2, -8),

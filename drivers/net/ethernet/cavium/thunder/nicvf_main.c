@@ -677,7 +677,6 @@ static void nicvf_snd_pkt_handler(struct net_device *netdev,
 	/* Is this a XDP designated Tx queue */
 	if (sq->is_xdp) {
 		page = (struct page *)sq->xdp_page[cqe_tx->sqe_ptr];
-		/* Check if it's recycled page or else unmap DMA mapping */
 		if (page && (page_ref_count(page) == 1))
 			nicvf_unmap_sndq_buffers(nic, sq, cqe_tx->sqe_ptr,
 						 hdr->subdesc_cnt);
@@ -1456,7 +1455,6 @@ int nicvf_open(struct net_device *netdev)
 		nic->napi[qidx] = cq_poll;
 	}
 
-	/* Check if we got MAC address from PF or else generate a radom MAC */
 	if (!nic->sqs_mode && is_zero_ether_addr(netdev->dev_addr)) {
 		eth_hw_addr_random(netdev);
 		nicvf_hw_set_mac_addr(nic, netdev);

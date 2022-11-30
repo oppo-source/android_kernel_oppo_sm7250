@@ -501,7 +501,6 @@ static int pata_ftide010_probe(struct platform_device *pdev)
 		if (ret)
 			goto err_dis_clk;
 	} else {
-		/* Else assume we are connected using PATA40 */
 		ftide->master_cbl = ATA_CBL_PATA40;
 		ftide->slave_cbl = ATA_CBL_PATA40;
 	}

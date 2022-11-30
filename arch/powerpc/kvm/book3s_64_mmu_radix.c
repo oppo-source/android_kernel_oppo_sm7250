@@ -412,7 +412,6 @@ static int kvmppc_create_pte(struct kvm *kvm, pte_t pte, unsigned long gpa,
 	if (pud_huge(*pud)) {
 		unsigned long hgpa = gpa & PUD_MASK;
 
-		/* Check if we raced and someone else has set the same thing */
 		if (level == 2) {
 			if (pud_raw(*pud) == pte_raw(pte)) {
 				ret = 0;
@@ -460,7 +459,6 @@ static int kvmppc_create_pte(struct kvm *kvm, pte_t pte, unsigned long gpa,
 	if (pmd_is_leaf(*pmd)) {
 		unsigned long lgpa = gpa & PMD_MASK;
 
-		/* Check if we raced and someone else has set the same thing */
 		if (level == 1) {
 			if (pmd_raw(*pmd) == pte_raw(pte)) {
 				ret = 0;
@@ -507,7 +505,6 @@ static int kvmppc_create_pte(struct kvm *kvm, pte_t pte, unsigned long gpa,
 	}
 	ptep = pte_offset_kernel(pmd, gpa);
 	if (pte_present(*ptep)) {
-		/* Check if someone else set the same thing */
 		if (pte_raw(*ptep) == pte_raw(pte)) {
 			ret = 0;
 			goto out_unlock;

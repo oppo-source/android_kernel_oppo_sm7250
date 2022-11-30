@@ -987,7 +987,6 @@ static struct dma_pte *pfn_to_dma_pte(struct dmar_domain *domain,
 			domain_flush_cache(domain, tmp_page, VTD_PAGE_SIZE);
 			pteval = ((uint64_t)virt_to_dma_pfn(tmp_page) << VTD_PAGE_SHIFT) | DMA_PTE_READ | DMA_PTE_WRITE;
 			if (cmpxchg64(&pte->val, 0ULL, pteval))
-				/* Someone else set it while we were thinking; use theirs. */
 				free_pgtable_page(tmp_page);
 			else
 				domain_flush_cache(domain, pte, sizeof(*pte));
@@ -1050,7 +1049,6 @@ static void dma_pte_clear_range(struct dmar_domain *domain,
 	BUG_ON(!domain_pfn_supported(domain, last_pfn));
 	BUG_ON(start_pfn > last_pfn);
 
-	/* we don't need lock here; nobody else touches the iova range */
 	do {
 		large_page = 1;
 		first_pte = pte = dma_pfn_level_pte(domain, start_pfn, 1, &large_page);
@@ -1124,7 +1122,6 @@ static void dma_pte_free_pagetable(struct dmar_domain *domain,
 
 	dma_pte_clear_range(domain, start_pfn, last_pfn);
 
-	/* We don't need lock here; nobody else touches the iova range */
 	dma_pte_free_level(domain, agaw_to_level(domain->agaw), retain_level,
 			   domain->pgd, 0, start_pfn, last_pfn);
 
@@ -1227,7 +1224,6 @@ static struct page *domain_unmap(struct dmar_domain *domain,
 	BUG_ON(!domain_pfn_supported(domain, last_pfn));
 	BUG_ON(start_pfn > last_pfn);
 
-	/* we don't need lock here; nobody else touches the iova range */
 	freelist = dma_pte_clear_level(domain, agaw_to_level(domain->agaw),
 				       domain->pgd, 0, start_pfn, last_pfn, NULL);
 

@@ -1092,7 +1092,6 @@ static irqreturn_t portal_isr(int irq, void *ptr)
 		__poll_portal_fast(p, QMAN_POLL_LIMIT);
 		clear = QM_DQAVAIL_MASK | QM_PIRQ_DQRI;
 	}
-	/* Handling of anything else that's interrupt-driven */
 	clear |= __poll_portal_slow(p, is) & QM_PIRQ_SLOW;
 	qm_out(&p->p, QM_REG_ISR, clear);
 	return IRQ_HANDLED;

@@ -6525,7 +6525,6 @@ static int complete_fast_pio_in(struct kvm_vcpu *vcpu)
 		return 1;
 	}
 
-	/* For size less than 4 we merge, else we zero extend */
 	val = (vcpu->arch.pio.size < 4) ? kvm_register_read(vcpu, VCPU_REGS_RAX)
 					: 0;
 
@@ -6546,7 +6545,6 @@ static int kvm_fast_pio_in(struct kvm_vcpu *vcpu, int size,
 	unsigned long val;
 	int ret;
 
-	/* For size less than 4 we merge, else we zero extend */
 	val = (size < 4) ? kvm_register_read(vcpu, VCPU_REGS_RAX) : 0;
 
 	ret = emulator_pio_in_emulated(&vcpu->arch.emulate_ctxt, size, port,

@@ -609,7 +609,6 @@ int nfp_net_bpf_offload(struct nfp_net *nn, struct bpf_prog *prog,
 		}
 	}
 
-	/* Something else is loaded, different program type? */
 	if (!old_prog && nn->dp.ctrl & NFP_NET_CFG_CTRL_BPF)
 		return -EBUSY;
 

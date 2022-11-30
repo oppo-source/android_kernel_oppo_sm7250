@@ -1077,7 +1077,6 @@ static int pvr2_v4l2_iosetup(struct pvr2_v4l2_fh *fh)
 	   it... */
 	if ((ret = pvr2_channel_claim_stream(&fh->channel,
 					     fh->pdi->stream)) != 0) {
-		/* Someone else must already have it */
 		return ret;
 	}
 

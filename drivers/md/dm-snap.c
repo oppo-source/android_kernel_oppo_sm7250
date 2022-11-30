@@ -1788,7 +1788,6 @@ static int snapshot_map(struct dm_target *ti, struct bio *bio)
 		goto out_unlock;
 	}
 
-	/* If the block is already remapped - use that, else remap it */
 	e = dm_lookup_exception(&s->complete, chunk);
 	if (e) {
 		remap_exception(s, e, bio, chunk);

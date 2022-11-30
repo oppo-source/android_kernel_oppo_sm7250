@@ -249,7 +249,6 @@ static u32 gb_manifest_parse_cports(struct gb_bundle *bundle)
 		if (cport_id > CPORT_ID_MAX)
 			goto exit;
 
-		/* Nothing else should have its cport_id as control cport id */
 		if (cport_id == GB_CONTROL_CPORT_ID) {
 			dev_err(&bundle->dev, "invalid cport id found (%02u)\n",
 				cport_id);
@@ -339,7 +338,6 @@ static u32 gb_manifest_parse_bundles(struct gb_interface *intf)
 			continue;
 		}
 
-		/* Nothing else should have its class set to control class */
 		if (class == GREYBUS_CLASS_CONTROL) {
 			dev_err(&intf->dev,
 				"bundle %u cannot use control class\n",

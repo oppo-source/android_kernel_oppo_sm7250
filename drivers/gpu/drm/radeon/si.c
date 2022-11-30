@@ -6259,7 +6259,6 @@ int si_irq_process(struct radeon_device *rdev)
 	wptr = si_get_ih_wptr(rdev);
 
 restart_ih:
-	/* is somebody else already processing irqs? */
 	if (atomic_xchg(&rdev->ih.lock, 1))
 		return IRQ_NONE;
 

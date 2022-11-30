@@ -642,7 +642,6 @@ qh_urb_transaction (
 
 	if (is_input)
 		token |= (1 /* "in" */ << 8);
-	/* else it's already initted to "out" pid (0 << 8) */
 
 	maxpacket = usb_maxpacket(urb->dev, urb->pipe, !is_input);
 
@@ -1437,7 +1436,6 @@ static void unlink_empty_async(struct ehci_hcd *ehci)
 		}
 	}
 
-	/* If nothing else is being unlinked, unlink the last empty QH */
 	if (list_empty(&ehci->async_unlink) && qh_to_unlink) {
 		qh_to_unlink->unlink_reason |= QH_UNLINK_QUEUE_EMPTY;
 		start_unlink_async(ehci, qh_to_unlink);

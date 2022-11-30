@@ -2592,7 +2592,6 @@ static int ai_cmd(struct comedi_device *dev, struct comedi_subdevice *s)
 			/* good old mode 13 */
 			devpriv->adc_control1_bits |= adc_mode_bits(13);
 		else
-			/* mode 8.  What else could you need? */
 			devpriv->adc_control1_bits |= adc_mode_bits(8);
 	} else {
 		devpriv->adc_control1_bits &= ~CHANNEL_MODE_4020_MASK;
@@ -2828,7 +2827,6 @@ static void handle_ai_interrupt(struct comedi_device *dev,
 		dev_err(dev->class_dev, "fifo overrun\n");
 		async->events |= COMEDI_CB_ERROR;
 	}
-	/* spin lock makes sure no one else changes plx dma control reg */
 	spin_lock_irqsave(&dev->spinlock, flags);
 	dma1_status = readb(devpriv->plx9080_iobase + PLX_REG_DMACSR1);
 	if (plx_status & PLX_INTCSR_DMA1IA) {	/* dma chan 1 interrupt */
@@ -3006,7 +3004,6 @@ static void handle_ao_interrupt(struct comedi_device *dev,
 	async = s->async;
 	cmd = &async->cmd;
 
-	/* spin lock makes sure no one else changes plx dma control reg */
 	spin_lock_irqsave(&dev->spinlock, flags);
 	dma0_status = readb(devpriv->plx9080_iobase + PLX_REG_DMACSR0);
 	if (plx_status & PLX_INTCSR_DMA0IA) {	/*  dma chan 0 interrupt */

@@ -170,7 +170,6 @@ static int winch_thread(void *arg)
 		       "errno = %d\n", errno);
 		exit(1);
 	}
-	/* In sigsuspend(), block anything else than SIGWINCH. */
 	sigdelset(&sigs, SIGWINCH);
 
 	if (setsid() < 0) {

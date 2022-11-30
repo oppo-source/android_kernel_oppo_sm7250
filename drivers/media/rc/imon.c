@@ -1380,7 +1380,6 @@ static void imon_pad_to_keys(struct imon_context *ictx, unsigned char *buf)
 	 * ignore when they get too close.
 	 */
 	if (ictx->product != 0xffdc) {
-		/* first, pad to 8 bytes so it conforms with everything else */
 		buf[5] = buf[6] = buf[7] = 0;
 		timeout = 500;	/* in msecs */
 		/* (2*threshold) x (2*threshold) square */

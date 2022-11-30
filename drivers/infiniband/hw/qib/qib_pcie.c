@@ -554,7 +554,6 @@ qib_pci_error_detected(struct pci_dev *pdev, pci_channel_state_t state)
 			dd->flags &= ~QIB_PRESENT;
 			qib_disable_after_error(dd);
 		}
-		 /* else early, or other problem */
 		ret =  PCI_ERS_RESULT_DISCONNECT;
 		break;
 

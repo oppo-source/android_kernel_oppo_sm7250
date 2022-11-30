@@ -268,7 +268,6 @@ static int __init isapnp_isolate_rdp_select(void)
 	isapnp_wait();
 	isapnp_key();
 
-	/* Control: reset CSN and conditionally everything else too */
 	isapnp_write_byte(0x02, isapnp_reset ? 0x05 : 0x04);
 	mdelay(2);
 

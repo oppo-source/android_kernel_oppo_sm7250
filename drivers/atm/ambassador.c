@@ -851,7 +851,6 @@ static irqreturn_t interrupt_handler(int irq, void *dev_id) {
   {
     u32 interrupt = rd_plain (dev, offsetof(amb_mem, interrupt));
   
-    // for us or someone else sharing the same interrupt
     if (!interrupt) {
       PRINTD (DBG_IRQ, "irq not for me: %d", irq);
       return IRQ_NONE;

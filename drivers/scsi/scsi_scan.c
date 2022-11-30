@@ -150,7 +150,6 @@ int scsi_complete_async_scans(void)
 	init_completion(&data->prev_finished);
 
 	spin_lock(&async_scan_lock);
-	/* Check that there's still somebody else on the list */
 	if (list_empty(&scanning_hosts))
 		goto done;
 	list_add_tail(&data->list, &scanning_hosts);

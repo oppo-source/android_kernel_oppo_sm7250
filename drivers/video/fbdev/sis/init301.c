@@ -11345,7 +11345,6 @@ SiS_SearchVBModeID(struct SiS_Private *SiS_Pr, unsigned short *ModeNo)
    }
 
    if(VGAINFO & 0x10) ModeIdIndex++;   /* 400 lines */
-	                               /* else 350 lines */
    return ModeIdIndex;
 }
 

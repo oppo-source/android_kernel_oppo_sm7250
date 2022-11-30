@@ -206,7 +206,6 @@ static int snow_probe(struct platform_device *pdev)
 
 	link->platform_of_node = link->cpu_of_node;
 
-	/* Update card-name if provided through DT, else use default name */
 	snd_soc_of_parse_card_name(card, "samsung,model");
 
 	snd_soc_card_set_drvdata(card, priv);

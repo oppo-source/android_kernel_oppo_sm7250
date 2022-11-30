@@ -1259,7 +1259,6 @@ static int setup_overlay(struct zoran_fh *fh, int on)
 	    (!on && fh->overlay_active == ZORAN_FREE))
 		return 0;
 
-	/* check whether we're touching someone else's overlay */
 	if (on && zr->overlay_active != ZORAN_FREE &&
 	    fh->overlay_active == ZORAN_FREE) {
 		dprintk(1,

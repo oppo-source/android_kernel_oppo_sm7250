@@ -113,7 +113,6 @@ cyrix_get_free_region(unsigned long base, unsigned long size, int replace_reg)
 		cyrix_get_arr(7, &lbase, &lsize, &ltype);
 		if (lsize == 0)
 			return 7;
-		/* Else try ARR0-ARR6 first  */
 	} else {
 		for (i = 0; i < 7; i++) {
 			cyrix_get_arr(i, &lbase, &lsize, &ltype);
@@ -152,10 +151,8 @@ static void prepare_set(void)
 	write_cr0(cr0);
 	wbinvd();
 
-	/* Cyrix ARRs - everything else was excluded at the top */
 	ccr3 = getCx86(CX86_CCR3);
 
-	/* Cyrix ARRs - everything else was excluded at the top */
 	setCx86(CX86_CCR3, (ccr3 & 0x0f) | 0x10);
 }
 
@@ -164,7 +161,6 @@ static void post_set(void)
 	/* Flush caches and TLBs */
 	wbinvd();
 
-	/* Cyrix ARRs - everything else was excluded at the top */
 	setCx86(CX86_CCR3, ccr3);
 
 	/* Enable caches */

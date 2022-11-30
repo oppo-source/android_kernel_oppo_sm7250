@@ -158,7 +158,6 @@ static int i2c_pnx_start(unsigned char slave_addr,
 
 	/* First, make sure bus is idle */
 	if (wait_timeout(alg_data)) {
-		/* Somebody else is monopolizing the bus */
 		dev_err(&alg_data->adapter.dev,
 			"%s: Bus busy. Slave addr = %02x, cntrl = %x, stat = %x\n",
 			alg_data->adapter.name, slave_addr,

@@ -1560,7 +1560,6 @@ static enum drm_connector_status radeon_legacy_tv_dac_detect(struct drm_encoder 
 		return found;
 	}
 
-	/* don't probe if the encoder is being used for something else not CRT related */
 	if (radeon_encoder->active_device && !(radeon_encoder->active_device & ATOM_DEVICE_CRT_SUPPORT)) {
 		DRM_INFO("not detecting due to %08x\n", radeon_encoder->active_device);
 		return connector_status_disconnected;

@@ -226,7 +226,6 @@
 #define GET_CTR(reg, area) 			ld	reg,area+EX_CTR(r13)
 #define RESTORE_CTR(reg, area)	ld	reg,area+EX_CTR(r13) ; mtctr reg
 #else
-/* ...else CTR is unused and in register. */
 #define SAVE_CTR(reg, area)
 #define GET_CTR(reg, area) 	mfctr	reg
 #define RESTORE_CTR(reg, area)

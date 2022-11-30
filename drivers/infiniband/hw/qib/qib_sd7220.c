@@ -714,7 +714,6 @@ static int qib_sd7220_reg_mod(struct qib_devdata *dd, int sdnum, u32 loc,
 			tries = epb_trans(dd, trans, transval, &transval);
 		}
 	}
-	/* else, failed to see ready, what error-handling? */
 
 	/*
 	 * Release bus. Failure is an error.

@@ -188,7 +188,6 @@ static int sctp_sched_prio_set(struct sctp_stream *stream, __u16 sid,
 	for (i = 0; i < stream->outcnt; i++) {
 		soute = SCTP_SO(stream, i)->ext;
 		if (soute && soute->prio_head == old)
-			/* It's still in use, nothing else to do here. */
 			return 0;
 	}
 

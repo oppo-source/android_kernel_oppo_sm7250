@@ -687,7 +687,6 @@ static inline void hdlc_unpack(unsigned char *src, unsigned count,
 					}
 				}
 			}
-			/* else: continue flag-hunting */
 		} else if (likely(seqlen < 5 && trail1 < 7)) {
 			/* streamlined case: 8 data bits, no stuffing */
 			inbyte |= c << inbits;

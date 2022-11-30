@@ -2813,7 +2813,6 @@ unsigned int ata_bmdma_port_intr(struct ata_port *ap, struct ata_queued_cmd *qc)
 		if (!(host_stat & ATA_DMA_INTR))
 			return ata_sff_idle_irq(ap);
 
-		/* before we do anything else, clear DMA-Start bit */
 		ap->ops->bmdma_stop(qc);
 		bmdma_stopped = true;
 

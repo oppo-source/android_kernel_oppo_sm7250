@@ -2360,7 +2360,6 @@ static void __exit isdn_exit(void)
 	isdn_tty_exit();
 	unregister_chrdev(ISDN_MAJOR, "isdn");
 	del_timer_sync(&dev->timer);
-	/* call vfree with interrupts enabled, else it will hang */
 	vfree(dev);
 	printk(KERN_NOTICE "ISDN-subsystem unloaded\n");
 }

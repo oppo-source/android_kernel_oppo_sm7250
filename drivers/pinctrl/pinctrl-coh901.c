@@ -263,7 +263,6 @@ static int u300_gpio_direction_output(struct gpio_chip *chip, unsigned offset,
 	 */
 	oldmode = val & (U300_GPIO_PXPCR_PIN_MODE_MASK <<
 			 ((offset & 0x07) << 1));
-	/* mode = 0 means input, else some mode is already set */
 	if (oldmode == 0) {
 		val &= ~(U300_GPIO_PXPCR_PIN_MODE_MASK <<
 			 ((offset & 0x07) << 1));

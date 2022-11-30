@@ -114,7 +114,6 @@ static void __arm64_workaround_1542418_asid_rollover(void)
 	 */
 	if (!system_supports_cnp())
 		cpu_set_reserved_ttbr0();
-	/* else: the caller must have already set this */
 
 	ttbr1 = read_sysreg(ttbr1_el1);
 	ttbr1_baddr = ttbr1 & ~TTBR_ASID_MASK;

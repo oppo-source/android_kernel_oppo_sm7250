@@ -408,7 +408,6 @@ static int save_user_regs(struct pt_regs *regs, struct mcontext __user *frame,
 		   frame->mc_vregs contains valid data */
 		msr |= MSR_VEC;
 	}
-	/* else assert((regs->msr & MSR_VEC) == 0) */
 
 	/* We always copy to/from vrsave, it's 0 if we don't have or don't
 	 * use altivec. Since VSCR only contains 32 bits saved in the least
@@ -454,7 +453,6 @@ static int save_user_regs(struct pt_regs *regs, struct mcontext __user *frame,
 		   frame->mc_vregs contains valid data */
 		msr |= MSR_SPE;
 	}
-	/* else assert((regs->msr & MSR_SPE) == 0) */
 
 	/* We always copy to/from spefscr */
 	if (__put_user(current->thread.spefscr, (u32 __user *)&frame->mc_vregs + ELF_NEVRREG))

@@ -1923,7 +1923,6 @@ static void set_dsiclk_rate(u8 n, unsigned long rate)
 
 	dsiclk[n].divsel = (div == 1) ? PRCM_DSI_PLLOUT_SEL_PHI :
 			   (div == 2) ? PRCM_DSI_PLLOUT_SEL_PHI_2 :
-			   /* else */	PRCM_DSI_PLLOUT_SEL_PHI_4;
 
 	val = readl(PRCM_DSI_PLLOUT_SEL);
 	val &= ~dsiclk[n].divsel_mask;

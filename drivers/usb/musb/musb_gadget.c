@@ -1292,7 +1292,6 @@ static int musb_gadget_dequeue(struct usb_ep *ep, struct usb_request *request)
 	if (musb_ep->req_list.next != &req->list || musb_ep->busy)
 		musb_g_giveback(musb_ep, request, -ECONNRESET);
 
-	/* ... else abort the dma transfer ... */
 	else if (is_dma_capable() && musb_ep->dma) {
 		struct dma_controller	*c = musb->dma_controller;
 

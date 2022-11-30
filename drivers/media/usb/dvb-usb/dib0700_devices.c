@@ -1728,7 +1728,6 @@ static int dib8096_set_param_override(struct dvb_frontend *fe)
 		state->dib8000_ops.pwm_agc_reset(fe);
 		state->dib8000_ops.set_tune_state(fe, CT_DEMOD_START);
 	} else {
-		/* for everything else than CBAND we are using standard AGC */
 		deb_info("not tuning in CBAND - standard AGC startup\n");
 		dib0090_pwm_gain_reset(fe);
 	}

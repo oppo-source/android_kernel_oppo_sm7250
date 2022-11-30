@@ -259,7 +259,6 @@ static unsigned char db9_saturn_read_packet(struct parport *port, unsigned char 
 			db9_saturn_write_sub(port, type, 3, powered, 0);
 			return data[0] = 0xe3;
 		}
-		/* else: fall through */
 	default:
 		return data[0];
 	}

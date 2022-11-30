@@ -231,7 +231,6 @@ static int opal_async_comp_event(struct notifier_block *nb,
 	spin_unlock_irqrestore(&opal_async_comp_lock, flags);
 
 	if (state == ASYNC_TOKEN_ABANDONED) {
-		/* Free the token, no one else will */
 		opal_async_release_token(token);
 		return 0;
 	}

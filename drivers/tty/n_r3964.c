@@ -651,7 +651,6 @@ char_to_buf:
 				mod_timer(&pInfo->tmr, jiffies + R3964_TO_ZVZ);
 			}
 		}
-		/* else: overflow-msg? BUF_SIZE>MTU; should not happen? */
 		break;
 	case R3964_WAIT_FOR_BCC:
 		pInfo->last_rx = c;

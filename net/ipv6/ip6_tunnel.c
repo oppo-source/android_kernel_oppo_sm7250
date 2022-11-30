@@ -448,7 +448,6 @@ __u16 ip6_tnl_parse_tlv_enc_lim(struct sk_buff *skb, __u8 *raw)
 				if (tel->type == IPV6_TLV_TNL_ENCAP_LIMIT &&
 				    tel->length == 1)
 					return i + off - nhoff;
-				/* else jump to next option */
 				if (tel->type)
 					i += tel->length + 2;
 				else

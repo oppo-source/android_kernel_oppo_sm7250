@@ -454,7 +454,6 @@ enum {
 	__EE_IN_INTERVAL_TREE,
 
 	/* for debugfs: */
-	/* has this been submitted, or does it still wait for something else? */
 	__EE_SUBMITTED,
 
 	/* this is/was a write request */

@@ -331,7 +331,6 @@ fail0:
 	return 1;
 }
 
-/* Return 1 if dual channel mode is active.  Else return 0. */
 static inline int dual_channel_active(u32 drc)
 {
 	return (drc >> 21) & 0x1;

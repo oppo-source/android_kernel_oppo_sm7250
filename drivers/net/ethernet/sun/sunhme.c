@@ -505,7 +505,6 @@ static void happy_meal_tcvr_write(struct happy_meal *hp,
 	while (!(hme_read32(hp, tregs + TCVR_FRAME) & 0x10000) && --tries)
 		udelay(20);
 
-	/* Anything else? */
 	if (!tries)
 		printk(KERN_ERR "happy meal: Aieee, transceiver MIF write bolixed\n");
 
@@ -1128,7 +1127,6 @@ static void happy_meal_transceiver_check(struct happy_meal *hp, void __iomem *tr
 	} else {
 		u32 reread = hme_read32(hp, tregs + TCVR_CFG);
 
-		/* Else we can just work off of the MDIO bits. */
 		ASD(("<not polling> "));
 		if (reread & TCV_CFG_MDIO1) {
 			hme_write32(hp, tregs + TCVR_CFG, tconfig | TCV_CFG_PSELECT);

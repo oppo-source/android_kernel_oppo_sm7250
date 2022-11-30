@@ -1593,7 +1593,6 @@ static int initio_state_5(struct initio_host * host)
 				/* for next disc and come in this loop */
 				return 4;	/* Go to state 4                */
 			}
-			/* else (xcnt >= 0 , i.e. this sgp already xferred */
 		}		/* for */
 		return 6;	/* Go to state 6                */
 	} else {

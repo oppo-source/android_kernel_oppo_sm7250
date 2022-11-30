@@ -3375,7 +3375,6 @@ static int kvmppc_run_vcpu(struct kvm_run *kvm_run, struct kvm_vcpu *vcpu)
 			kvmppc_vcore_blocked(vc);
 		} else if (need_resched()) {
 			kvmppc_vcore_preempt(vc);
-			/* Let something else run */
 			cond_resched_lock(&vc->lock);
 			if (vc->vcore_state == VCORE_PREEMPT)
 				kvmppc_vcore_end_preempt(vc);

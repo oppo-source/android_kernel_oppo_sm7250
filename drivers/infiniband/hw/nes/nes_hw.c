@@ -2030,7 +2030,6 @@ int nes_napi_isr(struct nes_device *nesdev)
 	}
 
 	int_stat &= nesdev->int_req;
-	/* iff NIC, process here, else wait for DPC */
 	if ((int_stat) && ((int_stat & 0x0000ff00) == int_stat)) {
 		nesdev->napi_isr_ran = 0;
 		nes_write32(nesdev->regs + NES_INT_STAT,

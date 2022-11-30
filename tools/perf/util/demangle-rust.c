@@ -84,7 +84,6 @@ rust_is_mangled(const char *sym)
 
 	len = strlen(sym);
 	if (len <= hash_prefix_len + hash_len)
-		/* Not long enough to contain "::h" + hash + something else */
 		return false;
 
 	len_without_hash = len - (hash_prefix_len + hash_len);

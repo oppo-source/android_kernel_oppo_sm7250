@@ -498,7 +498,6 @@ static size_t parport_pc_fifo_write_block_pio(struct parport *port,
 			/* Can't yield the port. */
 			schedule();
 
-		/* Anyone else waiting for the port? */
 		if (port->waithead) {
 			printk(KERN_DEBUG "Somebody wants the port\n");
 			break;
@@ -663,7 +662,6 @@ false_alarm:
 
 		cond_resched(); /* Can't yield the port. */
 
-		/* Anyone else waiting for the port? */
 		if (port->waithead) {
 			printk(KERN_DEBUG "Somebody wants the port\n");
 			break;

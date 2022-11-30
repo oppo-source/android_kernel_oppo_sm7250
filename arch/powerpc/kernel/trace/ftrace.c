@@ -37,7 +37,6 @@ ftrace_call_replace(unsigned long ip, unsigned long addr, int link)
 
 	addr = ppc_function_entry((void *)addr);
 
-	/* if (link) set op to 'bl' else 'b' */
 	op = create_branch((unsigned int *)ip, addr, link ? 1 : 0);
 
 	return op;

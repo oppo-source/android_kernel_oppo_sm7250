@@ -157,7 +157,6 @@ int amdgpu_ih_process(struct amdgpu_device *adev)
 	wptr = amdgpu_ih_get_wptr(adev);
 
 restart_ih:
-	/* is somebody else already processing irqs? */
 	if (atomic_xchg(&adev->irq.ih.lock, 1))
 		return IRQ_NONE;
 

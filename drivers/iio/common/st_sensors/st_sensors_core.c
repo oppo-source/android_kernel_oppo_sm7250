@@ -398,7 +398,6 @@ int st_sensors_init_sensor(struct iio_dev *indio_dev,
 	struct st_sensors_platform_data *of_pdata;
 	int err = 0;
 
-	/* If OF/DT pdata exists, it will take precedence of anything else */
 	of_pdata = st_sensors_of_probe(indio_dev->dev.parent, pdata);
 	if (of_pdata)
 		pdata = of_pdata;

@@ -2805,7 +2805,6 @@ static bool mv_process_crpb_response(struct ata_port *ap,
 	ata_status = edma_status >> CRPB_FLAG_STATUS_SHIFT;
 	if (!ac_err_mask(ata_status))
 		return true;
-	/* else: leave it for mv_err_intr() */
 	return false;
 }
 

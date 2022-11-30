@@ -110,7 +110,6 @@ static void qube_raq_galileo_fixup(struct pci_dev *dev)
 #endif
 	{
 		signed int timeo;
-		/* XXX WE MUST DO THIS ELSE GALILEO LOCKS UP! -DaveM */
 		timeo = GT_READ(GT_PCI0_TOR_OFS);
 		/* Old Galileo, assumes PCI STOP line to VIA is disconnected. */
 		GT_WRITE(GT_PCI0_TOR_OFS,

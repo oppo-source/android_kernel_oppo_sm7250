@@ -227,7 +227,6 @@ skip_ipi:
 		}
 	}
 
-	/* If we are just taking a "peek", do nothing else */
 	if (scan_type == scan_poll)
 		return hirq;
 

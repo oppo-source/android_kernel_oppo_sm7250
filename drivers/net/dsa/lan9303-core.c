@@ -729,13 +729,11 @@ static int lan9303_disable_processing_port(struct lan9303 *chip,
 {
 	int ret;
 
-	/* disable RX, but keep register reset default values else */
 	ret = lan9303_write_switch_port(chip, port, LAN9303_MAC_RX_CFG_0,
 					LAN9303_MAC_RX_CFG_X_REJECT_MAC_TYPES);
 	if (ret)
 		return ret;
 
-	/* disable TX, but keep register reset default values else */
 	return lan9303_write_switch_port(chip, port, LAN9303_MAC_TX_CFG_0,
 				LAN9303_MAC_TX_CFG_X_TX_IFG_CONFIG_DEFAULT |
 				LAN9303_MAC_TX_CFG_X_TX_PAD_ENABLE);
@@ -746,14 +744,12 @@ static int lan9303_enable_processing_port(struct lan9303 *chip,
 {
 	int ret;
 
-	/* enable RX and keep register reset default values else */
 	ret = lan9303_write_switch_port(chip, port, LAN9303_MAC_RX_CFG_0,
 					LAN9303_MAC_RX_CFG_X_REJECT_MAC_TYPES |
 					LAN9303_MAC_RX_CFG_X_RX_ENABLE);
 	if (ret)
 		return ret;
 
-	/* enable TX and keep register reset default values else */
 	return lan9303_write_switch_port(chip, port, LAN9303_MAC_TX_CFG_0,
 				LAN9303_MAC_TX_CFG_X_TX_IFG_CONFIG_DEFAULT |
 				LAN9303_MAC_TX_CFG_X_TX_PAD_ENABLE |
@@ -1163,7 +1159,6 @@ static void lan9303_port_stp_state_set(struct dsa_switch *ds, int port,
 	if (chip->is_bridged)
 		lan9303_write_switch_reg(chip, LAN9303_SWE_PORT_STATE,
 					 chip->swe_port_state);
-	/* else: touching SWE_PORT_STATE would break port separation */
 }
 
 static void lan9303_port_fast_age(struct dsa_switch *ds, int port)

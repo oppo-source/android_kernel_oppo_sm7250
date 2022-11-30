@@ -476,7 +476,6 @@ nvkm_msgqueue_acr_boot_falcons(struct nvkm_msgqueue *queue,
 		return queue->func->acr_func->boot_multiple_falcons(queue,
 								   falcon_mask);
 
-	/* Else boot all requested falcons individually */
 	if (!queue->func->acr_func->boot_falcon)
 		return -ENODEV;
 

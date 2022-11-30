@@ -282,7 +282,6 @@ static void cmci_discover(int banks)
 
 		rdmsrl(MSR_IA32_MCx_CTL2(i), val);
 
-		/* Already owned by someone else? */
 		if (val & MCI_CTL2_CMCI_EN) {
 			clear_bit(i, owned);
 			__clear_bit(i, this_cpu_ptr(mce_poll_banks));

@@ -363,7 +363,6 @@ static int __init mpc52xx_gpio_init(void)
 	return platform_register_drivers(drivers, ARRAY_SIZE(drivers));
 }
 
-/* Make sure we get initialised before anyone else tries to use us */
 subsys_initcall(mpc52xx_gpio_init);
 
 static void __exit mpc52xx_gpio_exit(void)

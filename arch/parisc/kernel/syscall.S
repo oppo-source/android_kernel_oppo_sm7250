@@ -901,7 +901,6 @@ cas2_end:
 	ASM_EXCEPTIONTABLE_ENTRY(21b-linux_gateway_page, 22b-linux_gateway_page)
 #endif
 
-	/* Make sure nothing else is placed on this page */
 	.align PAGE_SIZE
 END(linux_gateway_page)
 ENTRY(end_linux_gateway_page)

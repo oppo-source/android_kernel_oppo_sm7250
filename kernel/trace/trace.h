@@ -441,7 +441,6 @@ struct tracer {
 	/* If you handled the flag setting, return 0 */
 	int			(*set_flag)(struct trace_array *tr,
 					    u32 old_flags, u32 bit, int set);
-	/* Return 0 if OK with change, else return non-zero */
 	int			(*flag_changed)(struct trace_array *tr,
 						u32 mask, int set);
 	struct tracer		*next;

@@ -4526,7 +4526,6 @@ qla2x00_nvram_config(scsi_qla_host_t *vha)
 		 */
 		if ((nv->add_firmware_options[0] & (BIT_6 | BIT_5 | BIT_4)) ==
 		    (BIT_5 | BIT_4)) {
-			/* Force 'loop preferred, else point-to-point'. */
 			nv->add_firmware_options[0] &= ~(BIT_6 | BIT_5 | BIT_4);
 			nv->add_firmware_options[0] |= BIT_5;
 		}
@@ -5510,7 +5509,6 @@ qla2x00_find_all_fabric_devs(scsi_qla_host_t *vha)
 
 	rval = QLA_SUCCESS;
 
-	/* Try GID_PT to get device list, else GAN. */
 	if (!ha->swl)
 		ha->swl = kcalloc(ha->max_fibre_devices, sizeof(sw_info_t),
 		    GFP_KERNEL);

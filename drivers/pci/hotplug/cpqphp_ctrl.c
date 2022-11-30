@@ -48,7 +48,6 @@ static void long_delay(int delay)
 }
 
 
-/* FIXME: The following line needs to be somewhere else... */
 #define WRONG_BUS_FREQUENCY 0x07
 static u8 handle_switch_change(u8 change, struct controller *ctrl)
 {

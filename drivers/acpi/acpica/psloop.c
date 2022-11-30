@@ -184,7 +184,6 @@ acpi_ps_get_arguments(struct acpi_walk_state *walk_state,
 				ACPI_DEBUG_PRINT((ACPI_DB_PARSE,
 						  "Pass1: Skipping an If/Else/While body\n"));
 
-				/* Skip body of if/else/while in pass 1 */
 
 				walk_state->parser_state.aml =
 				    walk_state->parser_state.pkg_end;

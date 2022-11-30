@@ -1756,7 +1756,6 @@ static bool ixgbe_is_non_eop(struct ixgbe_ring *rx_ring,
 		}
 	}
 
-	/* if we are the last buffer then there is nothing else to do */
 	if (likely(ixgbe_test_staterr(rx_desc, IXGBE_RXD_STAT_EOP)))
 		return false;
 
@@ -7667,7 +7666,6 @@ static void ixgbe_sfp_detection_subtask(struct ixgbe_adapter *adapter)
 	    time_after(adapter->sfp_poll_time, jiffies))
 		return; /* If not yet time to poll for SFP */
 
-	/* someone else is in init, wait until next service event */
 	if (test_and_set_bit(__IXGBE_IN_SFP_INIT, &adapter->state))
 		return;
 
@@ -7736,7 +7734,6 @@ static void ixgbe_sfp_link_config_subtask(struct ixgbe_adapter *adapter)
 	if (!(adapter->flags & IXGBE_FLAG_NEED_LINK_CONFIG))
 		return;
 
-	/* someone else is in init, wait until next service event */
 	if (test_and_set_bit(__IXGBE_IN_SFP_INIT, &adapter->state))
 		return;
 
@@ -8564,7 +8561,6 @@ netdev_tx_t ixgbe_xmit_frame_ring(struct sk_buff *skb,
 	if (skb_vlan_tag_present(skb)) {
 		tx_flags |= skb_vlan_tag_get(skb) << IXGBE_TX_FLAGS_VLAN_SHIFT;
 		tx_flags |= IXGBE_TX_FLAGS_HW_VLAN;
-	/* else if it is a SW VLAN check the next protocol and store the tag */
 	} else if (protocol == htons(ETH_P_8021Q)) {
 		struct vlan_hdr *vhdr, _vhdr;
 		vhdr = skb_header_pointer(skb, ETH_HLEN, sizeof(_vhdr), &_vhdr);
@@ -10891,7 +10887,6 @@ skip_sriov:
 
 	ixgbe_dbg_adapter_init(adapter);
 
-	/* setup link for SFP devices with MNG FW, else wait for IXGBE_UP */
 	if (ixgbe_mng_enabled(hw) && ixgbe_is_sfp(hw) && hw->mac.ops.setup_link)
 		hw->mac.ops.setup_link(hw,
 			IXGBE_LINK_SPEED_10GB_FULL | IXGBE_LINK_SPEED_1GB_FULL,

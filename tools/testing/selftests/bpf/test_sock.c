@@ -242,7 +242,6 @@ static struct sock_test tests[] = {
 			BPF_MOV64_IMM(BPF_REG_0, 0),
 			BPF_JMP_A(1),
 
-			/* else return ALLOW; */
 			BPF_MOV64_IMM(BPF_REG_0, 1),
 			BPF_EXIT_INSN(),
 		},
@@ -272,7 +271,6 @@ static struct sock_test tests[] = {
 			BPF_MOV64_IMM(BPF_REG_0, 1),
 			BPF_JMP_A(1),
 
-			/* else return DENY; */
 			BPF_MOV64_IMM(BPF_REG_0, 0),
 			BPF_EXIT_INSN(),
 		},

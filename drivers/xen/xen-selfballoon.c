@@ -207,7 +207,6 @@ static void selfballoon_process(struct work_struct *work)
 			tgt_pages = cur_pages +
 				((goal_pages - cur_pages) /
 				  selfballoon_uphysteresis);
-		/* else if cur_pages == goal_pages, no change */
 		useful_pages = max_pfn - totalreserve_pages;
 		if (selfballoon_min_usable_mb != 0)
 			floor_pages = totalreserve_pages +

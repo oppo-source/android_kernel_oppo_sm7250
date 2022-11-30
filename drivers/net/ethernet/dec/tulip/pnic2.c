@@ -385,7 +385,6 @@ void pnic2_lnk_change(struct net_device *dev, int csr5)
 	if (tulip_debug > 1)
 		dev_info(&dev->dev, "PNIC2 Link Change Default?\n");
 
-        /* if all else fails default to trying 10baseT-HD */
 	dev->if_port = 0;
 
         /* make sure autonegotiate enable is off */

@@ -1519,7 +1519,6 @@ destructor function to ``pcm->private_free``:
               struct mychip *chip = snd_pcm_chip(pcm);
               /* free your own data */
               kfree(chip->my_private_pcm_data);
-              /* do what you like else */
               ....
       }
 

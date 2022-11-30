@@ -37,7 +37,6 @@
 
 #define I2O_EVT_SENSOR_STATE_CHANGED		0x01
 
-//#ifdef __KERNEL__   /* ioctl stuff only thing exported to users */
 
 #define I2O_MAX_MANAGERS	4
 

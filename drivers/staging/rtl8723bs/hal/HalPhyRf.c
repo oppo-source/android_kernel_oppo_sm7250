@@ -433,7 +433,6 @@ void ODM_TXPowerTrackingCallback_ThermalMeter(struct adapter *Adapter)
 		);
 		if (pDM_Odm->RFCalibrateInfo.CCK_index > c.SwingTableSize_CCK-1)
 			pDM_Odm->RFCalibrateInfo.CCK_index = c.SwingTableSize_CCK-1;
-		/* else if (pDM_Odm->RFCalibrateInfo.CCK_index < 0) */
 			/* pDM_Odm->RFCalibrateInfo.CCK_index = 0; */
 	} else {
 		ODM_RT_TRACE(

@@ -1292,7 +1292,6 @@ static void ei_tx_intr(struct net_device *dev)
 		else
 			ei_local->lasttx = 10, ei_local->txing = 0;
 	}
-//	else
 //		netdev_warn(dev, "unexpected TX-done interrupt, lasttx=%d\n",
 //			    ei_local->lasttx);
 

@@ -1085,7 +1085,6 @@ struct mrq_query_abi_request {
  * successful, not that the MRQ itself is supported!
  */
 struct mrq_query_abi_response {
-	/** @brief 0 if queried MRQ is supported. Else, -#BPMP_ENODEV */
 	int32_t status;
 } __ABI_PACKED;
 

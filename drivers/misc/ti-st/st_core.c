@@ -628,7 +628,6 @@ long st_register(struct st_proto_s *new_proto)
 		st_gdata->protos_registered++;
 		new_proto->write = st_write;
 
-		/* lock already held before entering else */
 		spin_unlock_irqrestore(&st_gdata->lock, flags);
 		return err;
 	}

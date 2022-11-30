@@ -372,7 +372,6 @@ static void do_test(int family, unsigned int opt)
 		if (val != total_len)
 			error(1, errno, "send");
 
-		/* wait for all errors to be queued, else ACKs arrive OOO */
 		if (!cfg_no_delay)
 			usleep(50 * 1000);
 

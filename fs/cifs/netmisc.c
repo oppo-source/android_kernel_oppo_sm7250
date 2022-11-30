@@ -865,7 +865,6 @@ map_smb_to_linux_error(char *buf, bool logErr)
 				rc = mapping_table_ERRDOS[i].posix_code;
 				break;
 			}
-			/* else try next error mapping one to see if match */
 		}
 	} else if (smberrclass == ERRSRV) {
 		/* server class of error codes */
@@ -880,10 +879,8 @@ map_smb_to_linux_error(char *buf, bool logErr)
 				rc = mapping_table_ERRSRV[i].posix_code;
 				break;
 			}
-			/* else try next error mapping to see if match */
 		}
 	}
-	/* else ERRHRD class errors or junk  - return EIO */
 
 	cifs_dbg(FYI, "Mapping smb error code 0x%x to POSIX err %d\n",
 		 le32_to_cpu(smb->Status.CifsError), rc);

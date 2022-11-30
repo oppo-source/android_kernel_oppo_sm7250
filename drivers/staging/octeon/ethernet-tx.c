@@ -315,7 +315,6 @@ int cvm_oct_xmit(struct sk_buff *skb, struct net_device *dev)
 		goto dont_put_skbuff_in_hw;
 	}
 	if (unlikely(skb_shared(skb))) {
-		/* TX buffer sharing data with someone else */
 		goto dont_put_skbuff_in_hw;
 	}
 	if (unlikely(skb_cloned(skb))) {

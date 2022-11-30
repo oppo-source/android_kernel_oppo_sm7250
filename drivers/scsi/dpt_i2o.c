@@ -495,22 +495,18 @@ static int adpt_bios_param(struct scsi_device *sdev, struct block_device *dev,
 		heads = 18;
 		sectors = 2;
 	} 
-	// else if between 0x2000 and 0x20000
 	else if (capacity < 0x20000) {
 		heads = 64;
 		sectors = 32;
 	}
-	// else if between 0x20000 and 0x40000
 	else if (capacity < 0x40000) {
 		heads = 65;
 		sectors = 63;
 	}
-	// else if between 0x4000 and 0x80000
 	else if (capacity < 0x80000) {
 		heads = 128;
 		sectors = 63;
 	}
-	// else if greater than 0x80000
 	else {
 		heads = 255;
 		sectors = 63;
@@ -1178,7 +1174,6 @@ static struct adpt_device* adpt_find_device(adpt_hba* pHba, u32 chan, u32 id, u6
 		return d;
 	}
 
-	/* else we need to look through all the luns */
 	for(d=d->next_lun ; d ; d = d->next_lun){
 		if(d->scsi_lun == lun){
 			return d;

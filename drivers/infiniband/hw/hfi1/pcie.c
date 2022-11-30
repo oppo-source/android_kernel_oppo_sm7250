@@ -607,7 +607,6 @@ pci_error_detected(struct pci_dev *pdev, pci_channel_state_t state)
 			dd->flags &= ~HFI1_PRESENT;
 			hfi1_disable_after_error(dd);
 		}
-		 /* else early, or other problem */
 		ret =  PCI_ERS_RESULT_DISCONNECT;
 		break;
 
@@ -885,7 +884,6 @@ static int trigger_sbr(struct hfi1_devdata *dd)
 		return -ENOTTY;
 	}
 
-	/* should not be anyone else on the bus */
 	list_for_each_entry(pdev, &dev->bus->devices, bus_list)
 		if (pdev != dev) {
 			dd_dev_err(dd,

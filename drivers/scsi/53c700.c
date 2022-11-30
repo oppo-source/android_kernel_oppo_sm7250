@@ -1047,7 +1047,6 @@ process_script_interrupt(__u32 dsps, __u32 dsp, struct scsi_cmnd *SCp,
 			//		     "Enabling Tag Command Queuing\n");
 			//		hostdata->tag_negotiated |= (1<<scmd_id(SCp));
 			//		NCR_700_set_flag(SCp->device, NCR_700_DEV_BEGIN_TAG_QUEUEING);
-			//	} else {
 			//		NCR_700_clear_flag(SCp->device, NCR_700_DEV_BEGIN_TAG_QUEUEING);
 			//		hostdata->tag_negotiated &= ~(1<<scmd_id(SCp));
 			//	}

@@ -125,7 +125,6 @@ smb2_hdr_assemble(struct smb2_sync_hdr *shdr, __le16 smb2_cmd,
 	if ((tcon->ses) && (tcon->ses->server) &&
 	    (tcon->ses->server->capabilities & SMB2_GLOBAL_CAP_LARGE_MTU))
 		shdr->CreditCharge = cpu_to_le16(1);
-	/* else CreditCharge MBZ */
 
 	shdr->TreeId = tcon->tid;
 	/* Uid is not converted */

@@ -232,7 +232,6 @@ static int qed_grc_attn_cb(struct qed_hwfn *p_hwfn)
 		GET_FIELD(tmp2, QED_GRC_ATTENTION_VF));
 
 out:
-	/* Regardles of anything else, clean the validity bit */
 	qed_wr(p_hwfn, p_hwfn->p_dpc_ptt,
 	       GRC_REG_TIMEOUT_ATTN_ACCESS_VALID, 0);
 	return 0;

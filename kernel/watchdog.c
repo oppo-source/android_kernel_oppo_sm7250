@@ -435,7 +435,6 @@ static enum hrtimer_restart watchdog_timer_fn(struct hrtimer *hrtimer)
 			 * engaged in dumping cpu back traces
 			 */
 			if (test_and_set_bit(0, &soft_lockup_nmi_warn)) {
-				/* Someone else will report us. Let's give up */
 				__this_cpu_write(soft_watchdog_warn, true);
 				return HRTIMER_RESTART;
 			}

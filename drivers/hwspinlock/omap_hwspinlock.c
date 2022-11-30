@@ -116,7 +116,6 @@ static int omap_hwspinlock_probe(struct platform_device *pdev)
 	if (ret < 0)
 		goto iounmap_base;
 
-	/* one of the four lsb's must be set, and nothing else */
 	if (hweight_long(i & 0xf) != 1 || i > 8) {
 		ret = -EINVAL;
 		goto iounmap_base;

@@ -1310,7 +1310,6 @@ static int hp100_build_rx_pdl(hp100_ring_t * ringptr,
 #endif
 		return 1;
 	}
-	/* else: */
 	/* alloc_skb failed (no memory) -> still can receive the header
 	 * fragment into PDL memory. make PDL safe by clearing msgptr and
 	 * making the PDL only 1 fragment (i.e. the 4 byte packet status)
@@ -2405,7 +2404,6 @@ static void hp100_stop_interface(struct net_device *dev)
 
 		if (!(val & HP100_HW_RST))
 			return;	/* If reset, imm. return ... */
-		/* ... else: busy wait until idle */
 		for (val = 0; val < 6000; val++)
 			if ((hp100_inb(MAC_CFG_1) & (HP100_TX_IDLE | HP100_RX_IDLE)) == (HP100_TX_IDLE | HP100_RX_IDLE)) {
 				hp100_page(PERFORMANCE);
