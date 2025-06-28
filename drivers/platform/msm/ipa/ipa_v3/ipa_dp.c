@@ -1201,10 +1201,7 @@ int ipa3_setup_sys_pipe(struct ipa_sys_connect_params *sys_in, u32 *clnt_hdl)
 		}
 		atomic_set(&ep->sys->page_recycle_repl->pending, 0);
 		ep->sys->page_recycle_repl->capacity =
-				(ep->sys->rx_pool_sz + 1) * 4;
-
-		IPAERR("page_recycle_repl->capacity is %d",
-				   ep->sys->page_recycle_repl->capacity);
+				(ep->sys->rx_pool_sz + 1) * 2;
 
 		ep->sys->page_recycle_repl->cache =
 				kcalloc(ep->sys->page_recycle_repl->capacity,
@@ -2530,7 +2527,9 @@ static void ipa3_replenish_rx_cache_recycle(struct ipa3_sys_context *sys)
 fail_dma_mapping:
 	spin_lock_bh(&sys->spinlock);
 	list_add_tail(&rx_pkt->link, &sys->rcycl_list);
-	INIT_LIST_HEAD(&rx_pkt->link);
+	//ifdef OPLUS_BUG_COMPATIBILITY
+	//INIT_LIST_HEAD(&rx_pkt->link);
+	//endif /* OPLUS_BUG_COMPATIBILITY */
 	spin_unlock_bh(&sys->spinlock);
 fail_kmem_cache_alloc:
 	if (rx_len_cached == 0)
